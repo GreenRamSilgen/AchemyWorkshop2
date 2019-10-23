@@ -8,28 +8,28 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
-  - enabled: 0
-    path: Assets/Scenes/CraftingStage.unity
-    guid: 00b6f17e8c49e394885419de576c60c9
-  - enabled: 0
-    path: Assets/Scenes/DayStart.unity
-    guid: bfc5439a7f62de449b7966fbd2563c3b
-  - enabled: 0
-    path: Assets/Scenes/FailGame.unity
-    guid: b21075965d6089342afa63226d4c5d91
-  - enabled: 0
-    path: Assets/Scenes/HireStage.unity
-    guid: 442096ac28026684294d999028c30dc2
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: 35884b1180a785842861674d53aa2791
-  - enabled: 0
+  - enabled: 1
+    path: Assets/Scenes/DayStart.unity
+    guid: bfc5439a7f62de449b7966fbd2563c3b
+  - enabled: 1
+    path: Assets/Scenes/HireStage.unity
+    guid: 442096ac28026684294d999028c30dc2
+  - enabled: 1
     path: Assets/Scenes/ResourceGathering.unity
     guid: 737adb0638a5ed84fb9cada62282ef17
   - enabled: 1
-    path: Assets/Scenes/SampleStage.unity
-    guid: 9199fc49c1f68c541913f1417da1e1b9
-  - enabled: 0
+    path: Assets/Scenes/CraftingStage.unity
+    guid: 00b6f17e8c49e394885419de576c60c9
+  - enabled: 1
+    path: Assets/Scenes/FailGame.unity
+    guid: b21075965d6089342afa63226d4c5d91
+  - enabled: 1
     path: Assets/Scenes/WinGame.unity
     guid: dcf6eae9eb86d5d498cedf01ab9fcd0c
+  - enabled: 1
+    path: Assets/Scenes/SampleStage.unity
+    guid: 9199fc49c1f68c541913f1417da1e1b9
   m_configObjects: {}
