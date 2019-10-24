@@ -8,6 +8,8 @@ public class RGButton : MonoBehaviour
     public GameObject ForestCanvas;
     public GameObject TownCanvas;
 
+    public GameObject DimCanvas;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -24,11 +26,13 @@ public class RGButton : MonoBehaviour
         CaveCanvas.SetActive(false);
         ForestCanvas.SetActive(false);
         TownCanvas.SetActive(false);
+        DimCanvas.SetActive(false);
     }
 
     public void CavesButton() {
         if(!CaveCanvas.activeInHierarchy && !ForestCanvas.activeInHierarchy && !TownCanvas.activeInHierarchy) {
             CaveCanvas.SetActive(true);
+            DimCanvas.SetActive(true);
         }
 
     }
@@ -38,6 +42,7 @@ public class RGButton : MonoBehaviour
         if (!CaveCanvas.activeInHierarchy && !ForestCanvas.activeInHierarchy && !TownCanvas.activeInHierarchy)
         {
             ForestCanvas.SetActive(true);
+            DimCanvas.SetActive(true);
         }
 
     }
@@ -47,6 +52,7 @@ public class RGButton : MonoBehaviour
         if (!CaveCanvas.activeInHierarchy && !ForestCanvas.activeInHierarchy && !TownCanvas.activeInHierarchy)
         {
             TownCanvas.SetActive(true);
+            DimCanvas.SetActive(true);
         }
 
     }
