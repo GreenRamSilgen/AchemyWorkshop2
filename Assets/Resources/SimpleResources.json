@@ -1,0 +1,29 @@
+{
+    "Items":
+    [
+        {
+            "itemID":0,
+            "itemName":"Milk",
+            "itemLoc": "City",
+            "itemTier":"Tier1"
+        },
+        {
+            "itemID":1,
+            "itemName":"Salt",
+            "itemLoc": "City",
+            "itemTier":"Tier1"
+        },
+        {
+            "itemID":3,
+            "itemName":"Pitch",
+            "itemLoc": "City",
+            "itemTier":"Tier2"
+        },
+        {
+            "itemID":4,
+            "itemName":"Lemon",
+            "itemLoc": "Wilds",
+            "itemTier":"Tier1"
+        }
+    ]
+}
