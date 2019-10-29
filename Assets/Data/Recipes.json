@@ -1,0 +1,20 @@
+[
+  {
+    "id": 0,
+    "name": "Potion 1",
+    "mainAspect": "Aspect 1",
+    "otherAspects": {
+      "Aspect 1": [1, 5],
+      "Aspect 2": [2, 3]
+    }
+  },
+  {
+    "id": 1,
+    "name": "Potion 2",
+    "mainAspect": "Aspect 2",
+    "otherAspects": {
+      "Aspect 1": [1, 5],
+      "Aspect 2": [2, 3]
+    }
+  }
+]
