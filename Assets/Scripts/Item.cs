@@ -7,5 +7,13 @@ public class Item
     public string itemName;
     public string itemLoc;
     public string itemTier;
+    public Aspect asp;
+    
+}
 
+[System.Serializable]
+public class Aspect
+{
+    public int Aspect1;
+    public int ASSSPECCC;
 }

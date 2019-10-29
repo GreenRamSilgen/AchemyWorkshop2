@@ -14,12 +14,16 @@ public class JsonTesting : MonoBehaviour
         {
             //Debug.Log(jsonString);
             ItemList = JsonUtility.FromJson<ItemList>(asset.text);
+
             foreach (Item item in ItemList.Items)
             {
                 Debug.Log(item.itemID);
                 Debug.Log(item.itemLoc);
                 Debug.Log(item.itemName);
                 Debug.Log(item.itemTier);
+                Debug.Log(item.asp);
+                Debug.Log(item.asp.Aspect1);
+                Debug.Log(item.asp.ASSSPECCC);
             }
         }
         else

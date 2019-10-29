@@ -5,25 +5,41 @@
             "itemID":0,
             "itemName":"Milk",
             "itemLoc": "City",
-            "itemTier":"Tier1"
+            "itemTier":"Tier1",
+            "Aspects":
+            {
+                "Aspect1":10
+            }
         },
         {
             "itemID":1,
             "itemName":"Salt",
             "itemLoc": "City",
-            "itemTier":"Tier1"
+            "itemTier":"Tier1",
+            "Aspects":
+            {
+                "Aspect1":20
+            }
         },
         {
             "itemID":3,
             "itemName":"Pitch",
             "itemLoc": "City",
-            "itemTier":"Tier2"
+            "itemTier":"Tier2",
+            "Aspects":
+            {
+                "Aspect1":1
+            }
         },
         {
             "itemID":4,
             "itemName":"Lemon",
             "itemLoc": "Wilds",
-            "itemTier":"Tier1"
+            "itemTier":"Tier1",
+            "Aspects":
+            {
+                "Aspect1":3
+            }
         }
     ]
 }

@@ -3,7 +3,7 @@
         "CITY":[{
             "Tier1" : [
                 {
-                    "itemID":0,
+                    "itemID":200,
                     "itemName": "Milk"
                 },
                 {
@@ -22,7 +22,7 @@
     "WILDS":[{
         "Tier1" : [
                 {   
-                    "itemID":0,
+                    "itemID":300,
                     "itemName": "Honey"
                 },
                 {
