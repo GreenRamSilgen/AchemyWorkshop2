@@ -1,0 +1,39 @@
+{
+    "CITY":[{
+        "Tier1" : [
+            {
+            "itemID":0,
+            "itemName": "Milk"
+            },
+            {
+                "itemID":1,
+                "itemName": "Water"
+            }
+        ],
+        "Tier2" :[
+            {
+                "itemID":2,
+                "itemName":"Pitch"
+            }
+        ]
+    }],
+
+    "WILDS":[{
+        "Tier1" : [
+            {
+            "itemID":0,
+            "itemName": "Honey"
+            },
+            {
+                "itemID":1,
+                "itemName": "Butta"
+            }
+        ],
+        "Tier2" :[
+            {
+                "itemID":2,
+                "itemName":"Lemon"
+            }
+        ]
+    }]
+}
