@@ -1,22 +1,22 @@
 [
   {
-    "id": 0,
-    "name": "Item 1",
-    "tier": 1,
-    "location": "City",
-    "aspects": {
-      "Aspect 1": 2,
-      "Aspect 2": 1
+    "itemID": 0,
+    "itemName": "Item 1",
+    "itemTier": 1,
+    "itemLocation": "City",
+    "itemAspects": {
+      "aspectName1": 2,
+      "aspectName2": 1
     }
   },
   {
-    "id": 1,
-    "name": "Item 2",
-    "tier": 1,
-    "location": "Caves",
+    "itemID": 1,
+    "itemName": "Item 2",
+    "itemTier": 1,
+    "itemLocation": "Caves",
     "aspects": {
-      "Aspect 1": 2,
-      "Aspect 2": 1
+      "aspectName1": 2,
+      "aspectName2": 1
     }
   }
 ]
