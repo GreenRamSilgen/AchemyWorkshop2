@@ -1,11 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-//NEED TO ADD USING:
-using System.IO;
-using System.Linq;
-public class KiranTest : MonoBehaviour
+public class ResourcePullingTemplate : MonoBehaviour
 {
     private ItemList ItemList = new ItemList(); //Create ItemList object
     GameObject resourceGetter; //create gameobject

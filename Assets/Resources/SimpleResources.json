@@ -7,11 +7,11 @@
             "itemLoc":"City",
             "itemTier":1,
             "A1Name":"Terra",
-            "A1Amt":2,
+            "A1Amt": 2,
             "A2Name":"Victus",
-            "A2Amt":3,
+            "A2Amt": 3,
             "A3Name":"NA",
-            "A3Amt":0
+            "A3Amt": 0
         },
         {
             "itemID":1,
@@ -19,11 +19,11 @@
             "itemLoc":"City",
             "itemTier":1,
             "A1Name":"Aqua",
-            "A1Amt":4,
+            "A1Amt": 4,
             "A2Name":"NA",
-            "A2Amt":0,
+            "A2Amt": 0,
             "A3Name":"NA",
-            "A3Amt":0
+            "A3Amt": 0
         },
         {
             "itemID":2,
