@@ -19,7 +19,7 @@ public static class Global
 
     // may be renamed to gold or something similar later, but this is the currency
     // amount also subject to change
-    public static int money = 100;
+    public static int gold = 100;
 
 
     // dictionary interface containing all the materials the player has
