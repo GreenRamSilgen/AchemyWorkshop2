@@ -35,15 +35,15 @@ public class RGPopup : MonoBehaviour
 
     public void Add(int unit)
     {
-        if(unit == 1 && Global.gold > 10) {
+        if(unit == 1 && Global.gold >= 10) {
             Unit1++;
             Global.gold -= 10;
         }
-        else if(unit == 2 && Global.gold > 100) {
+        else if(unit == 2 && Global.gold >= 100) {
             Unit2++;
             Global.gold -= 100;
         }
-        else if(unit == 3 && Global.gold > 500) {
+        else if(unit == 3 && Global.gold >= 500) {
             Unit3++;
             Global.gold -= 500;
         }
