@@ -11,6 +11,10 @@ public class RGPopup : MonoBehaviour
     public Text UnitCount2;
     public Text UnitCount3;
 
+    public Text UnitCount1Main;
+    public Text UnitCount2Main;
+    public Text UnitCount3Main;
+
     private int Unit1;
     private int Unit2;
     private int Unit3;
@@ -21,6 +25,14 @@ public class RGPopup : MonoBehaviour
         Unit1 = 0;
         Unit2 = 0;
         Unit3 = 0;
+
+        UnitCount1.text = Unit1.ToString();
+        UnitCount2.text = Unit2.ToString();
+        UnitCount3.text = Unit3.ToString();
+
+        UnitCount1Main.text = Unit1.ToString();
+        UnitCount2Main.text = Unit2.ToString();
+        UnitCount3Main.text = Unit3.ToString();
     }
 
     // Update is called once per frame
@@ -31,6 +43,10 @@ public class RGPopup : MonoBehaviour
         UnitCount1.text = Unit1.ToString();
         UnitCount2.text = Unit2.ToString();
         UnitCount3.text = Unit3.ToString();
+
+        UnitCount1Main.text = Unit1.ToString();
+        UnitCount2Main.text = Unit2.ToString();
+        UnitCount3Main.text = Unit3.ToString();
     }
 
     public void Add(int unit)
