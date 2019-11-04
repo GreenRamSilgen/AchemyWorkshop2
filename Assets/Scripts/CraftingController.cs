@@ -27,7 +27,7 @@ public class CraftingController : MonoBehaviour
             Debug.Log("hello " + gameObject.transform.localScale.y);
             for(int i = 0; i < ItemObjects.Count; i++)
             {
-                ItemObjects[i].transform.position = new Vector2(32+i*46%184, CanvasRectTransform.rect.height/2 - (i/4 * 32));
+                ItemObjects[i].transform.position = new Vector2((32+64+i*64%256)*gameObject.transform.localScale.x, (CanvasRectTransform.rect.height - 32 - (i/4 * 64))*gameObject.transform.localScale.y);
             }
             /*foreach (Item item in ItemList.Items)
             {
