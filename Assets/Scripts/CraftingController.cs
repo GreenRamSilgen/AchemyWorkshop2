@@ -9,8 +9,12 @@ public class CraftingController : MonoBehaviour
     public List<GameObject> ItemObjects = new List<GameObject>();
     public GameObject template;
     public Transform ResourcePanelTransform;
-/*    private string recipesFileName = "Data/Recipes.json";
-*/    // Start is called before the first frame update
+    public int itemClicked = -1;
+    public Slot slot1;
+    public Slot slot2;
+    public Slot slot3;
+    /*    private string recipesFileName = "Data/Recipes.json";
+    */    // Start is called before the first frame update
     void Start()
     {
         TextAsset asset = Resources.Load("SimpleResources") as TextAsset;
@@ -29,6 +33,14 @@ public class CraftingController : MonoBehaviour
             {
                 ItemObjects[i].transform.position = new Vector2((32+64+i*64%256)*gameObject.transform.localScale.x, (CanvasRectTransform.rect.height - 32 - (i/4 * 64))*gameObject.transform.localScale.y);
             }
+
+            /*var obj = new GameObject();
+            Image NewImage = obj.AddComponent<Image>();
+            NewImage.sprite = Resources.Load<Sprite>(a + "/" + obj.name) as Sprite;
+            obj.SetActive(true);
+            obj.AddComponent<ClickAction>();*/
+
+
             /*foreach (Item item in ItemList.Items)
             {
                 Debug.Log(item.itemID);
@@ -48,13 +60,27 @@ public class CraftingController : MonoBehaviour
             print("Asset is null");
         }
     }
-
-    // Update is called once per frame
-    void Update()
+    public void Update()
     {
-        
+        if (Input.GetMouseButtonUp(0)) {
+            if (itemClicked > -1)
+            {
+                if (slot1.mouseOver)
+                {
+                    slot1.itemID = itemClicked;
+                }
+                if (slot2.mouseOver)
+                {
+                    slot2.itemID = itemClicked;
+                }
+                if (slot3.mouseOver)
+                {
+                    slot3.itemID = itemClicked;
+                }
+            }
+            itemClicked = -1;
+        }
     }
-
     /*void LoadData()
     {
         string filePath1 = Path.Combine(Application.streamingAssetsPath, resourcesFileName);
