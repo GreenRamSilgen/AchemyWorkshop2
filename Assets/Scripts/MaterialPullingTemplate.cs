@@ -10,7 +10,7 @@ public class MaterialPullingTemplate : MonoBehaviour
          materialsGetter = GameObject.FindGameObjectWithTag("Resourcer"); //Assign ResourceLoader gameobject to "resourceGetter"
          MaterialList = materialsGetter.GetComponent<MaterialLoader>().getMaterialList(); //Call getResourceList from ResourceLoader Script in ResourceHolder
          
-         foreach(Material material in MaterialList.Materials) //LOOP THROUGH ALL RESOURCES. 
+         foreach(Materials material in MaterialList.Materials) //LOOP THROUGH ALL RESOURCES. 
          {
              Debug.Log("hippity hoppity");
          }

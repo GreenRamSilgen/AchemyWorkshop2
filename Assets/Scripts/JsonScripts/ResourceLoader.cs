@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
 
-public class MaterialLoader : MonoBehaviour
+public class ResourceLoader : MonoBehaviour
 {
     //START COPY HERE
     public MaterialList MaterialList = new MaterialList();
     void Start()
     {
-        TextAsset asset = Resources.Load("Material") as TextAsset;
+        TextAsset asset = Resources.Load("Materials") as TextAsset;
         if (asset != null)
         {
             //Debug.Log(jsonString);
@@ -37,7 +37,7 @@ public class MaterialLoader : MonoBehaviour
         
     }
 
-    public MaterialList getMaterialList()
+    public MaterialList getResourceList()
     {
         return MaterialList;
     }

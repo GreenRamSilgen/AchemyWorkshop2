@@ -1667,7 +1667,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: ' New Text'
+  m_Text: ' Veteran'
 --- !u!222 &448970639
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1949,7 +1949,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: ' New Text'
+  m_Text: ' Adventurer'
 --- !u!222 &553487441
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2381,7 +2381,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: ' New Text'
+  m_Text: ' Merchant'
 --- !u!222 &790864782
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2458,7 +2458,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: ' New Text'
+  m_Text: ' Ranger'
 --- !u!222 &909454564
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3747,7 +3747,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: ' New Text'
+  m_Text: ' Explorer'
 --- !u!222 &1372222008
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4464,7 +4464,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: ' New Text'
+  m_Text: ' Black Marketeer'
 --- !u!222 &1629179892
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4934,7 +4934,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: ' New Text'
+  m_Text: ' Hero'
 --- !u!222 &1749982839
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5362,7 +5362,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: ' New Text'
+  m_Text: ' Beast Hunter'
 --- !u!222 &1901245987
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5512,7 +5512,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: ' New Text'
+  m_Text: ' Trader'
 --- !u!222 &1963408013
 CanvasRenderer:
   m_ObjectHideFlags: 0

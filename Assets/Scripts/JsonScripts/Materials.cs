@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 
 [System.Serializable]
-public class Material
+public class Materials
 {
     public int materialID;
     public string materialName;

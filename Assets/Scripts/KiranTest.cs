@@ -1,4 +1,4 @@
-﻿/*using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,16 +7,17 @@ using System.IO;
 using System.Linq;
 public class KiranTest : MonoBehaviour
 {
-    private ItemList ItemList = new ItemList(); //Create ItemList object
+    
+    private MaterialList MaterialList = new MaterialList(); //Create MaterialList object
     GameObject resourceGetter; //create gameobject
+  
     void Start()
     {
-         resourceGetter = GameObject.FindGameObjectWithTag("Resourcer"); //Assign ResourceLoader gameobject to "resourceGetter"
-         ItemList = resourceGetter.GetComponent<ResourceLoader>().getResourceList(); //Call getResourceList from ResourceLoader Script in ResourceHolder
-         
-         foreach(Item it in ItemList.Items) //LOOP THROUGH ALL RESOURCES. 
-         {
-             Debug.Log("hippity hoppity");
-         }
+        for(int i = 0; i < Global.materials.Count; i++)
+        {
+            int myVal = Global.materials[i];
+            print(myVal);
+            Global.materials[i]++;
+        }
     }
-}*/
+}

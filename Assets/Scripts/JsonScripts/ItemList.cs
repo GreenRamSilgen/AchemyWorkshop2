@@ -3,5 +3,5 @@
 [System.Serializable]
 public class MaterialList
 {
-    public List<Material> Materials = new List<Material>();
+    public List<Materials> Materials = new List<Materials>();
 }

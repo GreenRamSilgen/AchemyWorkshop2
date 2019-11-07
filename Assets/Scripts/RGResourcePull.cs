@@ -26,12 +26,12 @@ public class RGResourcePull : MonoBehaviour
         materialGetter = GameObject.FindGameObjectWithTag("Resourcer"); //Assign ResourceLoader gameobject to "materialGetter"
         MaterialList = materialGetter.GetComponent<MaterialLoader>().getMaterialList(); //Call getResourceList from ResourceLoader Script in ResourceHolder
 
-        foreach (Material material in MaterialList.Materials) //LOOP THROUGH ALL RESOURCES. 
+        foreach (Materials material in MaterialList.Materials) //LOOP THROUGH ALL RESOURCES. 
         {
             switch (material.materialLocation)
             {
                 case "Dungeon":
-                    switch (it.itemTier) {
+                    switch (material.materialTier) {
                         case 1:
                             if(Global.FoundMaterials.Contains(material.materialID)) {
                                 DungeonTier1.text += material.materialName;

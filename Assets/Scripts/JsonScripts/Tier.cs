@@ -5,5 +5,5 @@ using System.Collections.Generic;
 public class Tier 
 {
     public string materialTier;
-    public List<Material> materials = new List<Material>();
+    public List<Materials> materials = new List<Materials>();
 }
