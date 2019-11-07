@@ -24,16 +24,39 @@ public static class Global
 
     // dictionary interface containing all the materials the player has
     // not sure if this is the best way to store so many variables so open to alternatives
-    public static IDictionary<string, int> materials = new Dictionary<string, int>()
+    public static IDictionary<int, int> materials = new Dictionary<int, int>()
     {
-        //Market Materials
-        ["Milk"] = 0,
+        //City Materials
+        [0] = 0,     
+        [1] = 0,      
+        [2] = 0,
+        [3] = 0,
+        [4] = 0,
+        [5] = 0,
+        [6] = 0,
+        [7] = 0,
+        [8] = 0,
 
-        //Forest Materials
-        ["Gnarly Forest Herbs"] = 0,
+        //Wild Materials
+        [9] = 0,
+        [10] = 0,
+        [11] = 0,
+        [12] = 0,
+        [13] = 0,
+        [14] = 0,
+        [15] = 0,
+        [16] = 0,
+        [17] = 0,
 
-        //Cave Materials
-        ["Weird Mountain Rocks"] = 0
+        //Dungeon Materials
+        [18] = 0,
+        [19] = 0,
+        [20] = 0,
+        [21] = 0,
+        [22] = 0,
+        [23] = 0,
+        [24] = 0,
+        [25] = 0,
     };
 
     public static List<int> FoundItems = new List<int>(){19, 21};
