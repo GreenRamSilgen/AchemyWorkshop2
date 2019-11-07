@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class Slot : MonoBehaviour, IPointerClickHandler
 
 {
+    public int id;
     public int materialID = -1;
     public CraftingController CraftingController;
     public void OnPointerClick(PointerEventData eventData)

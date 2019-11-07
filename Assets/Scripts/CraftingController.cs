@@ -4,7 +4,6 @@ using UnityEngine;
 using System.IO;
 public class CraftingController : MonoBehaviour
 {
-    private string resourcesFileName = "Data/Resources.json";
     public MaterialList MaterialList = new MaterialList();
     public List<GameObject> MaterialObjects = new List<GameObject>();
     public GameObject template;
@@ -32,27 +31,6 @@ public class CraftingController : MonoBehaviour
             {
                 MaterialObjects[i].transform.position = new Vector2((32 + 64 + i * 64 % 256) * gameObject.transform.localScale.x, (CanvasRectTransform.rect.height - 32 - (i / 4 * 64)) * gameObject.transform.localScale.y);
             }
-
-            /*var obj = new GameObject();
-            Image NewImage = obj.AddComponent<Image>();
-            NewImage.sprite = Resources.Load<Sprite>(a + "/" + obj.name) as Sprite;
-            obj.SetActive(true);
-            obj.AddComponent<ClickAction>();*/
-
-
-            /*foreach (Item item in ItemList.Items)
-            {
-                Debug.Log(item.itemID);
-                Debug.Log(item.itemLoc);
-                Debug.Log(item.itemName);
-                Debug.Log(item.itemTier);
-                Debug.Log(item.A1Name);
-                Debug.Log(item.A1Amt);
-                Debug.Log(item.A2Name);
-                Debug.Log(item.A2Amt);
-                Debug.Log(item.A3Name);
-                Debug.Log(item.A3Amt);
-            }*/
         }
         else
         {
@@ -74,6 +52,14 @@ public class CraftingController : MonoBehaviour
         {
             MaterialObjects[i].GetComponent<ClickAction>().DeselectMaterial();
         }
+    }
+    public void SlotMaterial(int materialID, int slotID)
+    {
+        //calculate aspects and update aspects panel
+    }
+    public void CraftPotion()
+    {
+
     }
     public Sprite GetImage(int materialID)
     {
