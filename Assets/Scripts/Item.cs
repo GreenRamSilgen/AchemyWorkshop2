@@ -13,4 +13,5 @@ public class Item
     public int A2Amt;
     public string A3Name;
     public int A3Amt;
+    public string imageName;
 }

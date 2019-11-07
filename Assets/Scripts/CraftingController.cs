@@ -9,7 +9,7 @@ public class CraftingController : MonoBehaviour
     public List<GameObject> ItemObjects = new List<GameObject>();
     public GameObject template;
     public Transform ResourcePanelTransform;
-    public int itemClicked = -1;
+    public int itemSelected = -1;
     public Slot slot1;
     public Slot slot2;
     public Slot slot3;
@@ -60,9 +60,31 @@ public class CraftingController : MonoBehaviour
             print("Asset is null");
         }
     }
+    public int getItem()
+    {
+        return (itemSelected);
+    }
+    public void selectItem(int itemID)
+    {
+        itemSelected = itemID;
+    }
+    public void deselectItem()
+    {
+        itemSelected = -1;
+        for(int i = 0; i < ItemObjects.Count; i++)
+        {
+            ItemObjects[i].GetComponent<ClickAction>().deselectItem();
+        }
+    }
+    public Sprite GetImage(int itemID)
+    {
+        /*Debug.Log(ItemList.Items[itemID].imageName);*/
+        Debug.Log(Resources.Load<Sprite>("Art/" + ItemList.Items[itemID].imageName));
+        return Resources.Load<Sprite>("Art/" + ItemList.Items[itemID].imageName);
+    }
     public void Update()
     {
-        if (Input.GetMouseButtonUp(0)) {
+        /*if (Input.GetMouseButtonUp(0)) {
             if (itemClicked > -1)
             {
                 if (slot1.mouseOver)
@@ -79,7 +101,7 @@ public class CraftingController : MonoBehaviour
                 }
             }
             itemClicked = -1;
-        }
+        }*/
     }
     /*void LoadData()
     {

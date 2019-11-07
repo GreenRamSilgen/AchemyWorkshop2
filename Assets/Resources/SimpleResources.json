@@ -11,7 +11,8 @@
             "A2Name":"Victus",
             "A2Amt": 3,
             "A3Name":"NA",
-            "A3Amt": 0
+            "A3Amt": 0,
+			"imageName":"Unknown"
         },
         {
             "itemID":1,
@@ -23,7 +24,8 @@
             "A2Name":"NA",
             "A2Amt": 0,
             "A3Name":"NA",
-            "A3Amt": 0
+            "A3Amt": 0,
+			"imageName":"Unknown"
         },
         {
             "itemID":2,
@@ -35,7 +37,8 @@
             "A2Name":"Vitreus",
             "A2Amt":3,
             "A3Name":"NA",
-            "A3Amt":0
+            "A3Amt":0,
+			"imageName":"Unknown"
         },
         {
             "itemID":3,
@@ -47,7 +50,8 @@
             "A2Name":"Vinculum",
             "A2Amt":2,
             "A3Name":"Instramentum",
-            "A3Amt":3
+            "A3Amt":3,
+			"imageName":"Unknown"
         },
         {
             "itemID":4,
@@ -59,7 +63,8 @@
             "A2Name":"Potentia",
             "A2Amt":5,
             "A3Name":"Victus",
-            "A3Amt":3
+            "A3Amt":3,
+			"imageName":"Unknown"
         },
         {
             "itemID":5,
@@ -71,7 +76,8 @@
             "A2Name":"Metalum",
             "A2Amt":3,
             "A3Name":"NA",
-            "A3Amt":0
+            "A3Amt":0,
+			"imageName":"Unknown"
         },
         {
             "itemID":6,
@@ -83,7 +89,8 @@
             "A2Name":"Motus",
             "A2Amt":8,
             "A3Name":"Venenum",
-            "A3Amt":2
+            "A3Amt":2,
+			"imageName":"Unknown"
         },
         {
             "itemID":7,
@@ -95,7 +102,8 @@
             "A2Name":"Potentia",
             "A2Amt":6,
             "A3Name":"Telum",
-            "A3Amt":4
+            "A3Amt":4,
+			"imageName":"Unknown"
         },
         {
             "itemID":8,
@@ -107,7 +115,8 @@
             "A2Name":"Mortus",
             "A2Amt":3,
             "A3Name":"Telum",
-            "A3Amt":5
+            "A3Amt":5,
+			"imageName":"Unknown"
         },
         {
             "itemID":9,
@@ -119,7 +128,8 @@
             "A2Name":"Victus",
             "A2Amt":3,
             "A3Name":"NA",
-            "A3Amt":0
+            "A3Amt":0,
+			"imageName":"Unknown"
         },
         {
             "itemID":10,
@@ -131,7 +141,8 @@
             "A2Name":"Gelum",
             "A2Amt":3,
             "A3Name":"NA",
-            "A3Amt":0
+            "A3Amt":0,
+			"imageName":"Unknown"
         },
         {
             "itemID":11,
@@ -143,7 +154,8 @@
             "A2Name":"Fames",
             "A2Amt":2,
             "A3Name":"Aer",
-            "A3Amt":2
+            "A3Amt":2,
+			"imageName":"Unknown"
         },
         {
             "itemID":12,
@@ -155,7 +167,8 @@
             "A2Name":"Praecantatio",
             "A2Amt":5,
             "A3Name":"Venenum",
-            "A3Amt":2
+            "A3Amt":2,
+			"imageName":"Unknown"
         },
         {
             "itemID":13,
@@ -167,7 +180,8 @@
             "A2Name":"Instramentum",
             "A2Amt":5,
             "A3Name":"NA",
-            "A3Amt":0
+            "A3Amt":0,
+			"imageName":"Unknown"
         },
         {
             "itemID":14,
@@ -179,7 +193,8 @@
             "A2Name":"Metalum",
             "A2Amt":2,
             "A3Name":"Aer",
-            "A3Amt":3
+            "A3Amt":3,
+			"imageName":"Unknown"
         },
         {
             "itemID":15,
@@ -191,7 +206,8 @@
             "A2Name":"Voltus",
             "A2Amt":6,
             "A3Name":"Aer",
-            "A3Amt":3
+            "A3Amt":3,
+			"imageName":"Unknown"
         },
         {
             "itemID":16,
@@ -203,7 +219,8 @@
             "A2Name":"Tutamen",
             "A2Amt":3,
             "A3Name":"Aer",
-            "A3Amt":6
+            "A3Amt":6,
+			"imageName":"Unknown"
         },
         {
             "itemID":17,
@@ -215,7 +232,8 @@
             "A2Name":"Praecantatio",
             "A2Amt":3,
             "A3Name":"Victus",
-            "A3Amt":4
+            "A3Amt":4,
+			"imageName":"Unknown"
         },
         {
             "itemID":18,
@@ -227,7 +245,8 @@
             "A2Name":"Examinus",
             "A2Amt":1,
             "A3Name":"NA",
-            "A3Amt":0
+            "A3Amt":0,
+			"imageName":"Unknown"
         },
         {
             "itemID":19,
@@ -239,7 +258,8 @@
             "A2Name":"Mortus",
             "A2Amt":1,
             "A3Name":"NA",
-            "A3Amt":0
+            "A3Amt":0,
+			"imageName":"Unknown"
         },
         {
             "itemID":20,
@@ -251,7 +271,8 @@
             "A2Name":"Telum",
             "A2Amt":3,
             "A3Name":"NA",
-            "A3Amt":0
+            "A3Amt":0,
+			"imageName":"Unknown"
         },
         {
             "itemID":21,
@@ -263,7 +284,8 @@
             "A2Name":"Veneum",
             "A2Amt":2,
             "A3Name":"Aer",
-            "A3Amt":4
+            "A3Amt":4,
+			"imageName":"Unknown"
         },
         {
             "itemID":22,
@@ -275,7 +297,8 @@
             "A2Name":"Mortus",
             "A2Amt":1,
             "A3Name":"Examinus",
-            "A3Amt":6
+            "A3Amt":6,
+			"imageName":"Unknown"
         },
         {
             "itemID":23,
@@ -287,7 +310,8 @@
             "A2Name":"Praecantatio",
             "A2Amt":3,
             "A3Name":"NA",
-            "A3Amt":0
+            "A3Amt":0,
+			"imageName":"Unknown"
         },
         {
             "itemID":24,
@@ -299,7 +323,8 @@
             "A2Name":"Praecantatio",
             "A2Amt":5,
             "A3Name":"Lux",
-            "A3Amt":2
+            "A3Amt":2,
+			"imageName":"Unknown"
         },
         {
             "itemID":25,
@@ -311,7 +336,8 @@
             "A2Name":"Gelum",
             "A2Amt":8,
             "A3Name":"Aqua",
-            "A3Amt":2
+            "A3Amt":2,
+			"imageName":"Unknown"
         },
         {
             "itemID":26,
@@ -323,7 +349,8 @@
             "A2Name":"Ignis",
             "A2Amt":3,
             "A3Name":"Tutamen",
-            "A3Amt":2
+            "A3Amt":2,
+			"imageName":"Unknown"
         }
     ]
 }
