@@ -7,6 +7,7 @@ using System.IO;
 using System.Linq;
 public class KiranTest : MonoBehaviour
 {
+    /*
     private ItemList ItemList = new ItemList(); //Create ItemList object
     GameObject resourceGetter; //create gameobject
     void Start()
@@ -18,5 +19,16 @@ public class KiranTest : MonoBehaviour
          {
              Debug.Log("hippity hoppity");
          }
+    }
+    
+    */
+    void Start()
+    {
+        for(int i = 0; i < Global.materials.Count; i++)
+        {
+            int myVal = Global.materials[i];
+            print(myVal);
+            Global.materials[i]++;
+        }
     }
 }
