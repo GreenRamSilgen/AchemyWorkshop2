@@ -6,7 +6,7 @@ public class Recipe
     //public int recipeID;
     public string recipeResult;
     public int recipeValue;
-    public int item1ID;
-    public int item2ID;
-    public int item3ID;
+    public int material1ID;
+    public int material2ID;
+    public int material3ID;
 }

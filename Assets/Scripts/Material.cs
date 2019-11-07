@@ -1,12 +1,12 @@
 ﻿using System.Collections.Generic;
 
 [System.Serializable]
-public class Item
+public class Material
 {
-    public int itemID;
-    public string itemName;
-    public string itemLoc;
-    public int itemTier;
+    public int materialID;
+    public string materialName;
+    public string materialLocation;
+    public int materialTier;
     public string A1Name;
     public int A1Amt;
     public string A2Name;

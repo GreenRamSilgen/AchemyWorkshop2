@@ -5,33 +5,32 @@ using System.IO;
 public class CraftingController : MonoBehaviour
 {
     private string resourcesFileName = "Data/Resources.json";
-    public ItemList ItemList = new ItemList();
-    public List<GameObject> ItemObjects = new List<GameObject>();
+    public MaterialList MaterialList = new MaterialList();
+    public List<GameObject> MaterialObjects = new List<GameObject>();
     public GameObject template;
-    public Transform ResourcePanelTransform;
-    public int itemSelected = -1;
+    public Transform MaterialPanelTransform;
+    public int materialSelected = -1;
     public Slot slot1;
     public Slot slot2;
     public Slot slot3;
+    public
     /*    private string recipesFileName = "Data/Recipes.json";
     */    // Start is called before the first frame update
     void Start()
     {
-        TextAsset asset = Resources.Load("SimpleResources") as TextAsset;
+        TextAsset asset = Resources.Load("Materials") as TextAsset;
         if (asset != null)
         {
             //Debug.Log(jsonString);
-            ItemList = JsonUtility.FromJson<ItemList>(asset.text);
-            for(int i = 0; i < ItemList.Items.Count; i++)
+            MaterialList = JsonUtility.FromJson<MaterialList>(asset.text);
+            for (int i = 0; i < MaterialList.Materials.Count; i++)
             {
-                ItemObjects.Add(Instantiate(template, ResourcePanelTransform));
+                MaterialObjects.Add(Instantiate(template, MaterialPanelTransform));
             }
             RectTransform CanvasRectTransform = gameObject.transform as RectTransform;
-            Debug.Log("hi " + CanvasRectTransform.rect.height);
-            Debug.Log("hello " + gameObject.transform.localScale.y);
-            for(int i = 0; i < ItemObjects.Count; i++)
+            for (int i = 0; i < MaterialObjects.Count; i++)
             {
-                ItemObjects[i].transform.position = new Vector2((32+64+i*64%256)*gameObject.transform.localScale.x, (CanvasRectTransform.rect.height - 32 - (i/4 * 64))*gameObject.transform.localScale.y);
+                MaterialObjects[i].transform.position = new Vector2((32 + 64 + i * 64 % 256) * gameObject.transform.localScale.x, (CanvasRectTransform.rect.height - 32 - (i / 4 * 64)) * gameObject.transform.localScale.y);
             }
 
             /*var obj = new GameObject();
@@ -60,65 +59,24 @@ public class CraftingController : MonoBehaviour
             print("Asset is null");
         }
     }
-    public int getItem()
+    public int GetMaterial()
     {
-        return (itemSelected);
+        return (materialSelected);
     }
-    public void selectItem(int itemID)
+    public void SelectMaterial(int materialID)
     {
-        itemSelected = itemID;
+        materialSelected = materialID;
     }
-    public void deselectItem()
+    public void DeselectMaterial()
     {
-        itemSelected = -1;
-        for(int i = 0; i < ItemObjects.Count; i++)
+        materialSelected = -1;
+        for (int i = 0; i < MaterialObjects.Count; i++)
         {
-            ItemObjects[i].GetComponent<ClickAction>().deselectItem();
+            MaterialObjects[i].GetComponent<ClickAction>().DeselectMaterial();
         }
     }
-    public Sprite GetImage(int itemID)
+    public Sprite GetImage(int materialID)
     {
-        /*Debug.Log(ItemList.Items[itemID].imageName);*/
-        Debug.Log(Resources.Load<Sprite>("Art/" + ItemList.Items[itemID].imageName));
-        return Resources.Load<Sprite>("Art/" + ItemList.Items[itemID].imageName);
+        return Resources.Load<Sprite>("Art/" + MaterialList.Materials[materialID].imageName);
     }
-    public void Update()
-    {
-        /*if (Input.GetMouseButtonUp(0)) {
-            if (itemClicked > -1)
-            {
-                if (slot1.mouseOver)
-                {
-                    slot1.itemID = itemClicked;
-                }
-                if (slot2.mouseOver)
-                {
-                    slot2.itemID = itemClicked;
-                }
-                if (slot3.mouseOver)
-                {
-                    slot3.itemID = itemClicked;
-                }
-            }
-            itemClicked = -1;
-        }*/
-    }
-    /*void LoadData()
-    {
-        string filePath1 = Path.Combine(Application.streamingAssetsPath, resourcesFileName);
-        string filePath2 = Path.Combine(Application.streamingAssetsPath, recipesFileName);
-        if (File.Exists(filePath1) && File.Exists(filePath2))
-        {
-            string dataAsJson = File.ReadAllText(filePath1);
-            //GameData loadedData = JsonUtility.FromJson<GameData>(dataAsJson);
-            //string dataAsJson = File.ReadAllText(filePath2);
-            //GameData loadedData = JsonUtility.FromJson<GameData>(dataAsJson);
-
-        }
-        else
-        {
-            Debug.LogError("Can't load game data!");
-        }
-
-    }*/
 }

@@ -36,7 +36,7 @@ public static class Global
         ["Weird Mountain Rocks"] = 0
     };
 
-    public static List<int> FoundItems = new List<int>(){19, 21};
+    public static List<int> FoundMaterials = new List<int>(){19, 21};
     
 
 

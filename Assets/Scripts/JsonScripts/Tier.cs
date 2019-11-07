@@ -4,6 +4,6 @@ using System.Collections.Generic;
 [System.Serializable]
 public class Tier 
 {
-    public string itemTier;
-    public List<Item> items = new List<Item>();
+    public string materialTier;
+    public List<Material> materials = new List<Material>();
 }

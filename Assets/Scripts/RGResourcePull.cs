@@ -5,8 +5,8 @@ using UnityEngine.UI;
 
 public class RGResourcePull : MonoBehaviour
 {
-    private ItemList ItemList = new ItemList(); //Create ItemList object
-    GameObject resourceGetter; //create gameobject
+    private MaterialList MaterialList = new MaterialList(); //Create MaterialList object
+    GameObject materialGetter; //create gameobject
 
     public Text DungeonTier1;
     public Text DungeonTier2;
@@ -23,27 +23,27 @@ public class RGResourcePull : MonoBehaviour
 
     void Start()
     {
-        resourceGetter = GameObject.FindGameObjectWithTag("Resourcer"); //Assign ResourceLoader gameobject to "resourceGetter"
-        ItemList = resourceGetter.GetComponent<ResourceLoader>().getResourceList(); //Call getResourceList from ResourceLoader Script in ResourceHolder
+        materialGetter = GameObject.FindGameObjectWithTag("Resourcer"); //Assign ResourceLoader gameobject to "materialGetter"
+        MaterialList = materialGetter.GetComponent<MaterialLoader>().getMaterialList(); //Call getResourceList from ResourceLoader Script in ResourceHolder
 
-        foreach (Item it in ItemList.Items) //LOOP THROUGH ALL RESOURCES. 
+        foreach (Material material in MaterialList.Materials) //LOOP THROUGH ALL RESOURCES. 
         {
-            switch (it.itemLoc)
+            switch (material.materialLocation)
             {
                 case "Dungeon":
                     switch (it.itemTier) {
                         case 1:
-                            if(Global.FoundItems.Contains(it.itemID)) {
-                                DungeonTier1.text += it.itemName;
+                            if(Global.FoundMaterials.Contains(material.materialID)) {
+                                DungeonTier1.text += material.materialName;
                             } else {
                                 DungeonTier1.text += "???";
                             }
                             DungeonTier1.text += "\n";
                             break;
                         case 2:
-                            if (Global.FoundItems.Contains(it.itemID))
+                            if (Global.FoundMaterials.Contains(material.materialID))
                             {
-                                DungeonTier2.text += it.itemName;
+                                DungeonTier2.text += material.materialName;
                             }
                             else
                             {
@@ -52,9 +52,9 @@ public class RGResourcePull : MonoBehaviour
                             DungeonTier2.text += "\n";
                             break;
                         case 3:
-                            if (Global.FoundItems.Contains(it.itemID))
+                            if (Global.FoundMaterials.Contains(material.materialID))
                             {
-                                DungeonTier3.text += it.itemName;
+                                DungeonTier3.text += material.materialName;
                             }
                             else
                             {
@@ -65,7 +65,7 @@ public class RGResourcePull : MonoBehaviour
                     }
                     break;
                 case "Wilds":
-                    switch (it.itemTier)
+                    switch (material.materialTier)
                     {
                         case 1:
                             break;
@@ -76,7 +76,7 @@ public class RGResourcePull : MonoBehaviour
                     }
                     break;
                 case "City":
-                    switch (it.itemTier)
+                    switch (material.materialTier)
                     {
                         case 1:
                             break;
