@@ -8,6 +8,7 @@ public class CraftingController : MonoBehaviour
     public List<GameObject> MaterialObjects = new List<GameObject>();
     public GameObject template;
     public Transform MaterialPanelTransform;
+    public Dictionary<string, int> Aspects = new Dictionary<string, int>();
     public int materialSelected = -1;
     public Slot slot1;
     public Slot slot2;
@@ -26,11 +27,11 @@ public class CraftingController : MonoBehaviour
             {
                 MaterialObjects.Add(Instantiate(template, MaterialPanelTransform));
             }
-            RectTransform CanvasRectTransform = gameObject.transform as RectTransform;
+            /*RectTransform CanvasRectTransform = gameObject.transform as RectTransform;
             for (int i = 0; i < MaterialObjects.Count; i++)
             {
                 MaterialObjects[i].transform.position = new Vector2((32 + 64 + i * 64 % 256) * gameObject.transform.localScale.x, (CanvasRectTransform.rect.height - 32 - (i / 4 * 64)) * gameObject.transform.localScale.y);
-            }
+            }*/
         }
         else
         {
@@ -48,10 +49,6 @@ public class CraftingController : MonoBehaviour
     public void DeselectMaterial()
     {
         materialSelected = -1;
-        for (int i = 0; i < MaterialObjects.Count; i++)
-        {
-            MaterialObjects[i].GetComponent<ClickAction>().DeselectMaterial();
-        }
     }
     public void SlotMaterial(int materialID, int slotID)
     {
@@ -59,7 +56,20 @@ public class CraftingController : MonoBehaviour
     }
     public void CraftPotion()
     {
+        if(slot1.materialID > -1 && slot2.materialID > -1 && slot3.materialID > -1)
+        {
 
+        }
+        else
+        {
+            Debug.Log("Place a material!");
+        }
+    }
+    public void ResetSlots()
+    {
+        slot1.ResetSlot();
+        slot2.ResetSlot();
+        slot3.ResetSlot();
     }
     public Sprite GetImage(int materialID)
     {
