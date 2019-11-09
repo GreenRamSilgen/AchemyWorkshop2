@@ -8,12 +8,14 @@ public class CraftingController : MonoBehaviour
     public List<GameObject> MaterialObjects = new List<GameObject>();
     public GameObject template;
     public Transform MaterialPanelTransform;
-    public Dictionary<string, int> Aspects = new Dictionary<string, int>();
+    
     public int materialSelected = -1;
     public Slot slot1;
     public Slot slot2;
     public Slot slot3;
-    public
+    public Dictionary<int, Slot> Slots = new Dictionary<int, Slot>();
+    public AspectPanel AspectPanel;
+    
     /*    private string recipesFileName = "Data/Recipes.json";
     */    // Start is called before the first frame update
     void Start()
@@ -37,6 +39,12 @@ public class CraftingController : MonoBehaviour
         {
             print("Asset is null");
         }
+        Slots.Add(0, slot1);
+        slot1.id = 0;
+        Slots.Add(1, slot2);
+        slot2.id = 1;
+        Slots.Add(2, slot3);
+        slot3.id = 2;
     }
     public int GetMaterial()
     {
@@ -52,8 +60,15 @@ public class CraftingController : MonoBehaviour
     }
     public void SlotMaterial(int materialID, int slotID)
     {
+        if (Slots[slotID].filled)
+        {
+            AspectPanel.RemoveAspect(MaterialList.Materials[Slots[slotID].materialID]);
+        }
+        AspectPanel.AddAspect(MaterialList.Materials[materialID]);
+
         //calculate aspects and update aspects panel
     }
+    
     public void CraftPotion()
     {
         if(slot1.materialID > -1 && slot2.materialID > -1 && slot3.materialID > -1)
@@ -70,6 +85,7 @@ public class CraftingController : MonoBehaviour
         slot1.ResetSlot();
         slot2.ResetSlot();
         slot3.ResetSlot();
+        AspectPanel.ResetAspects();
     }
     public Sprite GetImage(int materialID)
     {

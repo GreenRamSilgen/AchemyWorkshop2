@@ -10,13 +10,16 @@ public class Slot : MonoBehaviour
 {
     public int id;
     public int materialID = -1;
+    public bool filled = false;
     public CraftingController CraftingController;
     //OnPointerDown is also required to receive OnPointerUp callbacks
     public void OnDrop(PointerEventData eventData)
     {
-        if (CraftingController.GetMaterial() > -1)
+        if (!filled)
         {
+            CraftingController.SlotMaterial(CraftingController.GetMaterial(), id);
             materialID = CraftingController.GetMaterial();
+            filled = true;
             gameObject.GetComponent<Image>().sprite = CraftingController.GetImage(materialID);
         }
     }
@@ -24,6 +27,7 @@ public class Slot : MonoBehaviour
     {
         materialID = -1;
         gameObject.GetComponent<Image>().sprite = null;
+        filled = false;
     }
     /*public void OnDrop(PointerEventData eventData)
     {
