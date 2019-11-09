@@ -5,6 +5,7 @@ using System.IO;
 public class CraftingController : MonoBehaviour
 {
     public MaterialList MaterialList = new MaterialList();
+    public RecipeList RecipeList = new RecipeList();
     public List<GameObject> MaterialObjects = new List<GameObject>();
     public GameObject template;
     public Transform MaterialPanelTransform;
@@ -34,6 +35,15 @@ public class CraftingController : MonoBehaviour
             {
                 MaterialObjects[i].transform.position = new Vector2((32 + 64 + i * 64 % 256) * gameObject.transform.localScale.x, (CanvasRectTransform.rect.height - 32 - (i / 4 * 64)) * gameObject.transform.localScale.y);
             }*/
+        }
+        else
+        {
+            print("Asset is null");
+        }
+        TextAsset asset2 = Resources.Load("Recipes") as TextAsset;
+        if(asset != null)
+        {
+            RecipeList = JsonUtility.FromJson<RecipeList>(asset2.text);
         }
         else
         {
@@ -73,7 +83,16 @@ public class CraftingController : MonoBehaviour
     {
         if(slot1.materialID > -1 && slot2.materialID > -1 && slot3.materialID > -1)
         {
-
+            //get the aspects from the aspect panel, or store them in this crafting controller
+            //then look through recipe list to see if any recipes match up
+            //craft if so, otherwise...get small amount of money?
+            bool craftedPotion = false;
+            for(int i = 0; i < RecipeList.Recipes.Count; i++)
+            {
+                
+            }
+            ResetSlots();
+            //also, once inventory is implemented, remove items from the inventory
         }
         else
         {

@@ -4,9 +4,13 @@
 public class Recipe
 {
     //public int recipeID;
-    public string recipeResult;
+    public string recipeName;
     public int recipeValue;
-    public int material1ID;
-    public int material2ID;
-    public int material3ID;
+    public string mainAspectName;
+    public string subAspect1Name;
+    public int subAspect1Min;
+    public int subAspect1Max;
+    public string subAspect2Name;
+    public int subAspect2Min;
+    public int subAspect2Max;
 }
