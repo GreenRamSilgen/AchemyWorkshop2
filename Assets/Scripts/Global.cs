@@ -60,6 +60,24 @@ public static class Global
     };
 
     public static List<int> FoundMaterials = new List<int>(){19, 21};
+
+    public static IDictionary<string, int> gatherers = new Dictionary<string, int>()
+    {
+        //Dungeon Gatherers
+        ["Adventurer"] = 0,
+        ["Veteran"] = 0,
+        ["Hero"] = 0,
+
+        //Wilds Gatherers
+        ["Explorer"] = 0,
+        ["Ranger"] = 0,
+        ["Beast Hunter"] = 0,
+
+        //City Gatherers
+        ["Trader"] = 0,
+        ["Merchant"] = 0,
+        ["Black Marketeer"] = 0,
+    };
     
 
 

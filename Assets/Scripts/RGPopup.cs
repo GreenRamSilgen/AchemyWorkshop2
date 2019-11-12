@@ -19,6 +19,8 @@ public class RGPopup : MonoBehaviour
     private int Unit2;
     private int Unit3;
 
+    public string location;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -47,6 +49,31 @@ public class RGPopup : MonoBehaviour
         UnitCount1Main.text = Unit1.ToString();
         UnitCount2Main.text = Unit2.ToString();
         UnitCount3Main.text = Unit3.ToString();
+    }
+
+    private void OnDestroy()
+    {
+        switch(location)
+        {
+            case "dungeon":
+                Global.gatherers["Adventurers"] = Unit1;
+                Global.gatherers["Veteran"] = Unit2;
+                Global.gatherers["Hero"] = Unit3;
+                Debug.Log("dungeon works");
+                break;
+            case "wilds":
+                Global.gatherers["Explorer"] = Unit1;
+                Global.gatherers["Ranger"] = Unit2;
+                Global.gatherers["Beast Hunter"] = Unit3;
+                Debug.Log("wilds works");
+                break;
+            case "city":
+                Global.gatherers["Trader"] = Unit1;
+                Global.gatherers["Merchant"] = Unit2;
+                Global.gatherers["Black Marketeer"] = Unit3;
+                Debug.Log("city works");
+                break;
+        }
     }
 
     public void Add(int unit)
@@ -82,5 +109,19 @@ public class RGPopup : MonoBehaviour
             Unit3--;
             Global.gold += 500;
         }
+    }
+
+    public int Count(int unit)
+    {
+        switch(unit) {
+            case 1:
+                return Unit1;
+            case 2:
+                return Unit2;
+            case 3:
+                return Unit3;
+        }
+        return 0;
+
     }
 }

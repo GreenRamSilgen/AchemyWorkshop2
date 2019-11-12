@@ -1,13 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class RGButton : MonoBehaviour
 {
     public GameObject CaveCanvas;
     public GameObject ForestCanvas;
     public GameObject TownCanvas;
-
     public GameObject DimCanvas;
 
 
@@ -21,6 +21,10 @@ public class RGButton : MonoBehaviour
     void Update()
     {
         
+    }
+
+    void OnDestroy()
+    {
     }
 
     public void CloseCanvases() {

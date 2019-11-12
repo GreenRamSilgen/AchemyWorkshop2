@@ -12,13 +12,13 @@ public class RGResourcePull : MonoBehaviour
     public Text DungeonTier2;
     public Text DungeonTier3;
 
-    /*public Text WildsTier1;
+    public Text WildsTier1;
     public Text WildsTier2;
     public Text WildsTier3;
 
     public Text CityTier1;
     public Text CityTier2;
-    public Text CityTier3;*/
+    public Text CityTier3;
     
 
     void Start()
@@ -68,10 +68,37 @@ public class RGResourcePull : MonoBehaviour
                     switch (material.materialTier)
                     {
                         case 1:
+                            if (Global.FoundMaterials.Contains(material.materialID))
+                            {
+                                WildsTier1.text += material.materialName;
+                            }
+                            else
+                            {
+                                WildsTier1.text += "???";
+                            }
+                            WildsTier1.text += "\n";
                             break;
                         case 2:
+                            if (Global.FoundMaterials.Contains(material.materialID))
+                            {
+                                WildsTier2.text += material.materialName;
+                            }
+                            else
+                            {
+                                WildsTier2.text += "???";
+                            }
+                            WildsTier2.text += "\n";
                             break;
                         case 3:
+                            if (Global.FoundMaterials.Contains(material.materialID))
+                            {
+                                WildsTier3.text += material.materialName;
+                            }
+                            else
+                            {
+                                WildsTier3.text += "???";
+                            }
+                            WildsTier3.text += "\n";
                             break;
                     }
                     break;
@@ -79,10 +106,37 @@ public class RGResourcePull : MonoBehaviour
                     switch (material.materialTier)
                     {
                         case 1:
+                            if (Global.FoundMaterials.Contains(material.materialID))
+                            {
+                                CityTier1.text += material.materialName;
+                            }
+                            else
+                            {
+                                CityTier1.text += "???";
+                            }
+                            CityTier1.text += "\n";
                             break;
                         case 2:
+                            if (Global.FoundMaterials.Contains(material.materialID))
+                            {
+                                CityTier2.text += material.materialName;
+                            }
+                            else
+                            {
+                                CityTier2.text += "???";
+                            }
+                            CityTier2.text += "\n";
                             break;
                         case 3:
+                            if (Global.FoundMaterials.Contains(material.materialID))
+                            {
+                                CityTier3.text += material.materialName;
+                            }
+                            else
+                            {
+                                CityTier3.text += "???";
+                            }
+                            CityTier3.text += "\n";
                             break;
                     }
                     break;
