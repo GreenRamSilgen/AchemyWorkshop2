@@ -27,9 +27,9 @@ public static class Global
     public static IDictionary<int, int> materials = new Dictionary<int, int>()
     {
         //City Materials
-        [0] = 0,     
-        [1] = 0,      
-        [2] = 0,
+        [0] = 2,     
+        [1] = 1,      
+        [2] = 1,
         [3] = 0,
         [4] = 0,
         [5] = 0,
