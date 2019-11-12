@@ -9,7 +9,7 @@ public class MaterialLoader : MonoBehaviour
     public MaterialList MaterialList = new MaterialList();
     void Start()
     {
-        TextAsset asset = Resources.Load("Material") as TextAsset;
+        TextAsset asset = Resources.Load("Materials") as TextAsset;
         if (asset != null)
         {
             //Debug.Log(jsonString);
