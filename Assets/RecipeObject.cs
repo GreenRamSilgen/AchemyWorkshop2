@@ -36,6 +36,6 @@ public class RecipeObject : MonoBehaviour
     }
     public void OnPointerClick(PointerEventData eventData)
     {
-        CraftingController.AddMaterials(materialIDs);
+        CraftingController.SlotMaterials(materialIDs);
     }
 }

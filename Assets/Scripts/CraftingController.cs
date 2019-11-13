@@ -269,26 +269,39 @@ public class CraftingController : MonoBehaviour
     }
     public void AddRecipe(int recipeID, int material1ID, int material2ID, int material3ID)
     {
-        List<int> materialIDs = new List<int>();
-        materialIDs.Add(material1ID);
-        materialIDs.Add(material2ID);
-        materialIDs.Add(material3ID);
-        
-        RecipeObjects.Add(RecipeObjects.Count, Instantiate(recipeTemplate, RecipePanelTransform));
-        RecipeObjects[RecipeObjects.Count - 1].GetComponent<RecipeObject>().Initialize(RecipeObjects.Count, recipeID, materialIDs);
-        Global.recipes.Add(RecipeObjects[RecipeObjects.Count - 1].GetComponent<RecipeObject>());
+        bool duplicate = false;
+        for(int i = 0; i < Global.recipes.Count; i++)
+        {
+            if(Global.recipes[i].materialIDs.Contains(material1ID) && Global.recipes[i].materialIDs.Contains(material2ID) && Global.recipes[i].materialIDs.Contains(material3ID))
+            {
+                duplicate = true;
+            }
+        }
+        if (!duplicate)
+        {
+            List<int> materialIDs = new List<int>();
+            materialIDs.Add(material1ID);
+            materialIDs.Add(material2ID);
+            materialIDs.Add(material3ID);
+
+            RecipeObjects.Add(RecipeObjects.Count, Instantiate(recipeTemplate, RecipePanelTransform));
+            RecipeObjects[RecipeObjects.Count - 1].GetComponent<RecipeObject>().Initialize(RecipeObjects.Count, recipeID, materialIDs);
+            Global.recipes.Add(RecipeObjects[RecipeObjects.Count - 1].GetComponent<RecipeObject>());
+
+        }
     }
-    public void AddMaterials(List<int> materialIDs)
+    public void SlotMaterials(List<int> materialIDs)
     {
         
         for (int i = 0; i < materialIDs.Count; i++)
         {
-            if (materialIDs[i] > -1 && materials[materialIDs[i]] > 0)
+            if (materialIDs[i] != Slots[i].materialID && materialIDs[i] > -1 && materials[materialIDs[i]] > 0)
             {
                 Slots[i].AddMaterial(materialIDs[i]);
             }
             else
             {
+                AddMaterial(Slots[i].materialID);
                 Slots[i].ResetSlot();
             }
         }
