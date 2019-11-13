@@ -10,6 +10,7 @@ public class CraftingController : MonoBehaviour
     public IDictionary<int, int> materials = new Dictionary<int, int>();
     public RecipeList RecipeList = new RecipeList();
     public IDictionary<int, GameObject> MaterialObjects = new Dictionary<int, GameObject>();
+    public IDictionary<int, GameObject> RecipeObjects = new Dictionary<int, GameObject>();
     public GameObject template;
     public Transform MaterialPanelTransform;
     
@@ -20,6 +21,8 @@ public class CraftingController : MonoBehaviour
     public IDictionary<int, Slot> Slots = new Dictionary<int, Slot>();
     public AspectPanel AspectPanel;
     public IDictionary<string, int> Aspects = new Dictionary<string, int>();
+    public GameObject recipeTemplate;
+    public Transform RecipePanelTransform;
     
     /*    private string recipesFileName = "Data/Recipes.json";
     */    // Start is called before the first frame update
@@ -84,97 +87,149 @@ public class CraftingController : MonoBehaviour
     {
         materialSelected = -1;
     }
-    public void SlotMaterial(int materialID, int slotID)
+    public void AddMaterial(int materialID)
     {
-        if (Slots[slotID].filled)
+        if (materialID > -1)
         {
-            AspectPanel.RemoveAspect(MaterialList.Materials[Slots[slotID].materialID]);
-            RemoveAspect(materialID);
-        }
-        AspectPanel.AddAspect(MaterialList.Materials[materialID]);
-        AddAspect(materialID);
+            if (materials[materialID] < 1)
+            {
+                if (!MaterialObjects.ContainsKey(materialID))
+                {
+                    MaterialObjects.Add(materialID, Instantiate(template, MaterialPanelTransform));
+                    MaterialObjects[materialID].GetComponent<ClickAction>().materialID = materialID;
+                    MaterialObjects[materialID].GetComponentInChildren<Text>().text = "1";
 
-        //calculate aspects and update aspects panel
+                }
+                else
+                {
+                    MaterialObjects[materialID].GetComponentInChildren<Text>().text = "1";
+                }
+            }
+            else
+            {
+                MaterialObjects[materialID].GetComponentInChildren<Text>().text = (materials[materialID]+1).ToString();
+            }
+            materials[materialID] += 1;
+        }
+    }
+    public void RemoveMaterial(int materialID)
+    {
+        if (materialID > -1)
+        {
+            materials[materialID] -= 1;
+            if (materials[materialID] < 1)
+            {
+                if (MaterialObjects.ContainsKey(materialID))
+                {
+                    Object.Destroy(MaterialObjects[materialID]);
+                    MaterialObjects.Remove(materialID);
+                }
+            }
+            else
+            {
+                if (MaterialObjects.ContainsKey(materialID))
+                {
+                    MaterialObjects[materialID].GetComponentInChildren<Text>().text = materials[materialID].ToString();
+                }
+            }
+        }
+    }
+    public void SlotMaterial(int newID, int oldID)
+    {
+        AddMaterial(oldID);
+        RemoveAspect(oldID);
+        RemoveMaterial(newID);
+        AddAspect(newID);
     }
     public void AddAspect(int materialID)
     {
-        Materials material = MaterialList.Materials[materialID];
-        if (material.A1Name != "NA")
+        if(materialID > -1)
         {
-            if (Aspects.ContainsKey(material.A1Name))
+            Materials material = MaterialList.Materials[materialID];
+            if (material.A1Name != "NA")
             {
-                Aspects[material.A1Name] += material.A1Amt;
+                if (Aspects.ContainsKey(material.A1Name))
+                {
+                    Aspects[material.A1Name] += material.A1Amt;
+                }
+                else
+                {
+                    Aspects.Add(material.A1Name, material.A1Amt);
+                }
             }
-            else
+            if (material.A2Name != "NA")
             {
-                Aspects.Add(material.A1Name, material.A1Amt);
+                if (Aspects.ContainsKey(material.A2Name))
+                {
+                    Aspects[material.A2Name] += material.A2Amt;
+                }
+                else
+                {
+                    Aspects.Add(material.A2Name, material.A2Amt);
+                }
+            }
+            if (material.A3Name != "NA")
+            {
+                if (Aspects.ContainsKey(material.A3Name))
+                {
+                    Aspects[material.A3Name] += material.A3Amt;
+                }
+                else
+                {
+                    Aspects.Add(material.A3Name, material.A3Amt);
+                }
             }
         }
-        if (material.A2Name != "NA")
-        {
-            if (Aspects.ContainsKey(material.A2Name))
-            {
-                Aspects[material.A2Name] += material.A2Amt;
-            }
-            else
-            {
-                Aspects.Add(material.A2Name, material.A2Amt);
-            }
-        }
-        if (material.A3Name != "NA")
-        {
-            if (Aspects.ContainsKey(material.A3Name))
-            {
-                Aspects[material.A3Name] += material.A3Amt;
-            }
-            else
-            {
-                Aspects.Add(material.A3Name, material.A3Amt);
-            }
-        }
+        
         /*Debug.Log(Aspects.Count);*/
     }
+    
     public void RemoveAspect(int materialID)
     {
-        Materials material = MaterialList.Materials[materialID];
-        if (material.A1Name != "NA")
+        if(materialID > -1)
         {
-            if (Aspects.ContainsKey(material.A1Name))
+            Materials material = MaterialList.Materials[materialID];
+            if (material.A1Name != "NA")
             {
-                Aspects[material.A1Name] -= material.A1Amt;
-                if(Aspects[material.A1Name] == 0)
+                if (Aspects.ContainsKey(material.A1Name))
                 {
-                    Aspects.Remove(material.A1Name);
+                    Aspects[material.A1Name] -= material.A1Amt;
+                    if (Aspects[material.A1Name] == 0)
+                    {
+                        Aspects.Remove(material.A1Name);
+                    }
+                }
+
+            }
+            if (material.A2Name != "NA")
+            {
+                if (Aspects.ContainsKey(material.A2Name))
+                {
+                    Aspects[material.A2Name] -= material.A2Amt;
+                    if (Aspects[material.A2Name] == 0)
+                    {
+                        Aspects.Remove(material.A2Name);
+                    }
                 }
             }
-            
-        }
-        if (material.A2Name != "NA")
-        {
-            if (Aspects.ContainsKey(material.A2Name))
+            if (material.A3Name != "NA")
             {
-                Aspects[material.A2Name] -= material.A2Amt;
-                if (Aspects[material.A2Name] == 0)
+                if (Aspects.ContainsKey(material.A3Name))
                 {
-                    Aspects.Remove(material.A2Name);
+                    Aspects[material.A3Name] -= material.A3Amt;
+                    if (Aspects[material.A3Name] == 0)
+                    {
+                        Aspects.Remove(material.A3Name);
+                    }
                 }
             }
         }
-        if (material.A3Name != "NA")
-        {
-            if (Aspects.ContainsKey(material.A3Name))
-            {
-                Aspects[material.A3Name] -= material.A3Amt;
-                if (Aspects[material.A3Name] == 0)
-                {
-                    Aspects.Remove(material.A3Name);
-                }
-            }
-        }
+        
     }
-        public void CraftPotion()
+    public void CraftPotion()
     {
-        if(slot1.materialID > -1 || slot2.materialID > -1 || slot3.materialID > -1)
+        /*AddRecipe(0, slot1.materialID, slot2.materialID, slot3.materialID);*/
+        if (slot1.materialID > -1 || slot2.materialID > -1 || slot3.materialID > -1)
         {
             //get the aspects from the aspect panel, or store them in this crafting controller
             //then look through recipe list to see if any recipes match up
@@ -200,64 +255,11 @@ public class CraftingController : MonoBehaviour
                     {
                         //we crafted the potion woohoo!!!!
                         Global.gold += RecipeList.Recipes[i].recipeValue;
+                        AddRecipe(i, slot1.materialID, slot2.materialID, slot3.materialID);
                     }
                 }
             }
-            if (slot1.materialID > -1)
-            {
-                materials[slot1.materialID] -= 1;
-                if (materials[slot1.materialID] < 1)
-                {
-                    if (MaterialObjects.ContainsKey(slot1.materialID))
-                    {
-                        Object.Destroy(MaterialObjects[slot1.materialID]);
-                    }
-                }
-                else
-                {
-                    if (MaterialObjects.ContainsKey(slot1.materialID))
-                    {
-                        MaterialObjects[slot1.materialID].GetComponentInChildren<Text>().text = materials[slot1.materialID].ToString();
-                    }
-                }
-            }
-            if (slot2.materialID > -1)
-            {
-                materials[slot2.materialID] -= 1;
-                if (materials[slot2.materialID] < 1)
-                {
-                    if (MaterialObjects.ContainsKey(slot2.materialID))
-                    {
-                        Object.Destroy(MaterialObjects[slot2.materialID]);
-                    }
-                }
-                else
-                {
-                    if (MaterialObjects.ContainsKey(slot2.materialID))
-                    {
-                        MaterialObjects[slot2.materialID].GetComponentInChildren<Text>().text = materials[slot2.materialID].ToString();
-                    }
-                }
-            }
-            if (slot3.materialID > -1)
-            {
-                materials[slot3.materialID] -= 1;
-                if (materials[slot3.materialID] < 1)
-                {
-                    if (MaterialObjects.ContainsKey(slot3.materialID))
-                    {
-                        Object.Destroy(MaterialObjects[slot3.materialID]);
-                    }
-                }
-                else
-                {
-                    if (MaterialObjects.ContainsKey(slot3.materialID))
-                    {
-                        MaterialObjects[slot3.materialID].GetComponentInChildren<Text>().text = materials[slot3.materialID].ToString();
-                    }
-                }
-            }
-            ResetSlots();
+            EmptySlots();
             //also, once inventory is implemented, remove items from the inventory
         }
         else
@@ -265,8 +267,45 @@ public class CraftingController : MonoBehaviour
             Debug.Log("Place a material!");
         }
     }
+    public void AddRecipe(int recipeID, int material1ID, int material2ID, int material3ID)
+    {
+        List<int> materialIDs = new List<int>();
+        materialIDs.Add(material1ID);
+        materialIDs.Add(material2ID);
+        materialIDs.Add(material3ID);
+        
+        RecipeObjects.Add(RecipeObjects.Count, Instantiate(recipeTemplate, RecipePanelTransform));
+        RecipeObjects[RecipeObjects.Count - 1].GetComponent<RecipeObject>().Initialize(RecipeObjects.Count, recipeID, materialIDs);
+        Global.recipes.Add(RecipeObjects[RecipeObjects.Count - 1].GetComponent<RecipeObject>());
+    }
+    public void AddMaterials(List<int> materialIDs)
+    {
+        
+        for (int i = 0; i < materialIDs.Count; i++)
+        {
+            if (materialIDs[i] > -1 && materials[materialIDs[i]] > 0)
+            {
+                Slots[i].AddMaterial(materialIDs[i]);
+            }
+            else
+            {
+                Slots[i].ResetSlot();
+            }
+        }
+    }
+    public void EmptySlots()
+    {
+        slot1.ResetSlot();
+        slot2.ResetSlot();
+        slot3.ResetSlot();
+        AspectPanel.ResetAspects();
+        Aspects = new Dictionary<string, int>();
+    }
     public void ResetSlots()
     {
+        AddMaterial(slot1.materialID);
+        AddMaterial(slot2.materialID);
+        AddMaterial(slot3.materialID);
         slot1.ResetSlot();
         slot2.ResetSlot();
         slot3.ResetSlot();
@@ -275,6 +314,10 @@ public class CraftingController : MonoBehaviour
     }
     public Sprite GetImage(int materialID)
     {
+        if(materialID == -1)
+        {
+            return Resources.Load<Sprite>("Art/NA");
+        }
         return Resources.Load<Sprite>("Art/" + MaterialList.Materials[materialID].imageName);
     }
 }

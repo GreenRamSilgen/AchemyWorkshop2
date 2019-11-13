@@ -3,7 +3,7 @@
 [System.Serializable]
 public class Recipe
 {
-    //public int recipeID;
+    public int recipeID;
     public string recipeName;
     public int recipeValue;
     public string mainAspectName;
@@ -13,4 +13,5 @@ public class Recipe
     public string subAspect2Name;
     public int subAspect2Min;
     public int subAspect2Max;
+    public string imageName;
 }

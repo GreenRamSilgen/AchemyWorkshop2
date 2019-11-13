@@ -12,43 +12,28 @@ public class Slot : MonoBehaviour
     public int materialID = -1;
     public bool filled = false;
     public CraftingController CraftingController;
+    public void Start()
+    {
+        GetComponent<Image>().sprite = CraftingController.GetImage(-1);
+    }
     //OnPointerDown is also required to receive OnPointerUp callbacks
     public void OnDrop(PointerEventData eventData)
     {
-        if (!filled)
-        {
-            CraftingController.SlotMaterial(CraftingController.GetMaterial(), id);
-            materialID = CraftingController.GetMaterial();
-            filled = true;
-            gameObject.GetComponent<Image>().sprite = CraftingController.GetImage(materialID);
-        }
+        
+        AddMaterial(CraftingController.GetMaterial());
+    }
+    public void AddMaterial(int newID)
+    {
+        CraftingController.SlotMaterial(newID, materialID);
+        
+        materialID = newID;
+        filled = true;
+        gameObject.GetComponent<Image>().sprite = CraftingController.GetImage(materialID);
     }
     public void ResetSlot()
     {
         materialID = -1;
-        gameObject.GetComponent<Image>().sprite = null;
+        gameObject.GetComponent<Image>().sprite = CraftingController.GetImage(-1);
         filled = false;
     }
-    /*public void OnDrop(PointerEventData eventData)
-    {
-        RectTransform slotTransform = transform as RectTransform;
-        if(RectTransformUtility.RectangleContainsScreenPoint(slotTransform, Input.mousePosition))
-        {
-            if (CraftingController.GetMaterial() > -1)
-            {
-                materialID = CraftingController.GetMaterial();
-                gameObject.GetComponent<Image>().sprite = CraftingController.GetImage(materialID);
-                *//*CraftingController.DeselectMaterial();*//*
-            }
-        }
-    }*/
-    /*public void OnPointerClick(PointerEventData eventData)
-    {
-        if (CraftingController.GetMaterial() > -1)
-        {
-            materialID = CraftingController.GetMaterial();
-            gameObject.GetComponent<Image>().sprite = CraftingController.GetImage(materialID);
-            CraftingController.DeselectMaterial();
-        }
-    }*/
 }

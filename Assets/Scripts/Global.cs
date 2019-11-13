@@ -57,8 +57,9 @@ public static class Global
         [23] = 0,
         [24] = 0,
         [25] = 0,
+        [26] = 0
     };
-
+    public static List<RecipeObject> recipes = new List<RecipeObject>();
     public static List<int> FoundMaterials = new List<int>(){19, 21};
 
     public static IDictionary<string, int> gatherers = new Dictionary<string, int>()

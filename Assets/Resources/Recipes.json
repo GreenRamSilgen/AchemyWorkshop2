@@ -10,7 +10,8 @@
       "subAspect1Max": 4,
       "subAspect2Name": "Victus",
       "subAspect2Min": 2,
-      "subAspect2Max": 4
+      "subAspect2Max": 4,
+      "imageName": "Unknown"
     },
     {
       "recipeID": 1,
@@ -22,7 +23,8 @@
       "subAspect1Max": 5,
       "subAspect2Name": "Aqua",
       "subAspect2Min": 3,
-      "subAspect2Max": 5
+      "subAspect2Max": 5,
+      "imageName": "Unknown"
     },
     {
       "recipeID": 2,
@@ -34,7 +36,8 @@
       "subAspect1Max": 4,
       "subAspect2Name": "Terra",
       "subAspect2Min": 1,
-      "subAspect2Max": 3
+      "subAspect2Max": 3,
+      "imageName": "Unknown"
     },
     {
       "recipeID": 3,
@@ -46,7 +49,8 @@
       "subAspect1Max": 6,
       "subAspect2Name": "Ignis",
       "subAspect2Min": 1,
-      "subAspect2Max": 3
+      "subAspect2Max": 3,
+      "imageName": "Unknown"
     },
     {
       "recipeID": 4,
@@ -58,7 +62,8 @@
       "subAspect1Max": 4,
       "subAspect2Name": "Potentia",
       "subAspect2Min": 1,
-      "subAspect2Max": 4
+      "subAspect2Max": 4,
+      "imageName": "Unknown"
     },
     {
       "recipeID": 5,
@@ -70,7 +75,8 @@
       "subAspect1Max": 4,
       "subAspect2Name": "Venenum",
       "subAspect2Min": 1,
-      "subAspect2Max": 4
+      "subAspect2Max": 4,
+      "imageName": "Unknown"
     },
     {
       "recipeID": 6,
@@ -82,7 +88,8 @@
       "subAspect1Max": 4,
       "subAspect2Name": "Vinculum",
       "subAspect2Min": 2,
-      "subAspect2Max": 5
+      "subAspect2Max": 5,
+      "imageName": "Unknown"
     },
     {
       "recipeID": 7,
@@ -94,7 +101,8 @@
       "subAspect1Max": 5,
       "subAspect2Name": "Vitreus",
       "subAspect2Min": 1,
-      "subAspect2Max": 5
+      "subAspect2Max": 5,
+      "imageName": "Unknown"
     },
     {
       "recipeID": 8,
@@ -106,7 +114,8 @@
       "subAspect1Max": 5,
       "subAspect2Name": "Praecantatio",
       "subAspect2Min": 1,
-      "subAspect2Max": 4
+      "subAspect2Max": 4,
+      "imageName": "Unknown"
     },
     {
       "recipeID": 9,
@@ -118,7 +127,8 @@
       "subAspect1Max": 6,
       "subAspect2Name": "Tutamen",
       "subAspect2Min": 1,
-      "subAspect2Max": 4
+      "subAspect2Max": 4,
+      "imageName": "Unknown"
     },
     {
       "recipeID": 10,
@@ -130,7 +140,8 @@
       "subAspect1Max": 5,
       "subAspect2Name": "Terra",
       "subAspect2Min": 2,
-      "subAspect2Max": 5
+      "subAspect2Max": 5,
+      "imageName": "Unknown"
     },
     {
       "recipeID": 11,
@@ -142,7 +153,8 @@
       "subAspect1Max": 4,
       "subAspect2Name": "Bestia",
       "subAspect2Min": 2,
-      "subAspect2Max": 5
+      "subAspect2Max": 5,
+      "imageName": "Unknown"
     },
     {
       "recipeID": 12,
@@ -154,7 +166,8 @@
       "subAspect1Max": 4,
       "subAspect2Name": "Aqua",
       "subAspect2Min": 2,
-      "subAspect2Max": 5
+      "subAspect2Max": 5,
+      "imageName": "Unknown"
     },
     {
       "recipeID": 13,
@@ -166,7 +179,8 @@
       "subAspect1Max": 4,
       "subAspect2Name": "Aqua",
       "subAspect2Min": 3,
-      "subAspect2Max": 5
+      "subAspect2Max": 5,
+      "imageName": "Unknown"
     },
     {
       "recipeID": 14,
@@ -178,7 +192,8 @@
       "subAspect1Max": 4,
       "subAspect2Name": "Terra",
       "subAspect2Min": 1,
-      "subAspect2Max": 4
+      "subAspect2Max": 4,
+      "imageName": "Unknown"
     },
     {
       "recipeID": 15,
@@ -190,7 +205,8 @@
       "subAspect1Max": 6,
       "subAspect2Name": "Ignis",
       "subAspect2Min": 1,
-      "subAspect2Max": 3
+      "subAspect2Max": 3,
+      "imageName": "Unknown"
     },
     {
       "recipeID": 16,
@@ -202,7 +218,8 @@
       "subAspect1Max": 4,
       "subAspect2Name": "Vitreus",
       "subAspect2Min": 1,
-      "subAspect2Max": 4
+      "subAspect2Max": 4,
+      "imageName": "Unknown"
     },
     {
       "recipeID": 17,
@@ -214,7 +231,8 @@
       "subAspect1Max": 4,
       "subAspect2Name": "Lux",
       "subAspect2Min": 2,
-      "subAspect2Max": 5
+      "subAspect2Max": 5,
+      "imageName": "Unknown"
     },
     {
       "recipeID": 18,
@@ -226,7 +244,8 @@
       "subAspect1Max": 4,
       "subAspect2Name": "Vinculum",
       "subAspect2Min": 1,
-      "subAspect2Max": 4
+      "subAspect2Max": 4,
+      "imageName": "Unknown"
     },
     {
       "recipeID": 19,
@@ -238,7 +257,8 @@
       "subAspect1Max": 5,
       "subAspect2Name": "Victus",
       "subAspect2Min": 3,
-      "subAspect2Max": 6
+      "subAspect2Max": 6,
+      "imageName": "Unknown"
     },
     {
       "recipeID": 20,
@@ -250,7 +270,8 @@
       "subAspect1Max": 4,
       "subAspect2Name": "Aqua",
       "subAspect2Min": 1,
-      "subAspect2Max": 3
+      "subAspect2Max": 3,
+      "imageName": "Unknown"
     },
     {
       "recipeID": 21,
@@ -262,7 +283,8 @@
       "subAspect1Max": 5,
       "subAspect2Name": "Terra",
       "subAspect2Min": 1,
-      "subAspect2Max": 4
+      "subAspect2Max": 4,
+      "imageName": "Unknown"
     },
     {
       "recipeID": 22,
@@ -274,7 +296,8 @@
       "subAspect1Max": 4,
       "subAspect2Name": "Praecantatio",
       "subAspect2Min": 1,
-      "subAspect2Max": 4
+      "subAspect2Max": 4,
+      "imageName": "Unknown"
     }
   ]
 }
