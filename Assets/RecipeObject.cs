@@ -16,14 +16,18 @@ public class RecipeObject : MonoBehaviour
     public GameObject material1;
     public GameObject material2;
     public GameObject material3;
-    public void Initialize(int recipeID, int resultID, List<int> ids)
+    public GameObject recipenName;
+    public GameObject recipeValue;
+    public void Initialize(RecipeInfo recipe)
     {
-        recipeID = recipeID;
-        resultID = resultID;
-        materialIDs = ids;
+        recipeID = recipe.recipeID;
+        resultID = recipe.resultID;
+        materialIDs = recipe.materialIDs;
         material1.GetComponent<Image>().sprite = CraftingController.GetImage(materialIDs[0]);
         material2.GetComponent<Image>().sprite = CraftingController.GetImage(materialIDs[1]);
         material3.GetComponent<Image>().sprite = CraftingController.GetImage(materialIDs[2]);
+        recipenName.GetComponent<Text>().text = recipe.recipeName;
+        recipeValue.GetComponent<Text>().text = recipe.recipeValue.ToString();
         
     }
     public void OnPointerEnter(PointerEventData eventData)

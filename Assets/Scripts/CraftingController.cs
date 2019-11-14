@@ -23,12 +23,16 @@ public class CraftingController : MonoBehaviour
     public IDictionary<string, int> Aspects = new Dictionary<string, int>();
     public GameObject recipeTemplate;
     public Transform RecipePanelTransform;
-    
+    public int crafts = 0;
+    public const int NUM_OF_CRAFTS_PER_DAY = 5;
+    public StageCycle StageCycle;
     /*    private string recipesFileName = "Data/Recipes.json";
     */    // Start is called before the first frame update
     void Start()
     {
         materials = Global.materials;
+        Global.recipeHistory = new List<RecipeInfo>();
+        Global.materialsUsed = new List<int>();
         TextAsset asset = Resources.Load("Materials") as TextAsset;
         if (asset != null)
         {
@@ -54,6 +58,10 @@ public class CraftingController : MonoBehaviour
             {
                 MaterialObjects[i].transform.position = new Vector2((32 + 64 + i * 64 % 256) * gameObject.transform.localScale.x, (CanvasRectTransform.rect.height - 32 - (i / 4 * 64)) * gameObject.transform.localScale.y);
             }*/
+            foreach(RecipeInfo recipe in Global.recipes)
+            {
+                AddRecipeObject(recipe);
+            }
         }
         else
         {
@@ -228,7 +236,6 @@ public class CraftingController : MonoBehaviour
     }
     public void CraftPotion()
     {
-        /*AddRecipe(0, slot1.materialID, slot2.materialID, slot3.materialID);*/
         if (slot1.materialID > -1 || slot2.materialID > -1 || slot3.materialID > -1)
         {
             //get the aspects from the aspect panel, or store them in this crafting controller
@@ -255,8 +262,25 @@ public class CraftingController : MonoBehaviour
                     {
                         //we crafted the potion woohoo!!!!
                         Global.gold += RecipeList.Recipes[i].recipeValue;
-                        AddRecipe(i, slot1.materialID, slot2.materialID, slot3.materialID);
-                    }
+                        List<int> materialIDs = new List<int>();
+                        materialIDs.Add(slot1.materialID);
+                        materialIDs.Add(slot2.materialID);
+                        materialIDs.Add(slot3.materialID);
+                        RecipeInfo recipe = new RecipeInfo(Global.recipes.Count, i, RecipeList.Recipes[i].recipeName, RecipeList.Recipes[i].recipeValue, materialIDs);
+                        Global.recipeHistory.Add(recipe);
+                        for(int j = 0; j < materialIDs.Count; j++)
+                        {
+                            if(materialIDs[j] > -1)
+                            {
+                                Global.materialsUsed.Add(materialIDs[j]);
+                            }
+                        }
+                        AddRecipe(i, recipe);
+                        crafts += 1;
+                        if(crafts >= NUM_OF_CRAFTS_PER_DAY){
+                            StageCycle.FadeToStage(5);
+                        }
+                        }
                 }
             }
             EmptySlots();
@@ -267,28 +291,28 @@ public class CraftingController : MonoBehaviour
             Debug.Log("Place a material!");
         }
     }
-    public void AddRecipe(int recipeID, int material1ID, int material2ID, int material3ID)
+    public void AddRecipe(int resultID, RecipeInfo recipe)
     {
         bool duplicate = false;
-        for(int i = 0; i < Global.recipes.Count; i++)
+        for (int i = 0; i < Global.recipes.Count; i++)
         {
-            if(Global.recipes[i].materialIDs.Contains(material1ID) && Global.recipes[i].materialIDs.Contains(material2ID) && Global.recipes[i].materialIDs.Contains(material3ID))
+            if (Global.recipes[i].materialIDs.Contains(recipe.materialIDs[0]) && Global.recipes[i].materialIDs.Contains(recipe.materialIDs[1]) && Global.recipes[i].materialIDs.Contains(recipe.materialIDs[2]))
             {
                 duplicate = true;
             }
         }
         if (!duplicate)
         {
-            List<int> materialIDs = new List<int>();
-            materialIDs.Add(material1ID);
-            materialIDs.Add(material2ID);
-            materialIDs.Add(material3ID);
-
-            RecipeObjects.Add(RecipeObjects.Count, Instantiate(recipeTemplate, RecipePanelTransform));
-            RecipeObjects[RecipeObjects.Count - 1].GetComponent<RecipeObject>().Initialize(RecipeObjects.Count, recipeID, materialIDs);
-            Global.recipes.Add(RecipeObjects[RecipeObjects.Count - 1].GetComponent<RecipeObject>());
-
+            
+            Global.recipes.Add(recipe);
+            AddRecipeObject(recipe);
         }
+    }
+    public void AddRecipeObject(RecipeInfo recipe)
+    {
+        RecipeObjects.Add(recipe.recipeID, Instantiate(recipeTemplate, RecipePanelTransform));
+        RecipeObjects[RecipeObjects.Count - 1].GetComponent<RecipeObject>().Initialize(recipe);
+        
     }
     public void SlotMaterials(List<int> materialIDs)
     {

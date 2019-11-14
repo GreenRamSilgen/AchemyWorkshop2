@@ -59,7 +59,9 @@ public static class Global
         [25] = 0,
         [26] = 0
     };
-    public static List<RecipeObject> recipes = new List<RecipeObject>();
+    public static List<RecipeInfo> recipes = new List<RecipeInfo>();
+    public static List<RecipeInfo> recipeHistory = new List<RecipeInfo>();
+    public static List<int> materialsUsed = new List<int>();
     public static List<int> FoundMaterials = new List<int>(){19, 21};
 
     public static IDictionary<string, int> gatherers = new Dictionary<string, int>()
@@ -80,8 +82,4 @@ public static class Global
         ["Black Marketeer"] = 0,
     };
     
-
-
-
-
 }
