@@ -36,4 +36,9 @@ public class Slot : MonoBehaviour
         gameObject.GetComponent<Image>().sprite = CraftingController.GetImage(-1);
         filled = false;
     }
+
+    public int GetMaterialID()
+    {
+        return materialID;
+    }
 }

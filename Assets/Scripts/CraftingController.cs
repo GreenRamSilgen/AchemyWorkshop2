@@ -75,6 +75,11 @@ public class CraftingController : MonoBehaviour
         Slots.Add(2, slot3);
         slot3.id = 2;
     }
+
+    void Update()
+    {
+        int myID = Slots[0].materialID;
+    }
     public int GetMaterial()
     {
         return (materialSelected);
@@ -181,7 +186,7 @@ public class CraftingController : MonoBehaviour
             }
         }
         
-        /*Debug.Log(Aspects.Count);*/
+        Debug.Log(Aspects.Count);
     }
     
     public void RemoveAspect(int materialID)

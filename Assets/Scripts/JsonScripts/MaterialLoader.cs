@@ -6,16 +6,16 @@ using System.IO;
 public class MaterialLoader : MonoBehaviour
 {
     //START COPY HERE
-    public MaterialList MaterialList = new MaterialList();
+    public MaterialList matList = new MaterialList();
     void Start()
     {
         TextAsset asset = Resources.Load("Materials") as TextAsset;
         if (asset != null)
         {
             //Debug.Log(jsonString);
-            MaterialList = JsonUtility.FromJson<MaterialList>(asset.text);
+            matList = JsonUtility.FromJson<MaterialList>(asset.text);
 
-            foreach (Materials material in MaterialList.Materials)
+            foreach (Materials material in matList.Materials)
             {
                 Debug.Log(material.materialID);
                 Debug.Log(material.materialLocation);
@@ -33,13 +33,11 @@ public class MaterialLoader : MonoBehaviour
         {
             print("Asset is null");
         }
-
-        
     }
 
     public MaterialList getMaterialList()
     {
-        return MaterialList;
+        return matList;
     }
 
     // Update is called once per frame
