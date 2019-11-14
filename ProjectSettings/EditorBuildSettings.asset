@@ -29,7 +29,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/InfoTranferTest.unity
     guid: 3cfc520be1e6f3c41a97035f383a1eec
-  - enabled: 1
-    path: Assets/Scenes/SampleStage2.unity
-    guid: 91943c3141af0774fa9a7a79598b57dd
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   m_configObjects: {}

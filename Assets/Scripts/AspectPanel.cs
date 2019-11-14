@@ -8,7 +8,20 @@ public class AspectPanel : MonoBehaviour
     public GameObject AspectBarTemplate;
     public Transform AspectPanelTransform;
     public List<GameObject> AspectBars = new List<GameObject>();
-
+    private MaterialList MaterialList = new MaterialList(); //Create ItemList object
+    GameObject materialsGetter; //create gameobject
+    void Start()
+    {
+         materialsGetter = GameObject.FindGameObjectWithTag("Resourcer"); //Assign ResourceLoader gameobject to "resourceGetter"
+         MaterialList = materialsGetter.GetComponent<MaterialLoader>().getMaterialList(); //Call getResourceList from ResourceLoader Script in ResourceHolder
+         int meID = MaterialList.Materials[0].materialID;
+         foreach(Materials material in MaterialList.Materials) //LOOP THROUGH ALL RESOURCES. 
+         {
+             Debug.Log(MaterialList.Materials[material.materialID].materialID);
+             
+             Debug.Log(MaterialList.Materials[material.materialID].materialName);
+         }
+    }
     public void AddAspect(Materials material)
     {
         if (!material.A1Name.Equals("NA"))
@@ -101,4 +114,11 @@ public class AspectPanel : MonoBehaviour
     {
         AspectBars = new List<GameObject>();
     }
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
+public void UpdateGraph(Slot first, Slot second, Slot third)
+{
+    //Material s1Mat = Material[first.materialID];
+}
+
+
 }

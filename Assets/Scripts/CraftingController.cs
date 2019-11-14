@@ -83,6 +83,11 @@ public class CraftingController : MonoBehaviour
         Slots.Add(2, slot3);
         slot3.id = 2;
     }
+
+    void Update()
+    {
+        int myID = Slots[0].materialID;
+    }
     public int GetMaterial()
     {
         return (materialSelected);
@@ -189,7 +194,7 @@ public class CraftingController : MonoBehaviour
             }
         }
         
-        /*Debug.Log(Aspects.Count);*/
+        Debug.Log(Aspects.Count);
     }
     
     public void RemoveAspect(int materialID)
@@ -275,12 +280,13 @@ public class CraftingController : MonoBehaviour
                                 Global.materialsUsed.Add(materialIDs[j]);
                             }
                         }
+
                         AddRecipe(i, recipe);
                         crafts += 1;
                         if(crafts >= NUM_OF_CRAFTS_PER_DAY){
                             StageCycle.FadeToStage(5);
                         }
-                        }
+                    }
                 }
             }
             EmptySlots();
