@@ -3063,6 +3063,11 @@ MonoBehaviour:
   labels:
   - t1
   - t2
+  colors:
+  - {r: 0, g: 0, b: 0, a: 0}
+  - {r: 0, g: 0, b: 0, a: 0}
+  - {r: 0, g: 0, b: 0, a: 0}
+  - {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &902576627
 MonoBehaviour:
   m_ObjectHideFlags: 0

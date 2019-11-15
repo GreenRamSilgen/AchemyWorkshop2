@@ -8,7 +8,7 @@ public class BarChart : MonoBehaviour
     public Bar barPreFab;
     public int[] inputValues;
     public string[] labels;
-
+    public Color[] colors;
     List<Bar> bars = new List<Bar>();
 
     float chartHeight;
@@ -48,6 +48,11 @@ public class BarChart : MonoBehaviour
 
             //set Height of the Bar.
             rt.sizeDelta = new Vector2(rt.sizeDelta.x, (chartHeight/6) * normalizedValue);
+
+            //set Color of this ONE BAR.
+            //newBar.bar.color = colors[i % colors.Length];
+
+
 
             //set Label of created Bar (aspect name)
             if(labels.Length <= i)
