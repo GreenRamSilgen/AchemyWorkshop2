@@ -13,7 +13,6 @@ public class EndOfDayDisplay : MonoBehaviour
     {
 
         day.text = "End of Day " + Global.day;
-        print("start to calc -- start");
         ledger.text = "       LEDGER:\n\nHiring Cost:  - " + calcHireCost() + "\n\n" + "Rent:            - 50\n\n" + "Potions:       + "
                         +"---------------------\nTotal:          ";
         
@@ -24,7 +23,6 @@ public class EndOfDayDisplay : MonoBehaviour
     void Update()
     {
         day.text = "End of Day " + Global.day;
-        print("start to calc -- update");
         ledger.text = "       LEDGER:\n\nHiring Cost:  - " + calcHireCost() + "\n\n" + "Rent:            - 50\n\n" + "Potions:       + "
                         +"---------------------\nTotal:          ";
         
