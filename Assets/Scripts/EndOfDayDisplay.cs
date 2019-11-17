@@ -11,29 +11,47 @@ public class EndOfDayDisplay : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        ledger.text = "LEDGER";
-        day.text = "End of Day ";
+
+        day.text = "End of Day " + Global.day;
+        print("start to calc -- start");
+        ledger.text = "       LEDGER:\n\nHiring Cost:  - " + calcHireCost() + "\n\n" + "Rent:            - 50\n\n" + "Potions:       + "
+                        +"---------------------\nTotal:          ";
+        
 
     }
 
     // Update is called once per frame
     void Update()
     {
+        day.text = "End of Day " + Global.day;
+        print("start to calc -- update");
         ledger.text = "       LEDGER:\n\nHiring Cost:  - " + calcHireCost() + "\n\n" + "Rent:            - 50\n\n" + "Potions:       + "
                         +"---------------------\nTotal:          ";
-        day.text = "End of Day " + Global.day;
+        
 
     }
 
     int calcHireCost()
     {
         int count = 0;
-        foreach (KeyValuePair<string, int> kv in Global.gatherers)
+        foreach (KeyValuePair<string, int> kv in Global.gathererCost)
         {
-            count += Global.gathererCost[kv.Key] * kv.Value;
+           
+            count += Global.gatherers[kv.Key] * kv.Value;
+          
 
         }
 
         return count;
+    }
+    void printDict()//used for debugging
+    {
+        foreach(KeyValuePair<string, int> kv in Global.gatherers)
+        {
+            print("key: " + kv.Key + "   value: " + kv.Value);
+            print(Global.gatherers.ContainsKey(kv.Key));
+            print(Global.gathererCost.ContainsKey(kv.Key));
+            print("=======================");
+        }
     }
 }
