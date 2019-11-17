@@ -91,7 +91,7 @@ public static class Global
         //Wilds Gatherers
         ["Explorer"] = 10,
         ["Ranger"] = 100,
-        ["Beast Hunter"] = 10,
+        ["Beast Hunter"] = 500,
 
         //City Gatherers
         ["Trader"] = 10,
