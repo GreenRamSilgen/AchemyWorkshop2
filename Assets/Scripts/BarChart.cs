@@ -47,7 +47,7 @@ public class BarChart : MonoBehaviour
             float normalizedValue = (float)values[i] / (float)maxValue;
 
             //set Height of the Bar.
-            rt.sizeDelta = new Vector2(rt.sizeDelta.x, (chartHeight/6) * normalizedValue);
+            rt.sizeDelta = new Vector2(rt.sizeDelta.x, (chartHeight/7) * normalizedValue);
 
             //set Color of this ONE BAR.
             //newBar.bar.color = colors[i % colors.Length];

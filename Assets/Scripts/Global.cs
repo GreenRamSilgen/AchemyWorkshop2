@@ -81,5 +81,25 @@ public static class Global
         ["Merchant"] = 0,
         ["Black Marketeer"] = 0,
     };
+
+    public static IDictionary<string, int> gathererCost = new Dictionary<string, int>()
+    {
+        ["Adventurer"] = 10,
+        ["Veteran"] = 100,
+        ["Hero"] = 500,
+
+        //Wilds Gatherers
+        ["Explorer"] = 10,
+        ["Ranger"] = 100,
+        ["Beast Hunter"] = 10,
+
+        //City Gatherers
+        ["Trader"] = 10,
+        ["Merchant"] = 100,
+        ["Black Marketeer"] = 500,
+
+    };
     
+
+
 }
