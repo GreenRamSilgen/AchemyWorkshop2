@@ -1,0 +1,4 @@
+Material Sprite Sheet order:
+1st row: milk, water, salt, pitch, saltpetre, sulfur, phosphorus, quicksilver, Hemlock Extract
+2nd row: lavender, peppermint, honey, Mana Bean, Magnetite, Rimewood, owlbear Further, griffon talon, Will-o'-Wisp Escence
+3rd row: bone, caustic ooze, Rat Tail, spider silk, Ectoplasum, Mimic Splinter, Basilisk Blood, premordial fire, dragon scale
