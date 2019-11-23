@@ -9,6 +9,12 @@ public class BarChart : MonoBehaviour
     private readonly int maxValue = 25;
     /*CUSTOMIZE BARS HERE*/
 
+    /*
+	CraftingController assist week 8 meeting
+        Call BarChart.blankGraph() upon “Craft”
+        Call BarChart.updateBarGraph(mat1ID,mat2ID,mat3ID) upon slot update
+
+     */
 
 
 
@@ -62,8 +68,15 @@ public class BarChart : MonoBehaviour
     public void updateBarGraph(int m1ID, int m2ID, int m3ID)
     {
         calculateAspects(m1ID, m2ID, m3ID);
-        updateTopFive();
-        updateAllBars();
+        if (totalAspects.Count == 1 && totalAspects.ContainsKey("NA"))
+        {
+            blankGraph();
+        }
+        else
+        {
+            updateTopFive();
+            updateAllBars();
+        }
     }
 
     void calculateAspects(int m1ID, int m2ID, int m3ID) //MIGHT GET ERROR FOR MULTIPLE NA ITEM???
@@ -114,6 +127,8 @@ public class BarChart : MonoBehaviour
             else
             {
                 totalAspects["NA"] += 0;
+                Debug.Log(totalAspects.Count);
+                Debug.Log(totalAspects.ContainsKey("NA"));
             }
         }
         else
@@ -187,6 +202,21 @@ public class BarChart : MonoBehaviour
             //Change the bar Value
             bars[i].barValue.text = myEnumerator.Value.ToString();
             i++;
+        }
+    }
+
+    public void blankGraph() //call this upon "CRAFT"
+    {
+        for(int i = 0; i < 5;i++)
+        {
+            RectTransform rt = bars[i].bar.GetComponent<RectTransform>();
+            float normalizedValue = (float)0/ (float)25;
+            rt.sizeDelta = new Vector2(rt.sizeDelta.x, (chartHeight / 7) * normalizedValue);
+
+            //Change the bar label HEREREE.
+            bars[i].label.text = "NA";
+            //Change the bar Value
+            bars[i].barValue.text = "0";
         }
     }
 
