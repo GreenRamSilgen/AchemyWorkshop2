@@ -26,6 +26,7 @@ public class CraftingController : MonoBehaviour
     public int crafts = 0;
     public const int NUM_OF_CRAFTS_PER_DAY = 5;
     public StageCycle StageCycle;
+    public BarChart BarChart;
     /*    private string recipesFileName = "Data/Recipes.json";
     */    // Start is called before the first frame update
     void Start()

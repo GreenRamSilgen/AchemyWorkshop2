@@ -2596,6 +2596,7 @@ MonoBehaviour:
   RecipePanelTransform: {fileID: 303893528}
   crafts: 0
   StageCycle: {fileID: 1161024209}
+  BarChart: {fileID: 902576626}
 --- !u!1 &842050745
 GameObject:
   m_ObjectHideFlags: 0
@@ -2629,7 +2630,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0.0000192523}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!1 &857474667
@@ -3059,7 +3060,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   barPreFab: {fileID: 5367333724122357508, guid: 9038e0c1bad65d44988bcefddec28851,
     type: 3}
-  inputValues: 14000000190000000f0000000a00000001000000
+  inputValues: 0000000000000000000000000000000000000000
   labels:
   - t1
   - t2

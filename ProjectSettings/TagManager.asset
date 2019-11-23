@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Resourcer
   - RGResourcer
+  - BarTag
   layers:
   - Default
   - TransparentFX
