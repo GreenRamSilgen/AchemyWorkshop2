@@ -88,6 +88,15 @@ public class CraftingController : MonoBehaviour
     void Update()
     {
         int myID = Slots[0].materialID;
+        if (Input.GetKeyDown(KeyCode.F))
+        { 
+            Debug.Log(Slots[0].materialID);
+            Debug.Log(Slots[1].materialID);
+            Debug.Log(Slots[2].materialID);
+            BarChart.updateBarGraph(Slots[0].materialID, Slots[1].materialID, Slots[2].materialID);
+
+        }
+        
     }
     public int GetMaterial()
     {
@@ -355,6 +364,7 @@ public class CraftingController : MonoBehaviour
         slot3.ResetSlot();
         AspectPanel.ResetAspects();
         Aspects = new Dictionary<string, int>();
+        BarChart.updateBarGraph(slot1.materialID, slot2.materialID, slot3.materialID);
     }
     public Sprite GetImage(int materialID)
     {

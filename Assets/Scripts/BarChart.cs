@@ -56,11 +56,7 @@ public class BarChart : MonoBehaviour
             //bars[1].bar.color = colors[/*materialID*/10];
             Debug.Log(bars.Count);
         }
-        if (Input.GetKeyDown(KeyCode.F))
-        {
-            Destroy(bars[0].bar);
-            Debug.Log(bars.Count);
-        }
+        
     }
 
     public void updateBarGraph(int m1ID, int m2ID, int m3ID)
@@ -75,21 +71,86 @@ public class BarChart : MonoBehaviour
         resetAspects();
 
         //Material 1
-        totalAspects[MaterialList.Materials[m1ID].A1Name] += MaterialList.Materials[m1ID].A1Amt;
-        totalAspects[MaterialList.Materials[m1ID].A2Name] += MaterialList.Materials[m1ID].A2Amt;
-        totalAspects[MaterialList.Materials[m1ID].A3Name] += MaterialList.Materials[m1ID].A3Amt;
+        if (m1ID == -1)
+        {
+            if (!totalAspects.ContainsKey("NA"))
+            {
+                totalAspects.Add("NA", 0);
+            }
+            else
+            {
+                totalAspects["NA"] += 0;
+            }
+        }
+        else
+        {
+            safeAdd(m1ID);
+        }
 
         //Material 2
-        totalAspects[MaterialList.Materials[m2ID].A1Name] += MaterialList.Materials[m2ID].A1Amt;
-        totalAspects[MaterialList.Materials[m2ID].A2Name] += MaterialList.Materials[m2ID].A2Amt;
-        totalAspects[MaterialList.Materials[m2ID].A3Name] += MaterialList.Materials[m2ID].A3Amt;
+        if (m2ID == -1)
+        {
+            if (!totalAspects.ContainsKey("NA"))
+            {
+                totalAspects.Add("NA", 0);
+            }
+            else
+            {
+                totalAspects["NA"] += 0;
+            }
+        }
+        else
+        {
+            safeAdd(m2ID);
+        }
 
         //Material 3
-        totalAspects[MaterialList.Materials[m3ID].A1Name] += MaterialList.Materials[m3ID].A1Amt;
-        totalAspects[MaterialList.Materials[m3ID].A2Name] += MaterialList.Materials[m3ID].A2Amt;
-        totalAspects[MaterialList.Materials[m3ID].A3Name] += MaterialList.Materials[m3ID].A3Amt;
+        if (m3ID == -1)
+        {
+            if (!totalAspects.ContainsKey("NA"))
+            {
+                totalAspects.Add("NA", 0);
+            }
+            else
+            {
+                totalAspects["NA"] += 0;
+            }
+        }
+        else
+        {
+            safeAdd(m3ID);
+        }
     }
 
+    void safeAdd(int m1ID)
+    {
+        if (!totalAspects.ContainsKey(MaterialList.Materials[m1ID].A1Name))
+        {
+            totalAspects.Add(MaterialList.Materials[m1ID].A1Name, MaterialList.Materials[m1ID].A1Amt);
+        }
+        else
+        {
+            totalAspects[MaterialList.Materials[m1ID].A1Name] += MaterialList.Materials[m1ID].A1Amt;
+        }
+        //ASPECT 2
+        if (!totalAspects.ContainsKey(MaterialList.Materials[m1ID].A2Name))
+        {
+            totalAspects.Add(MaterialList.Materials[m1ID].A2Name, MaterialList.Materials[m1ID].A2Amt);
+        }
+        else
+        {
+            totalAspects[MaterialList.Materials[m1ID].A2Name] += MaterialList.Materials[m1ID].A2Amt;
+        }
+        //ASPECT 3
+        if (!totalAspects.ContainsKey(MaterialList.Materials[m1ID].A3Name))
+        {
+            totalAspects.Add(MaterialList.Materials[m1ID].A3Name, MaterialList.Materials[m1ID].A3Amt);
+        }
+        else
+        {
+            totalAspects[MaterialList.Materials[m1ID].A3Name] += MaterialList.Materials[m1ID].A3Amt;
+        }
+    }
 
     void updateTopFive()
     {
@@ -118,7 +179,7 @@ public class BarChart : MonoBehaviour
         {
             //Change the bar height HERERERE
             RectTransform rt = bars[i].bar.GetComponent<RectTransform>();
-            float normalizedValue = (float)myEnumerator.Value/ (float)25;
+            float normalizedValue = (float)System.Convert.ToInt32(myEnumerator.Value.ToString())/ (float)25;
             rt.sizeDelta = new Vector2(rt.sizeDelta.x, (chartHeight / 7) * normalizedValue);
 
             //Change the bar label HEREREE.
