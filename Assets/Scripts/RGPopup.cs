@@ -81,14 +81,17 @@ public class RGPopup : MonoBehaviour
         if(unit == 1) {
             Unit1++;
             Global.gold -= 10;
+            FindObjectOfType<AudioManager>().Play("Buy");
         }
         else if(unit == 2) {
             Unit2++;
             Global.gold -= 100;
+            FindObjectOfType<AudioManager>().Play("Buy");
         }
         else if(unit == 3) {
             Unit3++;
             Global.gold -= 500;
+            FindObjectOfType<AudioManager>().Play("Buy");
         }
 
         if(Global.gold < 0) {
@@ -102,16 +105,19 @@ public class RGPopup : MonoBehaviour
         {
             Unit1--;
             Global.gold += 10;
+            FindObjectOfType<AudioManager>().Play("Sell");
         }
         else if (unit == 2 && Unit2 > 0)
         {
             Unit2--;
             Global.gold += 100;
+            FindObjectOfType<AudioManager>().Play("Sell");
         }
         else if (unit == 3 && Unit3 > 0)
         {
             Unit3--;
             Global.gold += 500;
+            FindObjectOfType<AudioManager>().Play("Sell");
         }
 
         if(Global.gold >= 0) {
