@@ -274,7 +274,7 @@ public class CraftingController : MonoBehaviour
                     {
                         if(i == 3)
                         {
-                            StageCycle.FadeToStage(8);
+                            StageCycle.FadeToStage(5);//WIN
                         }
                         //we crafted the potion woohoo!!!!
                         Global.gold += RecipeList.Recipes[i].recipeValue;
@@ -296,7 +296,7 @@ public class CraftingController : MonoBehaviour
                         AddRecipe(i, recipe);
                         crafts += 1;
                         if(crafts >= NUM_OF_CRAFTS_PER_DAY){
-                            StageCycle.FadeToStage(5);
+                            StageCycle.FadeToStage(4);//TO END DAY
                         }
                     }
                 }
