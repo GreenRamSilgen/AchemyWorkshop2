@@ -27,6 +27,7 @@ public class CraftingController : MonoBehaviour
     public const int NUM_OF_CRAFTS_PER_DAY = 5;
     public StageCycle StageCycle;
     public BarChart BarChart;
+    public const int END_RECIPE_ID = 3;
     /*    private string recipesFileName = "Data/Recipes.json";
     */    // Start is called before the first frame update
     void Start()
@@ -35,6 +36,12 @@ public class CraftingController : MonoBehaviour
         Global.recipeHistory = new List<RecipeInfo>();
         Global.materialsUsed = new List<int>();
         Global.moneyMade = 0;
+        /*List<int> materialIDs = new List<int>();
+        materialIDs.Add(0);
+        materialIDs.Add(0);
+        materialIDs.Add(0);
+        RecipeInfo endRecipe = new RecipeInfo(0, END_RECIPE_ID, RecipeList.Recipes[END_RECIPE_ID].recipeName, RecipeList.Recipes[END_RECIPE_ID].recipeValue, materialIDs);
+        AddRecipe(END_RECIPE_ID, endRecipe);*/
         TextAsset asset = Resources.Load("Materials") as TextAsset;
         if (asset != null)
         {
@@ -88,19 +95,19 @@ public class CraftingController : MonoBehaviour
         BarChart.updateBarGraph(Slots[0].materialID, Slots[1].materialID, Slots[2].materialID);
     }
 
-    /*void Update()
+    void Update()
     {
         int myID = Slots[0].materialID;
         if (Input.GetKeyDown(KeyCode.F))
-        { 
-            Debug.Log("mat1 ID:"+Slots[0].materialID);
+        {
+            Debug.Log("mat1 ID:" + Slots[0].materialID);
             Debug.Log("mat2 ID:" + Slots[1].materialID);
             Debug.Log("mat3 ID:" + Slots[2].materialID);
             BarChart.updateBarGraph(Slots[0].materialID, Slots[1].materialID, Slots[2].materialID);
 
         }
-        
-    }*/
+
+    }
     public int GetMaterial()
     {
         return (materialSelected);
@@ -280,7 +287,7 @@ public class CraftingController : MonoBehaviour
                         && Aspects[RecipeList.Recipes[i].subAspect2Name] >= RecipeList.Recipes[i].subAspect2Min
                         && Aspects[RecipeList.Recipes[i].subAspect2Name] <= RecipeList.Recipes[i].subAspect2Max)
                     {
-                        if(i == 3)
+                        if(i == END_RECIPE_ID)
                         {
                             StageCycle.FadeToStage(8);
                         }
