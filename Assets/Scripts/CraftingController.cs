@@ -34,6 +34,7 @@ public class CraftingController : MonoBehaviour
         materials = Global.materials;
         Global.recipeHistory = new List<RecipeInfo>();
         Global.materialsUsed = new List<int>();
+        Global.moneyMade = 0;
         TextAsset asset = Resources.Load("Materials") as TextAsset;
         if (asset != null)
         {
@@ -283,6 +284,7 @@ public class CraftingController : MonoBehaviour
                         }
                         //we crafted the potion woohoo!!!!
                         Global.gold += RecipeList.Recipes[i].recipeValue;
+                        Global.moneyMade += RecipeList.Recipes[i].recipeValue;
                         List<int> materialIDs = new List<int>();
                         materialIDs.Add(slot1.materialID);
                         materialIDs.Add(slot2.materialID);
