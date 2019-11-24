@@ -26,6 +26,7 @@ public class CraftingController : MonoBehaviour
     public int crafts = 0;
     public const int NUM_OF_CRAFTS_PER_DAY = 5;
     public StageCycle StageCycle;
+    public BarChart BarChart;
     /*    private string recipesFileName = "Data/Recipes.json";
     */    // Start is called before the first frame update
     void Start()
@@ -82,11 +83,22 @@ public class CraftingController : MonoBehaviour
         slot2.id = 1;
         Slots.Add(2, slot3);
         slot3.id = 2;
+
+        BarChart.updateBarGraph(Slots[0].materialID, Slots[1].materialID, Slots[2].materialID);
     }
 
     void Update()
     {
         int myID = Slots[0].materialID;
+        if (Input.GetKeyDown(KeyCode.F))
+        { 
+            Debug.Log("mat1 ID:"+Slots[0].materialID);
+            Debug.Log("mat2 ID:" + Slots[1].materialID);
+            Debug.Log("mat3 ID:" + Slots[2].materialID);
+            BarChart.updateBarGraph(Slots[0].materialID, Slots[1].materialID, Slots[2].materialID);
+
+        }
+        
     }
     public int GetMaterial()
     {
@@ -358,6 +370,7 @@ public class CraftingController : MonoBehaviour
         slot3.ResetSlot();
         AspectPanel.ResetAspects();
         Aspects = new Dictionary<string, int>();
+        BarChart.updateBarGraph(slot1.materialID, slot2.materialID, slot3.materialID);
     }
     public Sprite GetImage(int materialID)
     {
