@@ -28,6 +28,7 @@ public class CraftingController : MonoBehaviour
     public StageCycle StageCycle;
     public BarChart BarChart;
     public const int END_RECIPE_ID = 3;
+    public Object[] sprites;
     /*    private string recipesFileName = "Data/Recipes.json";
     */    // Start is called before the first frame update
     void Start()
@@ -36,13 +37,8 @@ public class CraftingController : MonoBehaviour
         Global.recipeHistory = new List<RecipeInfo>();
         Global.materialsUsed = new List<int>();
         Global.moneyMade = 0;
-        /*List<int> materialIDs = new List<int>();
-        materialIDs.Add(0);
-        materialIDs.Add(0);
-        materialIDs.Add(0);
-        RecipeInfo endRecipe = new RecipeInfo(0, END_RECIPE_ID, RecipeList.Recipes[END_RECIPE_ID].recipeName, RecipeList.Recipes[END_RECIPE_ID].recipeValue, materialIDs);
-        AddRecipe(END_RECIPE_ID, endRecipe);*/
         TextAsset asset = Resources.Load("Materials") as TextAsset;
+        sprites = Resources.LoadAll("Sprites/Materials");
         if (asset != null)
         {
             //Debug.Log(jsonString);
@@ -93,6 +89,13 @@ public class CraftingController : MonoBehaviour
         slot3.id = 2;
 
         BarChart.updateBarGraph(Slots[0].materialID, Slots[1].materialID, Slots[2].materialID);
+        List<int> materialIDs = new List<int>();
+        materialIDs.Add(6);
+        materialIDs.Add(15);
+        materialIDs.Add(26);
+        RecipeInfo endRecipe = new RecipeInfo(0, END_RECIPE_ID, RecipeList.Recipes[END_RECIPE_ID].recipeName, RecipeList.Recipes[END_RECIPE_ID].recipeValue, materialIDs);
+        AddRecipe(END_RECIPE_ID, endRecipe);
+
     }
 
     void Update()
@@ -390,6 +393,11 @@ public class CraftingController : MonoBehaviour
         {
             return Resources.Load<Sprite>("Art/NA");
         }
-        return Resources.Load<Sprite>("Art/" + MaterialList.Materials[materialID].imageName);
+        /*Debug.Log("Art/" + MaterialList.Materials[materialID].imageName);
+        Debug.Log(Resources.Load<Sprite>("Sprites/" + MaterialList.Materials[materialID].imageName));
+        return Resources.Load<Sprite>("Sprites/" + MaterialList.Materials[materialID].imageName);
+        */
+        /*Debug.Log(sprites.Length);*/
+        return (Sprite) sprites[materialID+1];
     }
 }
