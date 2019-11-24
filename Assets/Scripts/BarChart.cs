@@ -9,21 +9,13 @@ public class BarChart : MonoBehaviour
     private readonly int maxValue = 25;
     /*CUSTOMIZE BARS HERE*/
 
-    /*
-	CraftingController assist week 8 meeting
-        Call BarChart.blankGraph() upon “Craft”
-        Call BarChart.updateBarGraph(mat1ID,mat2ID,mat3ID) upon slot update
-
-     */
-
-
 
     //Material Pulling
     private MaterialList MaterialList = new MaterialList(); //Create ItemList object
     GameObject materialsGetter; //create gameobject
     private SortedDictionary<string, int> totalAspects = new SortedDictionary<string, int>();
     private SortedDictionary<string, int> topFiveAspects = new SortedDictionary<string, int>();
-
+    private Dictionary<string, int> colorWheel = new Dictionary<string, int>();
     //Bar 
     public Bar barPreFab;
     public int[] inputValues;
@@ -42,26 +34,11 @@ public class BarChart : MonoBehaviour
         //Bar
         chartHeight = Screen.height - GetComponent<RectTransform>().sizeDelta.y;
         MakeBars(inputValues);
+        colorWheelSetup();
     }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.G))
-        {
-            //Change the bar height HERERERE
-            RectTransform rt = bars[1].bar.GetComponent<RectTransform>();
-            float normalizedValue = (float)10/*NEWVALUE HERERER in pace of 10*/ / (float)25;
-            rt.sizeDelta = new Vector2(rt.sizeDelta.x, (chartHeight / 7) * normalizedValue);
-
-            //Change the bar label HEREREE.
-            bars[1].label.text = "NewTxt";
-            //Change the bar Value
-            bars[1].barValue.text = "10";
-
-            //Change the bar Color
-            //bars[1].bar.color = colors[/*materialID*/10];
-            Debug.Log(bars.Count);
-        }
         
     }
 
@@ -127,8 +104,6 @@ public class BarChart : MonoBehaviour
             else
             {
                 totalAspects["NA"] += 0;
-                Debug.Log(totalAspects.Count);
-                Debug.Log(totalAspects.ContainsKey("NA"));
             }
         }
         else
@@ -199,8 +174,13 @@ public class BarChart : MonoBehaviour
 
             //Change the bar label HEREREE.
             bars[i].label.text = myEnumerator.Key.ToString();
+            
             //Change the bar Value
             bars[i].barValue.text = myEnumerator.Value.ToString();
+            //Change the bar Color
+            bars[i].bar.color = colors[colorWheel[myEnumerator.Key.ToString()]];
+            bars[i].label.color = colors[colorWheel[myEnumerator.Key.ToString()]];
+            
             i++;
         }
     }
@@ -215,6 +195,8 @@ public class BarChart : MonoBehaviour
 
             //Change the bar label HEREREE.
             bars[i].label.text = "NA";
+            //Change bar label color back to white.
+            bars[i].label.color = colors[colorWheel["NA"]];
             //Change the bar Value
             bars[i].barValue.text = "0";
         }
@@ -275,6 +257,35 @@ public class BarChart : MonoBehaviour
     void resetTopFiveAspects()
     {
         topFiveAspects.Clear();
+    }
+
+    void colorWheelSetup()
+    {
+        colorWheel.Add("Aqua", 0);
+        colorWheel.Add("Arbor", 1);
+        colorWheel.Add("Bestia", 2);
+        colorWheel.Add("Examinus", 3);
+        colorWheel.Add("Fames", 4);
+        colorWheel.Add("Gelum", 5);
+        colorWheel.Add("Herba", 6);
+        colorWheel.Add("Ignis", 7);
+        colorWheel.Add("Instramentum", 8);
+        colorWheel.Add("Lucrum", 9);
+        colorWheel.Add("Lux", 10);
+        colorWheel.Add("Mortus", 11);
+        colorWheel.Add("Potentia", 12);
+        colorWheel.Add("Praecantatio", 13);
+        colorWheel.Add("Telum", 14);
+        colorWheel.Add("Tenebrae", 15);
+        colorWheel.Add("Terra", 16);
+        colorWheel.Add("Tutamen", 17);
+        colorWheel.Add("Venenum", 18);
+        colorWheel.Add("Victus", 19);
+        colorWheel.Add("Vinculum", 20);
+        colorWheel.Add("Vitreus", 21);
+        colorWheel.Add("Voltus", 22);
+        colorWheel.Add("NA", 23);
+        colorWheel.Add("na", 23);
     }
 }
 

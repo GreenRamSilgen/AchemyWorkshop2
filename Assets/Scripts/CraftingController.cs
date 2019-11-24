@@ -83,6 +83,8 @@ public class CraftingController : MonoBehaviour
         slot2.id = 1;
         Slots.Add(2, slot3);
         slot3.id = 2;
+
+        BarChart.updateBarGraph(Slots[0].materialID, Slots[1].materialID, Slots[2].materialID);
     }
 
     void Update()
@@ -90,9 +92,9 @@ public class CraftingController : MonoBehaviour
         int myID = Slots[0].materialID;
         if (Input.GetKeyDown(KeyCode.F))
         { 
-            Debug.Log(Slots[0].materialID);
-            Debug.Log(Slots[1].materialID);
-            Debug.Log(Slots[2].materialID);
+            Debug.Log("mat1 ID:"+Slots[0].materialID);
+            Debug.Log("mat2 ID:" + Slots[1].materialID);
+            Debug.Log("mat3 ID:" + Slots[2].materialID);
             BarChart.updateBarGraph(Slots[0].materialID, Slots[1].materialID, Slots[2].materialID);
 
         }
