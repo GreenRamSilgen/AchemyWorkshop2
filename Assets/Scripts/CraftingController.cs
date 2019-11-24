@@ -88,7 +88,7 @@ public class CraftingController : MonoBehaviour
         BarChart.updateBarGraph(Slots[0].materialID, Slots[1].materialID, Slots[2].materialID);
     }
 
-    void Update()
+    /*void Update()
     {
         int myID = Slots[0].materialID;
         if (Input.GetKeyDown(KeyCode.F))
@@ -100,7 +100,7 @@ public class CraftingController : MonoBehaviour
 
         }
         
-    }
+    }*/
     public int GetMaterial()
     {
         return (materialSelected);
@@ -137,6 +137,7 @@ public class CraftingController : MonoBehaviour
             }
             materials[materialID] += 1;
         }
+        BarChart.updateBarGraph(slot1.materialID, slot2.materialID, slot3.materialID);
     }
     public void RemoveMaterial(int materialID)
     {
@@ -159,6 +160,7 @@ public class CraftingController : MonoBehaviour
                 }
             }
         }
+        BarChart.updateBarGraph(slot1.materialID, slot2.materialID, slot3.materialID);
     }
     public void SlotMaterial(int newID, int oldID)
     {
@@ -353,6 +355,7 @@ public class CraftingController : MonoBehaviour
                 Slots[i].ResetSlot();
             }
         }
+        BarChart.updateBarGraph(slot1.materialID, slot2.materialID, slot3.materialID);
     }
     public void EmptySlots()
     {
