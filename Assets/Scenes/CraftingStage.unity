@@ -2597,6 +2597,7 @@ MonoBehaviour:
   crafts: 0
   StageCycle: {fileID: 1161024209}
   BarChart: {fileID: 902576626}
+  sprites: []
 --- !u!1 &842050745
 GameObject:
   m_ObjectHideFlags: 0
@@ -3788,8 +3789,8 @@ MonoBehaviour:
   material1: {fileID: 1731266449}
   material2: {fileID: 803834841}
   material3: {fileID: 1023226160}
-  recipenName: {fileID: 0}
-  recipeValue: {fileID: 0}
+  recipeName: {fileID: 367305476}
+  recipeValue: {fileID: 88450065}
 --- !u!114 &1405190326
 MonoBehaviour:
   m_ObjectHideFlags: 0
