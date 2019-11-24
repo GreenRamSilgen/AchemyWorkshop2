@@ -196,7 +196,6 @@ public class BarChart : MonoBehaviour
             //Change the bar label HEREREE.
             bars[i].label.text = "NA";
             //Change bar label color back to white.
-            Debug.Log(colorWheel["NA"]);
             bars[i].label.color = colors[colorWheel["NA"]];
             //Change the bar Value
             bars[i].barValue.text = "0";

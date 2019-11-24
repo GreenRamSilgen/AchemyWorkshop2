@@ -95,7 +95,7 @@ public class CraftingController : MonoBehaviour
         BarChart.updateBarGraph(Slots[0].materialID, Slots[1].materialID, Slots[2].materialID);
     }
 
-    void Update()
+    /*void Update()
     {
         int myID = Slots[0].materialID;
         if (Input.GetKeyDown(KeyCode.F))
@@ -107,7 +107,7 @@ public class CraftingController : MonoBehaviour
 
         }
 
-    }
+    }*/
     public int GetMaterial()
     {
         return (materialSelected);
