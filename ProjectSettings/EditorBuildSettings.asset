@@ -29,6 +29,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/InfoTranferTest.unity
     guid: 3cfc520be1e6f3c41a97035f383a1eec
+  - enabled: 1
+    path: Assets/Scenes/WinGame.unity
+    guid: dcf6eae9eb86d5d498cedf01ab9fcd0c
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000

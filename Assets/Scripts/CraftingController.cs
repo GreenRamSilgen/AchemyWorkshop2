@@ -265,6 +265,10 @@ public class CraftingController : MonoBehaviour
                         && Aspects[RecipeList.Recipes[i].subAspect2Name] >= RecipeList.Recipes[i].subAspect2Min
                         && Aspects[RecipeList.Recipes[i].subAspect2Name] <= RecipeList.Recipes[i].subAspect2Max)
                     {
+                        if(i == 3)
+                        {
+                            StageCycle.FadeToStage(8);
+                        }
                         //we crafted the potion woohoo!!!!
                         Global.gold += RecipeList.Recipes[i].recipeValue;
                         List<int> materialIDs = new List<int>();
