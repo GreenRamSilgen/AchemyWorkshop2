@@ -56,7 +56,7 @@ public class RGPopup : MonoBehaviour
         switch(location)
         {
             case "dungeon":
-                Global.gatherers["Adventurers"] = Unit1;
+                Global.gatherers["Adventurer"] = Unit1;
                 Global.gatherers["Veteran"] = Unit2;
                 Global.gatherers["Hero"] = Unit3;
                 Debug.Log("dungeon works");

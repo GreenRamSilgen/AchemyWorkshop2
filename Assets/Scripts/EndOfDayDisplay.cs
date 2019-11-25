@@ -1,18 +1,20 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 
 public class EndOfDayDisplay : MonoBehaviour
 {
-    public Text ledger;
+    public Ledger ledger;
     public Text day;
 
     // Use this for initialization
     void Start()
     {
         day.text = "End of Day " + Global.day;
-        ledger.text = "       LEDGER:\n\nHiring Cost:  - " + calcHireCost() + "\n\n" + "Rent:            - 50\n\n" + "Potions:       + "
-                        +"---------------------\nTotal:          ";
+        
+                        //+"---------------------\nTotal:          ";
         
 
     }
@@ -20,17 +22,21 @@ public class EndOfDayDisplay : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-
+        if(Input.GetKeyDown(KeyCode.P))
+        {
+            //ledger.cost.text = "YO";
+            ledger.cost.text = "Hiring Cost:  - " + calcHireCost() + "\n\n" + "Rent:            - 50\n\n" + "Potions:       + ";
+        }
     }
 
     int calcHireCost() // calculate the hiring costs based on that day
     {
+        IDictionaryEnumerator myEnum = Global.gatherers.GetEnumerator();
         int count = 0;
-        foreach (KeyValuePair<string, int> kv in Global.gathererCost)
+        while(myEnum.MoveNext())
         {
-           
-            count += Global.gatherers[kv.Key] * kv.Value;
+            Debug.Log(myEnum.Key.ToString());
+            count += Global.gathererCost[myEnum.Key.ToString()] * System.Convert.ToInt32(myEnum.Value.ToString());
           
 
         }
