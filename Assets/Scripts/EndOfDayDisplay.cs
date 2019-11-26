@@ -6,16 +6,15 @@ using System.Linq;
 
 public class EndOfDayDisplay : MonoBehaviour
 {
-    public Ledger ledger;
-    public Text day;
+
+    public Text ledger;
 
     // Use this for initialization
     void Start()
     {
-        day.text = "End of Day " + Global.day;
-        
-                        //+"---------------------\nTotal:          ";
-        
+    
+        ledger.text = "       LEDGER:\n\nHiring Cost:  - " + calcHireCost() + "\n\n" + "Rent:            - 50\n\n" + "Potions:       + "
+                        +"---------------------\nTotal:          ";
 
     }
 
