@@ -64,7 +64,7 @@ public static class Global
     public static List<int> materialsUsed = new List<int>();
     public static List<int> FoundMaterials = new List<int>(){19, 21};
     public static int moneyMade = 0;
-    public static IDictionary<string, int> gatherers = new Dictionary<string, int>()
+    public static Dictionary<string, int> gatherers = new Dictionary<string, int>()
     {
         //Dungeon Gatherers
         ["Adventurer"] = 0,
@@ -82,7 +82,7 @@ public static class Global
         ["Black Marketeer"] = 0,
     };
 
-    public static IDictionary<string, int> gathererCost = new Dictionary<string, int>()
+    public static Dictionary<string, int> gathererCost = new Dictionary<string, int>()
     {
         ["Adventurer"] = 10,
         ["Veteran"] = 100,

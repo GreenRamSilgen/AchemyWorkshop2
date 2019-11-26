@@ -21,6 +21,7 @@ public class BarChart : MonoBehaviour
     public int[] inputValues;
     public string[] labels;
     public Color[] colors;
+    public TextLog TextLog;
     List<Bar> bars = new List<Bar>();
 
     float chartHeight;
@@ -158,6 +159,11 @@ public class BarChart : MonoBehaviour
             {
                 totalAspects.Remove(totalAspects.Aggregate((x, y) => x.Value > y.Value ? x : y).Key);
             }
+        }
+
+        if(i == 5 && totalAspects.Count != 0)
+        {
+            TextLog.SetText(totalAspects);
         }
     }
 
