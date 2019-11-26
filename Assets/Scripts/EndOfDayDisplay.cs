@@ -5,12 +5,12 @@ using System.Collections.Generic;
 public class EndOfDayDisplay : MonoBehaviour
 {
     public Text ledger;
-    public Text day;
+
 
     // Use this for initialization
     void Start()
     {
-        day.text = "End of Day " + Global.day;
+    
         ledger.text = "       LEDGER:\n\nHiring Cost:  - " + calcHireCost() + "\n\n" + "Rent:            - 50\n\n" + "Potions:       + "
                         +"---------------------\nTotal:          ";
         
