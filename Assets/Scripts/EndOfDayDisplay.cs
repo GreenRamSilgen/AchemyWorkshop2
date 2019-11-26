@@ -7,13 +7,13 @@ using System.Linq;
 public class EndOfDayDisplay : MonoBehaviour
 {
 
-    public Text ledger;
+    public Ledger ledger;
 
     // Use this for initialization
     void Start()
     {
     
-        ledger.text = "       LEDGER:\n\nHiring Cost:  - " + calcHireCost() + "\n\n" + "Rent:            - 50\n\n" + "Potions:       + "
+        ledger.cost.text = "       LEDGER:\n\nHiring Cost:  - " + calcHireCost() + "\n\n" + "Rent:            - 50\n\n" + "Potions:       + "
                         +"---------------------\nTotal:          ";
 
     }
