@@ -56,7 +56,7 @@ public class RGPopup : MonoBehaviour
         switch(location)
         {
             case "dungeon":
-                Global.gatherers["Adventurers"] = Unit1;
+                Global.gatherers["Adventurer"] = Unit1;
                 Global.gatherers["Veteran"] = Unit2;
                 Global.gatherers["Hero"] = Unit3;
                 Debug.Log("dungeon works");
@@ -81,17 +81,17 @@ public class RGPopup : MonoBehaviour
         if(unit == 1) {
             Unit1++;
             Global.gold -= 10;
-            FindObjectOfType<AudioManager>().Play("Buy");
+            FindObjectOfType<AudioManager>().Play(0);
         }
         else if(unit == 2) {
             Unit2++;
             Global.gold -= 100;
-            FindObjectOfType<AudioManager>().Play("Buy");
+            FindObjectOfType<AudioManager>().Play(0);
         }
         else if(unit == 3) {
             Unit3++;
             Global.gold -= 500;
-            FindObjectOfType<AudioManager>().Play("Buy");
+            FindObjectOfType<AudioManager>().Play(0);
         }
 
         if(Global.gold < 0) {
@@ -105,19 +105,19 @@ public class RGPopup : MonoBehaviour
         {
             Unit1--;
             Global.gold += 10;
-            FindObjectOfType<AudioManager>().Play("Sell");
+            FindObjectOfType<AudioManager>().Play(1);
         }
         else if (unit == 2 && Unit2 > 0)
         {
             Unit2--;
             Global.gold += 100;
-            FindObjectOfType<AudioManager>().Play("Sell");
+            FindObjectOfType<AudioManager>().Play(1);
         }
         else if (unit == 3 && Unit3 > 0)
         {
             Unit3--;
             Global.gold += 500;
-            FindObjectOfType<AudioManager>().Play("Sell");
+            FindObjectOfType<AudioManager>().Play(1);
         }
 
         if(Global.gold >= 0) {

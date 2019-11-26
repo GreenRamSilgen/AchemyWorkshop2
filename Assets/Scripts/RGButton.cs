@@ -28,6 +28,7 @@ public class RGButton : MonoBehaviour
     }
 
     public void CloseCanvases() {
+        FindObjectOfType<AudioManager>().Play(2);
         CaveCanvas.SetActive(false);
         ForestCanvas.SetActive(false);
         TownCanvas.SetActive(false);
@@ -39,6 +40,7 @@ public class RGButton : MonoBehaviour
             CaveCanvas.SetActive(true);
             DimCanvas.SetActive(true);
         }
+        FindObjectOfType<AudioManager>().Play(2);
 
     }
 
@@ -49,6 +51,7 @@ public class RGButton : MonoBehaviour
             ForestCanvas.SetActive(true);
             DimCanvas.SetActive(true);
         }
+        FindObjectOfType<AudioManager>().Play(2);
 
     }
 
@@ -59,6 +62,7 @@ public class RGButton : MonoBehaviour
             TownCanvas.SetActive(true);
             DimCanvas.SetActive(true);
         }
+        FindObjectOfType<AudioManager>().Play(2);
 
     }
 }
