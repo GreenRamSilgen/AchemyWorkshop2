@@ -24,7 +24,7 @@ public class EndOfDayDisplay : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.P))
         {
             //ledger.cost.text = "YO";
-            ledger.text = "Hiring Cost:  - " + calcHireCost() + "\n\n" + "Rent:            - 50\n\n" + "Potions:       + ";
+            ledger.cost.text = "Hiring Cost:  - " + calcHireCost() + "\n\n" + "Rent:            - 50\n\n" + "Potions:       + ";
         }
     }
 
