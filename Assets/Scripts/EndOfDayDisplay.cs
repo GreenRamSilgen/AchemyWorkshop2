@@ -12,9 +12,6 @@ public class EndOfDayDisplay : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-    
-        ledger.cost.text = "       LEDGER:\n\nHiring Cost:  - " + calcHireCost() + "\n\n" + "Rent:            - 50\n\n" + "Potions:       + "
-                        +"---------------------\nTotal:          ";
 
     }
 

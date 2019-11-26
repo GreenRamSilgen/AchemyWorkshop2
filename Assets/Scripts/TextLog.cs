@@ -57,4 +57,12 @@ public class TextLog : MonoBehaviour
             residuals.Add(newResidual);
         }
     }
+
+    public void emptyResiduals()
+    {
+        for(int i = 0; i < residuals.Count; i++)
+        {
+            residuals[i].residual.text = "NA : 0";
+        }
+    }
 }

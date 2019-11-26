@@ -49,6 +49,7 @@ public class BarChart : MonoBehaviour
         if (totalAspects.Count == 1 && totalAspects.ContainsKey("NA"))
         {
             blankGraph();
+            TextLog.emptyResiduals();
         }
         else
         {
