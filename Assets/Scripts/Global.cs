@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 
 
@@ -100,6 +101,6 @@ public static class Global
 
     };
     
-
+    public static Random rand = new Random();
 
 }

@@ -14,7 +14,10 @@ public class RGButton : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        CloseCanvases();
+        CaveCanvas.SetActive(false);
+        ForestCanvas.SetActive(false);
+        TownCanvas.SetActive(false);
+        DimCanvas.SetActive(false);
     }
 
     // Update is called once per frame
