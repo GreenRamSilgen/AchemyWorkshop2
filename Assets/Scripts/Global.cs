@@ -64,6 +64,7 @@ public static class Global
     public static List<RecipeInfo> recipeHistory = new List<RecipeInfo>();
     public static List<int> materialsUsed = new List<int>();
     public static List<int> FoundMaterials = new List<int>(){19, 21};
+    public static List<string> potionsCrafted = new List<string>();
     public static int moneyMade = 0;
     public static Dictionary<string, int> gatherers = new Dictionary<string, int>()
     {

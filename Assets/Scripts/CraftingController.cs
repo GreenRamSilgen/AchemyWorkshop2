@@ -214,7 +214,7 @@ public class CraftingController : MonoBehaviour
             }
         }
         
-        Debug.Log(Aspects.Count);
+
     }
     
     public void RemoveAspect(int materialID)
@@ -304,9 +304,6 @@ public class CraftingController : MonoBehaviour
                             if(materialIDs[j] > -1)
                             {
                                 Global.materialsUsed.Add(materialIDs[j]);
-                                Debug.Log("Global.materialsUsed[0] =  " + Global.materialsUsed[0]);
-                                Debug.Log("materialIDs[j]= "+ materialIDs[j]);
-                                Debug.Log("j = " + j);
                             }
                         }
 
