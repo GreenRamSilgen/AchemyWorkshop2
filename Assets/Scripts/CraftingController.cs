@@ -171,6 +171,8 @@ public class CraftingController : MonoBehaviour
         RemoveAspect(oldID);
         RemoveMaterial(newID);
         AddAspect(newID);
+        FindObjectOfType<AudioManager>().Play(Global.rand.Next(2, 7));
+
     }
     public void AddAspect(int materialID)
     {
@@ -288,6 +290,7 @@ public class CraftingController : MonoBehaviour
                             StageCycle.FadeToStage(5);//WIN
                         }
                         //we crafted the potion woohoo!!!!
+                        craftedPotion = true;
                         Global.gold += RecipeList.Recipes[i].recipeValue;
                         Global.moneyMade += RecipeList.Recipes[i].recipeValue;
                         List<int> materialIDs = new List<int>();
@@ -313,7 +316,15 @@ public class CraftingController : MonoBehaviour
                 }
             }
             EmptySlots();
-            //also, once inventory is implemented, remove items from the inventory
+            if (!craftedPotion)
+            {
+                FindObjectOfType<AudioManager>().Play(0);
+            }
+            else
+            {
+                FindObjectOfType<AudioManager>().Play(1);
+
+            }
         }
         else
         {

@@ -33,13 +33,19 @@ public class RecipeObject : MonoBehaviour
     public void OnPointerEnter(PointerEventData eventData)
     {
         animator.SetTrigger("RecipeInfo");
+        FindObjectOfType<AudioManager>().Play(Global.rand.Next(7, 15));
+
     }
     public void OnPointerExit(PointerEventData eventData)
     {
         animator.SetTrigger("RecipeInfo");
+        FindObjectOfType<AudioManager>().Play(Global.rand.Next(7, 15));
+
     }
     public void OnPointerClick(PointerEventData eventData)
     {
         CraftingController.SlotMaterials(materialIDs);
+        FindObjectOfType<AudioManager>().Play(Global.rand.Next(15, 17));
+
     }
 }
