@@ -8,20 +8,25 @@ public class EndOfDayDisplay : MonoBehaviour
 {
 
     public Ledger ledger;
-
+    private int hireCost = 0;
+    private int total = 0;
     // Use this for initialization
     void Start()
     {
-
+        hireCost = calcHireCost();
+        total = Global.moneyMade - 50 - hireCost;
+        matUsed();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.P))
+        ledger.cost.text = "Hiring Cost \n-" + hireCost + "\n" + "Rent\n-50 \n" + "Potions Profit\n+" + Global.moneyMade + "\nNet Total: " + total;
+
+        if (Input.GetKeyDown(KeyCode.P))
         {
             //ledger.cost.text = "YO";
-            ledger.cost.text = "Hiring Cost:  - " + calcHireCost() + "\n\n" + "Rent:            - 50\n\n" + "Potions:       + ";
+            ledger.cost.text = "Hiring Cost: -" + calcHireCost() + "\n" + "Rent:- 50 \n" + "Potions Profit: +" + Global.moneyMade;
         }
     }
 
@@ -31,14 +36,12 @@ public class EndOfDayDisplay : MonoBehaviour
         int count = 0;
         while(myEnum.MoveNext())
         {
-            Debug.Log(myEnum.Key.ToString());
             count += Global.gathererCost[myEnum.Key.ToString()] * System.Convert.ToInt32(myEnum.Value.ToString());
-          
-
         }
 
         return count;
     }
+
     void printDict()//used for debugging
     {
         foreach(KeyValuePair<string, int> kv in Global.gatherers)
@@ -47,6 +50,14 @@ public class EndOfDayDisplay : MonoBehaviour
             print(Global.gatherers.ContainsKey(kv.Key));
             print(Global.gathererCost.ContainsKey(kv.Key));
             print("=======================");
+        }
+    }
+
+    void matUsed()
+    {
+        for (int i = 0; i < Global.materialsUsed.Count; i++)
+        {
+            Debug.Log(Global.materialsUsed[i]);
         }
     }
 }

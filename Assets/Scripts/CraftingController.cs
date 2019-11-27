@@ -291,8 +291,8 @@ public class CraftingController : MonoBehaviour
                         }
                         //we crafted the potion woohoo!!!!
                         craftedPotion = true;
-                        Global.gold += RecipeList.Recipes[i].recipeValue;
                         Global.moneyMade += RecipeList.Recipes[i].recipeValue;
+                        Global.gold += RecipeList.Recipes[i].recipeValue;
                         List<int> materialIDs = new List<int>();
                         materialIDs.Add(slot1.materialID);
                         materialIDs.Add(slot2.materialID);
@@ -304,6 +304,9 @@ public class CraftingController : MonoBehaviour
                             if(materialIDs[j] > -1)
                             {
                                 Global.materialsUsed.Add(materialIDs[j]);
+                                Debug.Log("Global.materialsUsed[0] =  " + Global.materialsUsed[0]);
+                                Debug.Log("materialIDs[j]= "+ materialIDs[j]);
+                                Debug.Log("j = " + j);
                             }
                         }
 
