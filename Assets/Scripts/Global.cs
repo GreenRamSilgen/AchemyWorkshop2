@@ -20,7 +20,7 @@ public static class Global
 
     // may be renamed to gold or something similar later, but this is the currency
     // amount also subject to change
-    public static int gold = 1000;
+    public static int gold = 300;
 
 
     // dictionary interface containing all the materials the player has
@@ -63,7 +63,7 @@ public static class Global
     public static List<RecipeInfo> recipes = new List<RecipeInfo>();
     public static List<RecipeInfo> recipeHistory = new List<RecipeInfo>();
     public static List<int> materialsUsed = new List<int>();
-    public static List<int> FoundMaterials = new List<int>(){19, 21};
+    public static List<int> FoundMaterials = new List<int>() { 0, 1, 2 };
     public static List<string> potionsCrafted = new List<string>();
     public static int moneyMade = 0;
     public static Dictionary<string, int> gatherers = new Dictionary<string, int>()

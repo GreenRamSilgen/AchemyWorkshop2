@@ -25,7 +25,6 @@ public class EndOfDayDisplay : MonoBehaviour
     public PotionsCreated potions;
 
     private int hireCost = 0;
-    private int total = 0;
     private int startGold = 0;
     // Use this for initialization
     void Start()
@@ -41,21 +40,18 @@ public class EndOfDayDisplay : MonoBehaviour
         potions.potText.text = "";
 
         //Ledger calc
+        startGold = Global.gold;
         hireCost = calcHireCost();
-        total = Global.moneyMade - 50 - hireCost;
-        if (total > 0)
-        {
-            startGold = Global.gold + total + 50;
-        }
-        else if (total < 0)
-        {
-            startGold = Global.gold - total - 50;
-        }
+        int netGain = Global.moneyMade - 50 - hireCost;
+        Global.gold = Global.gold + Global.moneyMade - 50 - hireCost;
         //SET Text
-        updateLedger(hireCost, total);
+        updateLedger(hireCost, netGain);
         matUsed();
         updatePotions();
         materialGain();
+
+        //update Day
+        Global.day += 1;
     }
 
     // Update is called once per frame
@@ -75,9 +71,9 @@ public class EndOfDayDisplay : MonoBehaviour
         return count;
     }
 
-    void updateLedger(int hireCost, int total)
+    void updateLedger(int hireCost, int netGain)
     {
-        ledger.cost.text = "Start Gold:" + startGold + "\nHiring Cost \n-" + hireCost + "\n" + "Rent\n-50 \n" + "Potions Profit\n+" + Global.moneyMade + "\nNet Gain: " + total + "\nTotal Gold: " + Global.gold;
+        ledger.cost.text = "Start Gold:" + startGold + "\nHiring Cost \n-" + hireCost + "\n" + "Rent\n-50 \n" + "Potions Profit\n+" + Global.moneyMade + "\nNet Gain: " + netGain + "\nTotal Gold: " + Global.gold;
     }
 
     void matUsed()
@@ -111,6 +107,7 @@ public class EndOfDayDisplay : MonoBehaviour
 
     void calcMatGain(string workerType, int location, int workerAmt)
     {
+        int matID = -1;
         int grabbedMatTier = 0;
         int grabbedMatAmt = 0;
         string loc = setLocation(location);
@@ -188,53 +185,67 @@ public class EndOfDayDisplay : MonoBehaviour
                 grabbedMatAmt = 4;
             }
             //How many to grab
-
+            
             //grabbedMatTier and grabbedMatAmt are set
             //NOW actually "grab" the materials
             if(loc.Equals("City"))
             {
                 if(grabbedMatTier == 1)
                 {
-                    Global.materials[Random.Range(0, 4)] += grabbedMatAmt;
+                    matID = Random.Range(0, 4);
+                    Global.materials[matID] += grabbedMatAmt;
                 }
                 else if(grabbedMatTier ==2)
                 {
-                    Global.materials[Random.Range(4, 7)] += grabbedMatAmt;
+                    matID = Random.Range(4, 7);
+                    Global.materials[matID] += grabbedMatAmt;
                 }
                 else
                 {
-                    Global.materials[Random.Range(7, 9)] += grabbedMatAmt;
+                    matID = Random.Range(7, 9);
+                    Global.materials[matID] += grabbedMatAmt;
                 }
             }
             else if(loc.Equals("Wilds"))
             {
                 if (grabbedMatTier == 1)
                 {
-                    Global.materials[Random.Range(9, 13)] += grabbedMatAmt;
+                    matID = Random.Range(9, 13);
+                    Global.materials[matID] += grabbedMatAmt;
                 }
                 else if (grabbedMatTier == 2)
                 {
-                    Global.materials[Random.Range(13, 16)] += grabbedMatAmt;
+                    matID = Random.Range(13, 16);
+                    Global.materials[matID] += grabbedMatAmt;
                 }
                 else
                 {
-                    Global.materials[Random.Range(16, 18)] += grabbedMatAmt;
+                    matID = Random.Range(16, 18);
+                    Global.materials[matID] += grabbedMatAmt;
                 }
             }
             else if (loc.Equals("Dungeon"))
             {
                 if (grabbedMatTier == 1)
                 {
-                    Global.materials[Random.Range(18, 22)] += grabbedMatAmt;
+                    matID = Random.Range(18, 22);
+                    Global.materials[matID] += grabbedMatAmt;
                 }
                 else if (grabbedMatTier == 2)
                 {
-                    Global.materials[Random.Range(22, 25)] += grabbedMatAmt;
+                    matID = Random.Range(22,25);
+                    Global.materials[matID] += grabbedMatAmt;
                 }
                 else
                 {
-                    Global.materials[Random.Range(25, 27)] += grabbedMatAmt;
+                    matID = Random.Range(25, 27);
+                    Global.materials[matID] += grabbedMatAmt;
                 }
+            }
+
+            if(!Global.FoundMaterials.Contains(matID))
+            {
+                Global.FoundMaterials.Add(matID);
             }
         }
 
