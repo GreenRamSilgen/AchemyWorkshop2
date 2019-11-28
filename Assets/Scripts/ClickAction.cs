@@ -13,8 +13,14 @@ public class ClickAction : MonoBehaviour
     , IPointerUpHandler*/
 {
     public int materialID = -1;
+    public GameObject materialName;
     public Vector2 startPosition;
     public CraftingController CraftingController;
+    void Start()
+    {
+        gameObject.GetComponent<Image>().sprite = CraftingController.GetImage(materialID);
+        materialName.GetComponent<Text>().text = CraftingController.GetMaterialName(materialID);
+    }/*
     void Update()
     {
         if (materialID > -1)
@@ -25,7 +31,7 @@ public class ClickAction : MonoBehaviour
         {
             gameObject.GetComponent<Image>().sprite = CraftingController.GetImage(-1);
         }
-    }
+    }*/
     public void OnBeginDrag(PointerEventData eventData)
     {
         startPosition = gameObject.transform.position;

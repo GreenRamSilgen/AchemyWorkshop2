@@ -29,6 +29,7 @@ public class CraftingController : MonoBehaviour
     public BarChart BarChart;
     public const int END_RECIPE_ID = 3;
     public Object[] sprites;
+    public Object[] potionSprites;
     /*    private string recipesFileName = "Data/Recipes.json";
     */    // Start is called before the first frame update
     void Start()
@@ -39,6 +40,7 @@ public class CraftingController : MonoBehaviour
         Global.moneyMade = 0;
         TextAsset asset = Resources.Load("Materials") as TextAsset;
         sprites = Resources.LoadAll("Sprites/Materials");
+        potionSprites = Resources.LoadAll("Sprites/potions");
         if (asset != null)
         {
             //Debug.Log(jsonString);
@@ -403,5 +405,26 @@ public class CraftingController : MonoBehaviour
         */
         /*Debug.Log(sprites.Length);*/
         return (Sprite) sprites[materialID+1];
+    }
+    public Sprite GetPotionImage(int potionID)
+    {
+/*        Debug.Log(potionID);
+        Debug.Log(potionSprites.Length);*/
+        if(potionID == -1)
+        {
+            return Resources.Load<Sprite>("Art/NA");
+        }
+        return (Sprite) potionSprites[potionID + 1];
+    }
+    public string GetMaterialName(int materialID)
+    {
+        if(materialID > -1)
+        {
+            return MaterialList.Materials[materialID].materialName;
+        }
+        else
+        {
+            return "NA";
+        }
     }
 }
