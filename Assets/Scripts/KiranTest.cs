@@ -24,4 +24,13 @@ public class KiranTest : MonoBehaviour
         testDict.Add("NA", 0);
         testDict.Add("NA", 0);
     }
+
+    void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.Z))
+        {
+            Debug.Log(Random.Range(0, 3));
+
+        }
+    }
 }

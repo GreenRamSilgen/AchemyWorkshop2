@@ -80,19 +80,6 @@
     },
     {
       "materialID": 6,
-      "materialName": "Quicksilver",
-      "materialLocation": "City",
-      "materialTier": 3,
-      "A1Name": "Lucrum ",
-      "A1Amt": 2,
-      "A2Name": "volatus",
-      "A2Amt": 2,
-      "A3Name": "Venenum",
-      "A3Amt": 2,
-      "imageName": "Materials_6"
-    },
-    {
-      "materialID": 7,
       "materialName": "Sulfur",
       "materialLocation": "City",
       "materialTier": 2,
@@ -103,6 +90,19 @@
       "A3Name": "Telum",
       "A3Amt": 2,
       "imageName": "Materials_7"
+    },
+    {
+      "materialID": 7,
+      "materialName": "Quicksilver",
+      "materialLocation": "City",
+      "materialTier": 3,
+      "A1Name": "Lucrum ",
+      "A1Amt": 2,
+      "A2Name": "volatus",
+      "A2Amt": 2,
+      "A3Name": "Venenum",
+      "A3Amt": 2,
+      "imageName": "Materials_6"
     },
     {
       "materialID": 8,
@@ -197,19 +197,6 @@
     },
     {
       "materialID": 15,
-      "materialName": "Griffon Talon",
-      "materialLocation": "Wilds",
-      "materialTier": 3,
-      "A1Name": "Telum",
-      "A1Amt": 3,
-      "A2Name": "Voltus",
-      "A2Amt": 3,
-      "A3Name": "Lucrum",
-      "A3Amt": 3,
-      "imageName": "Materials_15"
-    },
-    {
-      "materialID": 16,
       "materialName": "Owlbear Further",
       "materialLocation": "Wilds",
       "materialTier": 2,
@@ -220,6 +207,19 @@
       "A3Name": "volatus",
       "A3Amt": 2,
       "imageName": "Materials_16"
+    },
+    {
+      "materialID": 16,
+      "materialName": "Griffon Talon",
+      "materialLocation": "Wilds",
+      "materialTier": 3,
+      "A1Name": "Telum",
+      "A1Amt": 3,
+      "A2Name": "Voltus",
+      "A2Amt": 3,
+      "A3Name": "Lucrum",
+      "A3Amt": 3,
+      "imageName": "Materials_15"
     },
     {
       "materialID": 17,
@@ -314,19 +314,6 @@
     },
     {
       "materialID": 24,
-      "materialName": "Primordial Fire",
-      "materialLocation": "Dungeon",
-      "materialTier": 3,
-      "A1Name": "Ignes",
-      "A1Amt": 4,
-      "A2Name": "Potentia",
-      "A2Amt": 2,
-      "A3Name": "Lux",
-      "A3Amt": 3,
-      "imageName": "Materials_24"
-    },
-    {
-      "materialID": 25,
       "materialName": "Basilisk Blood",
       "materialLocation": "Dungeon",
       "materialTier": 2,
@@ -337,6 +324,19 @@
       "A3Name": "Venenum",
       "A3Amt": 2,
       "imageName": "Materials_25"
+    },
+    {
+      "materialID": 25,
+      "materialName": "Primordial Fire",
+      "materialLocation": "Dungeon",
+      "materialTier": 3,
+      "A1Name": "Ignes",
+      "A1Amt": 4,
+      "A2Name": "Potentia",
+      "A2Amt": 2,
+      "A3Name": "Lux",
+      "A3Amt": 3,
+      "imageName": "Materials_24"
     },
     {
       "materialID": 26,
