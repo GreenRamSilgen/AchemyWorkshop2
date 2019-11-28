@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-public class StageCycle : MonoBehaviour
+public class StageCycleEod : MonoBehaviour
 {
     // Start is called before the first frame update
     public Animator animator;
@@ -15,7 +15,15 @@ public class StageCycle : MonoBehaviour
     public void FadeToStage (int levelIndex)
         //switches to whichever scene index is defined in the button trigger
     {
-        levelToLoad = levelIndex;
+        if (Global.gold < -5000)
+        {
+            levelToLoad = 6;
+        }
+        else
+        {
+            levelToLoad = levelIndex;
+        }
+
         animator.SetTrigger("FadeOut");
     }
     public void OnFadeComplete()
@@ -23,6 +31,7 @@ public class StageCycle : MonoBehaviour
     {
         SceneManager.LoadScene(levelToLoad);
     }
+
     public void QuitGame()
     {
         Debug.Log("Bid you farewell!");
