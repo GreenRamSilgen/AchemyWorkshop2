@@ -20,7 +20,7 @@ public static class Global
 
     // may be renamed to gold or something similar later, but this is the currency
     // amount also subject to change
-    public static int gold = 1000;
+    public static int gold = 300;
 
 
     // dictionary interface containing all the materials the player has
@@ -63,7 +63,8 @@ public static class Global
     public static List<RecipeInfo> recipes = new List<RecipeInfo>();
     public static List<RecipeInfo> recipeHistory = new List<RecipeInfo>();
     public static List<int> materialsUsed = new List<int>();
-    public static List<int> FoundMaterials = new List<int>(){19, 21};
+    public static List<int> FoundMaterials = new List<int>() { 0, 1, 2 };
+    public static List<string> potionsCrafted = new List<string>();
     public static int moneyMade = 0;
     public static Dictionary<string, int> gatherers = new Dictionary<string, int>()
     {
@@ -85,22 +86,21 @@ public static class Global
 
     public static Dictionary<string, int> gathererCost = new Dictionary<string, int>()
     {
-        ["Adventurer"] = 10,
-        ["Veteran"] = 100,
-        ["Hero"] = 500,
+        ["Adventurer"] = 50,
+        ["Veteran"] = 750,
+        ["Hero"] = 3000,
 
         //Wilds Gatherers
-        ["Explorer"] = 10,
-        ["Ranger"] = 100,
-        ["Beast Hunter"] = 500,
+        ["Explorer"] = 50,
+        ["Ranger"] = 750,
+        ["Beast Hunter"] = 3000,
 
         //City Gatherers
-        ["Trader"] = 10,
-        ["Merchant"] = 100,
-        ["Black Marketeer"] = 500,
+        ["Trader"] = 50,
+        ["Merchant"] = 750,
+        ["Black Marketeer"] = 3000,
 
     };
     
     public static Random rand = new Random();
-
 }

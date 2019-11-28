@@ -17,16 +17,6 @@ public class MaterialLoader : MonoBehaviour
 
             foreach (Materials material in matList.Materials)
             {
-                Debug.Log(material.materialID);
-                Debug.Log(material.materialLocation);
-                Debug.Log(material.materialName);
-                Debug.Log(material.materialTier);
-                Debug.Log(material.A1Name);
-                Debug.Log(material.A1Amt);
-                Debug.Log(material.A2Name);
-                Debug.Log(material.A2Amt);
-                Debug.Log(material.A3Name);
-                Debug.Log(material.A3Amt);
             }
         }
         else

@@ -3,7 +3,7 @@
     {
       "recipeID": 0,
       "recipeName": "Deathward Potion",
-      "recipeValue": 0,
+      "recipeValue": 300,
       "mainAspectName": "Mortus",
       "subAspect1Name": "Examinus",
       "subAspect1Min": 2,
@@ -16,7 +16,7 @@
     {
       "recipeID": 1,
       "recipeName": "Necromancer's Poison",
-      "recipeValue": 0,
+      "recipeValue": 700,
       "mainAspectName": "Examinus",
       "subAspect1Name": "Mortus",
       "subAspect1Min": 3,
@@ -29,7 +29,7 @@
     {
       "recipeID": 2,
       "recipeName": "Animal Friendship Potion",
-      "recipeValue": 0,
+      "recipeValue": 800,
       "mainAspectName": "Bestia",
       "subAspect1Name": "Victus",
       "subAspect1Min": 2,
@@ -42,7 +42,7 @@
     {
       "recipeID": 3,
       "recipeName": "The Philosopher's Stone",
-      "recipeValue": 0,
+      "recipeValue": 99999,
       "mainAspectName": "Lucrum",
       "subAspect1Name": "Voltus",
       "subAspect1Min": 3,
@@ -55,7 +55,7 @@
     {
       "recipeID": 4,
       "recipeName": "Strength Potion",
-      "recipeValue": 0,
+      "recipeValue": 900,
       "mainAspectName": "Telum",
       "subAspect1Name": "Victus",
       "subAspect1Min": 2,
@@ -68,7 +68,7 @@
     {
       "recipeID": 5,
       "recipeName": "Paralisis Poison",
-      "recipeValue": 0,
+      "recipeValue": 300,
       "mainAspectName": "Vinculum",
       "subAspect1Name": "Fames",
       "subAspect1Min": 2,
@@ -81,7 +81,7 @@
     {
       "recipeID": 6,
       "recipeName": "Assasin's Poison",
-      "recipeValue": 0,
+      "recipeValue": 600,
       "mainAspectName": "Venenum",
       "subAspect1Name": "Tenebrae",
       "subAspect1Min": 2,
@@ -94,7 +94,7 @@
     {
       "recipeID": 7,
       "recipeName": "Wisdom Potion",
-      "recipeValue": 0,
+      "recipeValue": 400,
       "mainAspectName": "Praecantatio",
       "subAspect1Name": "Fames",
       "subAspect1Min": 2,
@@ -107,7 +107,7 @@
     {
       "recipeID": 8,
       "recipeName": "Saitey Potion",
-      "recipeValue": 0,
+      "recipeValue": 500,
       "mainAspectName": "Fames",
       "subAspect1Name": "Aqua",
       "subAspect1Min": 3,
@@ -120,7 +120,7 @@
     {
       "recipeID": 9,
       "recipeName": "Cold Resistance Potion",
-      "recipeValue": 0,
+      "recipeValue": 900,
       "mainAspectName": "Ignis",
       "subAspect1Name": "Potentia",
       "subAspect1Min": 2,
@@ -133,7 +133,7 @@
     {
       "recipeID": 10,
       "recipeName": "Defense Potion",
-      "recipeValue": 0,
+      "recipeValue": 1100,
       "mainAspectName": "Tutamen",
       "subAspect1Name": "Instramentum",
       "subAspect1Min": 2,
@@ -146,7 +146,7 @@
     {
       "recipeID": 11,
       "recipeName": "Flying Potion",
-      "recipeValue": 0,
+      "recipeValue": 500,
       "mainAspectName": "Voltus",
       "subAspect1Name": "Praecantatio",
       "subAspect1Min": 2,
@@ -159,7 +159,7 @@
     {
       "recipeID": 12,
       "recipeName": "Dexterity Potion",
-      "recipeValue": 0,
+      "recipeValue": 700,
       "mainAspectName": "Instramentum",
       "subAspect1Name": "Terra",
       "subAspect1Min": 2,
@@ -172,7 +172,7 @@
     {
       "recipeID": 13,
       "recipeName": "Flame Resistance Potion",
-      "recipeValue": 0,
+      "recipeValue": 400,
       "mainAspectName": "Gelum",
       "subAspect1Name": "Herba",
       "subAspect1Min": 2,
@@ -185,7 +185,7 @@
     {
       "recipeID": 14,
       "recipeName": "Health Potion",
-      "recipeValue": 0,
+      "recipeValue": 300,
       "mainAspectName": "Victus",
       "subAspect1Name": "Fames",
       "subAspect1Min": 2,
@@ -198,7 +198,7 @@
     {
       "recipeID": 15,
       "recipeName": "Mana Potion",
-      "recipeValue": 0,
+      "recipeValue": 400,
       "mainAspectName": "Potentia",
       "subAspect1Name": "Praecantatio",
       "subAspect1Min": 3,
@@ -211,7 +211,7 @@
     {
       "recipeID": 16,
       "recipeName": "Darkvision Potion",
-      "recipeValue": 0,
+      "recipeValue": 700,
       "mainAspectName": "Lux",
       "subAspect1Name": "Tenebrae",
       "subAspect1Min": 2,
@@ -224,7 +224,7 @@
     {
       "recipeID": 17,
       "recipeName": "Mindvision Potion",
-      "recipeValue": 0,
+      "recipeValue": 600,
       "mainAspectName": "Vitreus",
       "subAspect1Name": "Victus",
       "subAspect1Min": 1,
@@ -237,7 +237,7 @@
     {
       "recipeID": 18,
       "recipeName": "Blinding Poison",
-      "recipeValue": 0,
+      "recipeValue": 600,
       "mainAspectName": "Tenebrae",
       "subAspect1Name": "Venenum",
       "subAspect1Min": 1,
@@ -250,7 +250,7 @@
     {
       "recipeID": 19,
       "recipeName": "Water Breathing Potion",
-      "recipeValue": 0,
+      "recipeValue": 300,
       "mainAspectName": "Aqua",
       "subAspect1Name": "Praecantatio",
       "subAspect1Min": 2,
@@ -263,7 +263,7 @@
     {
       "recipeID": 20,
       "recipeName": "Slowness Potion",
-      "recipeValue": 0,
+      "recipeValue": 300,
       "mainAspectName": "Terra",
       "subAspect1Name": "Vinculum",
       "subAspect1Min": 1,
@@ -276,7 +276,7 @@
     {
       "recipeID": 21,
       "recipeName": "Plant Growth Potion",
-      "recipeValue": 0,
+      "recipeValue": 30,
       "mainAspectName": "Herba",
       "subAspect1Name": "Victus",
       "subAspect1Min": 2,
@@ -289,7 +289,7 @@
     {
       "recipeID": 22,
       "recipeName": "Barkskin Potion",
-      "recipeValue": 0,
+      "recipeValue": 500,
       "mainAspectName": "Arbor",
       "subAspect1Name": "Tutamen",
       "subAspect1Min": 1,

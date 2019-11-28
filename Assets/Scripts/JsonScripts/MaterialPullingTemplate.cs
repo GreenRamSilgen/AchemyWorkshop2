@@ -12,7 +12,6 @@ public class MaterialPullingTemplate : MonoBehaviour
          
          foreach(Materials material in MaterialList.Materials) //LOOP THROUGH ALL RESOURCES. 
          {
-             Debug.Log("hippity hoppity");
          }
     }
 }

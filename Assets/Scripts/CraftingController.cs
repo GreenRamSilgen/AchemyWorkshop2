@@ -214,7 +214,7 @@ public class CraftingController : MonoBehaviour
             }
         }
         
-        Debug.Log(Aspects.Count);
+
     }
     
     public void RemoveAspect(int materialID)
@@ -291,8 +291,8 @@ public class CraftingController : MonoBehaviour
                         }
                         //we crafted the potion woohoo!!!!
                         craftedPotion = true;
-                        Global.gold += RecipeList.Recipes[i].recipeValue;
                         Global.moneyMade += RecipeList.Recipes[i].recipeValue;
+                        Global.gold += RecipeList.Recipes[i].recipeValue;
                         List<int> materialIDs = new List<int>();
                         materialIDs.Add(slot1.materialID);
                         materialIDs.Add(slot2.materialID);

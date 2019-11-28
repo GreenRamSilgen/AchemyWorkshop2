@@ -23,4 +23,9 @@ public class StageCycle : MonoBehaviour
     {
         SceneManager.LoadScene(levelToLoad);
     }
+    public void QuitGame()
+    {
+        Debug.Log("Bid you farewell!");
+        Application.Quit();
+    }
 }
