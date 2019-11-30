@@ -281,7 +281,7 @@ public class BarChart : MonoBehaviour
         colorWheel.Add("Instramentum", 8);
         colorWheel.Add("Lucrum", 9);
         colorWheel.Add("Lux", 10);
-        colorWheel.Add("Mortus", 11);
+        colorWheel.Add("Mortuus", 11);
         colorWheel.Add("Potentia", 12);
         colorWheel.Add("Praecantatio", 13);
         colorWheel.Add("Telum", 14);
