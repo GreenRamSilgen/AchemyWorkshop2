@@ -24,7 +24,7 @@ public class RecipeObject : MonoBehaviour
         recipeID = recipe.recipeID;
         resultID = recipe.resultID;
         materialIDs = recipe.materialIDs;
-        potionImage.GetComponent<Image>().sprite = CraftingController.GetPotionImage(resultID);
+        potionImage.GetComponent<Image>().sprite = CraftingController.GetRecipeImage(resultID);
         material1.GetComponent<Image>().sprite = CraftingController.GetImage(materialIDs[0]);
         material2.GetComponent<Image>().sprite = CraftingController.GetImage(materialIDs[1]);
         material3.GetComponent<Image>().sprite = CraftingController.GetImage(materialIDs[2]);

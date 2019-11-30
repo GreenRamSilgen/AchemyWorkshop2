@@ -39,7 +39,7 @@ public static class Global
         [8] = 0,
 
         //Wild Materials
-        [9] = 0,
+        [9] = 1,
         [10] = 0,
         [11] = 0,
         [12] = 0,
@@ -50,8 +50,8 @@ public static class Global
         [17] = 0,
 
         //Dungeon Materials
-        [18] = 0,
-        [19] = 0,
+        [18] = 1,
+        [19] = 1,
         [20] = 0,
         [21] = 0,
         [22] = 0,

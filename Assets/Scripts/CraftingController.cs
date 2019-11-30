@@ -29,7 +29,10 @@ public class CraftingController : MonoBehaviour
     public BarChart BarChart;
     public const int END_RECIPE_ID = 3;
     public Object[] sprites;
-    public Object[] potionSprites;
+    public Object[] recipeSprites;
+    public Animator MessageBoard;
+    public GameObject messageText;
+    public GameObject messageImage;
     /*    private string recipesFileName = "Data/Recipes.json";
     */    // Start is called before the first frame update
     void Start()
@@ -40,7 +43,7 @@ public class CraftingController : MonoBehaviour
         Global.moneyMade = 0;
         TextAsset asset = Resources.Load("Materials") as TextAsset;
         sprites = Resources.LoadAll("Sprites/Materials");
-        potionSprites = Resources.LoadAll("Sprites/potions");
+        recipeSprites = Resources.LoadAll("Sprites/potions");
         if (asset != null)
         {
             //Debug.Log(jsonString);
@@ -90,10 +93,10 @@ public class CraftingController : MonoBehaviour
         Slots.Add(2, slot3);
         slot3.id = 2;
 
-        BarChart.updateBarGraph(Slots[0].materialID, Slots[1].materialID, Slots[2].materialID);
-        List<int> materialIDs = new List<int>();
+/*        BarChart.updateBarGraph(Slots[0].materialID, Slots[1].materialID, Slots[2].materialID);
+*/        List<int> materialIDs = new List<int>();
         materialIDs.Add(6);
-        materialIDs.Add(15);
+        materialIDs.Add(16);
         materialIDs.Add(26);
         RecipeInfo endRecipe = new RecipeInfo(0, END_RECIPE_ID, RecipeList.Recipes[END_RECIPE_ID].recipeName, RecipeList.Recipes[END_RECIPE_ID].recipeValue, materialIDs);
         AddRecipe(END_RECIPE_ID, endRecipe);
@@ -129,7 +132,6 @@ public class CraftingController : MonoBehaviour
                     MaterialObjects.Add(materialID, Instantiate(template, MaterialPanelTransform));
                     MaterialObjects[materialID].GetComponent<ClickAction>().materialID = materialID;
                     MaterialObjects[materialID].GetComponentInChildren<Text>().text = "1";
-
                 }
                 else
                 {
@@ -142,8 +144,8 @@ public class CraftingController : MonoBehaviour
             }
             materials[materialID] += 1;
         }
-        BarChart.updateBarGraph(slot1.materialID, slot2.materialID, slot3.materialID);
-    }
+/*        BarChart.updateBarGraph(slot1.materialID, slot2.materialID, slot3.materialID);
+*/    }
     public void RemoveMaterial(int materialID)
     {
         if (materialID > -1)
@@ -165,8 +167,8 @@ public class CraftingController : MonoBehaviour
                 }
             }
         }
-        BarChart.updateBarGraph(slot1.materialID, slot2.materialID, slot3.materialID);
-    }
+/*        BarChart.updateBarGraph(slot1.materialID, slot2.materialID, slot3.materialID);
+*/    }
     public void SlotMaterial(int newID, int oldID)
     {
         AddMaterial(oldID);
@@ -261,14 +263,14 @@ public class CraftingController : MonoBehaviour
         }
         
     }
-    public void CraftPotion()
+    public void CraftRecipe()
     {
         if (slot1.materialID > -1 || slot2.materialID > -1 || slot3.materialID > -1)
         {
             //get the aspects from the aspect panel, or store them in this crafting controller
             //then look through recipe list to see if any recipes match up
             //craft if so, otherwise...get small amount of money?
-            bool craftedPotion = false;
+            bool craftedrecipe = false;
             string mainAspect = "";
             int highest = 0;
             foreach (string aspect in Aspects.Keys)
@@ -276,6 +278,7 @@ public class CraftingController : MonoBehaviour
                 if(Aspects[aspect] > highest)
                 {
                     mainAspect = aspect;
+                    highest = Aspects[aspect];
                 }
             }
             for(int i = 0; i < RecipeList.Recipes.Count; i++)
@@ -291,8 +294,8 @@ public class CraftingController : MonoBehaviour
                         {
                             StageCycle.FadeToStage(5);//WIN
                         }
-                        //we crafted the potion woohoo!!!!
-                        craftedPotion = true;
+                        //we crafted the recipe woohoo!!!!
+                        craftedrecipe = true;
                         Global.moneyMade += RecipeList.Recipes[i].recipeValue;
                         Global.gold += RecipeList.Recipes[i].recipeValue;
                         List<int> materialIDs = new List<int>();
@@ -314,11 +317,13 @@ public class CraftingController : MonoBehaviour
                         if(crafts >= NUM_OF_CRAFTS_PER_DAY){
                             StageCycle.FadeToStage(4);//TO END DAY
                         }
+                        CraftingMessage(i);
+                        
                     }
                 }
             }
             EmptySlots();
-            if (!craftedPotion)
+            if (!craftedrecipe)
             {
                 FindObjectOfType<AudioManager>().Play(0);
             }
@@ -371,8 +376,8 @@ public class CraftingController : MonoBehaviour
                 Slots[i].ResetSlot();
             }
         }
-        BarChart.updateBarGraph(slot1.materialID, slot2.materialID, slot3.materialID);
-    }
+/*        BarChart.updateBarGraph(slot1.materialID, slot2.materialID, slot3.materialID);
+*/    }
     public void EmptySlots()
     {
         slot1.ResetSlot();
@@ -391,8 +396,8 @@ public class CraftingController : MonoBehaviour
         slot3.ResetSlot();
         AspectPanel.ResetAspects();
         Aspects = new Dictionary<string, int>();
-        BarChart.updateBarGraph(slot1.materialID, slot2.materialID, slot3.materialID);
-    }
+/*        BarChart.updateBarGraph(slot1.materialID, slot2.materialID, slot3.materialID);
+*/    }
     public Sprite GetImage(int materialID)
     {
         if(materialID == -1)
@@ -406,15 +411,15 @@ public class CraftingController : MonoBehaviour
         /*Debug.Log(sprites.Length);*/
         return (Sprite) sprites[materialID+1];
     }
-    public Sprite GetPotionImage(int potionID)
+    public Sprite GetRecipeImage(int recipeID)
     {
-/*        Debug.Log(potionID);
-        Debug.Log(potionSprites.Length);*/
-        if(potionID == -1)
+/*        Debug.Log(recipeID);
+        Debug.Log(recipeSprites.Length);*/
+        if(recipeID == -1)
         {
             return Resources.Load<Sprite>("Art/NA");
         }
-        return (Sprite) potionSprites[potionID + 1];
+        return (Sprite) recipeSprites[recipeID + 1];
     }
     public string GetMaterialName(int materialID)
     {
@@ -426,5 +431,11 @@ public class CraftingController : MonoBehaviour
         {
             return "NA";
         }
+    }
+    public void CraftingMessage(int recipeID)
+    {
+        messageText.GetComponent<Text>().text = "You Crafted " + RecipeList.Recipes[recipeID].recipeName + " and earned " +RecipeList.Recipes[recipeID].recipeValue.ToString() + " money";
+        messageImage.GetComponent<Image>().sprite = GetRecipeImage(recipeID);
+        MessageBoard.SetTrigger("CraftingMessage");
     }
 }

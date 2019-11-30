@@ -185,6 +185,8 @@ public class BarChart : MonoBehaviour
             //Change the bar Value
             bars[i].barValue.text = myEnumerator.Value.ToString();
             //Change the bar Color
+            Debug.Log(myEnumerator.Key.ToString());
+            Debug.Log(colorWheel[myEnumerator.Key.ToString()]);
             bars[i].bar.color = colors[colorWheel[myEnumerator.Key.ToString()]];
             bars[i].label.color = colors[colorWheel[myEnumerator.Key.ToString()]];
             
