@@ -40,7 +40,7 @@ public class EndOfDayDisplay : MonoBehaviour
         potions.potText.text = "";
 
         //Ledger calc
-        startGold = Global.gold;
+        startGold = Global.startGold;
         hireCost = calcHireCost();
         int netGain = Global.moneyMade - 50 - hireCost;
         Global.gold = Global.gold + Global.moneyMade - 50 - hireCost;
