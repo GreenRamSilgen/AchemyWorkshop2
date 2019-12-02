@@ -33,6 +33,7 @@ public class CraftingController : MonoBehaviour
     public Animator MessageBoard;
     public GameObject messageText;
     public GameObject messageImage;
+    public GameObject messageBackground;
     /*    private string recipesFileName = "Data/Recipes.json";
     */    // Start is called before the first frame update
     void Start()
