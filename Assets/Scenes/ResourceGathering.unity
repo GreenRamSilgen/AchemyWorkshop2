@@ -6740,8 +6740,10 @@ MonoBehaviour:
     in this menu.
 
 
-    Once you have assigned workers press the next day to deploy them. Workers will
-    head out today and drop off materials they collected on the following day.'
+    Workers will drop off the materials at the start of the next day, but will be
+    paid at the end of the current day. While you can spend more goal than you can,
+    be careful! You must also pay rent along with your workers. Ending the day in
+    debt will lose the game.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -6769,8 +6771,8 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 20
-  m_fontSizeBase: 20
+  m_fontSize: 17
+  m_fontSizeBase: 17
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18

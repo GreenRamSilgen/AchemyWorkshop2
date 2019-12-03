@@ -409,8 +409,9 @@ public class CraftingController : MonoBehaviour
         Debug.Log(Resources.Load<Sprite>("Sprites/" + MaterialList.Materials[materialID].imageName));
         return Resources.Load<Sprite>("Sprites/" + MaterialList.Materials[materialID].imageName);
         */
-        /*Debug.Log(sprites.Length);*/
-        return (Sprite) sprites[materialID+1];
+        /*Debug.Log(sprites.Length);*//*
+        return (Sprite) sprites[materialID+1];*/
+        return (Sprite) sprites[MaterialList.Materials[materialID].imageName + 1];
     }
     public Sprite GetRecipeImage(int recipeID)
     {

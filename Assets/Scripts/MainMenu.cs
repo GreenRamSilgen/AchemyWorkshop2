@@ -8,7 +8,7 @@ public class MainMenu : MonoBehaviour
     void Start()
     {
         Global.day = 1;
-        Global.gold = 300;
+        Global.gold = 500;
         for(int i = 0; i < Global.materials.Count; i++)
         {
             Global.materials[i] = 0;

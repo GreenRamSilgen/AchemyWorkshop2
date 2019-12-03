@@ -292,7 +292,7 @@ public class BarChart : MonoBehaviour
         colorWheel.Add("Victus", 19);
         colorWheel.Add("Vinculum", 20);
         colorWheel.Add("Vitreus", 21);
-        colorWheel.Add("Voltus", 22);
+        colorWheel.Add("Volatus", 22);
         colorWheel.Add("NA", 23);
         colorWheel.Add("na", 23);
     }

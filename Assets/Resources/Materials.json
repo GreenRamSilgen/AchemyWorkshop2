@@ -11,7 +11,7 @@
       "A2Amt": 3,
       "A3Name": "Aqua",
       "A3Amt": 2,
-      "imageName": "Materials_0"
+      "imageName": 0
     },
     {
       "materialID": 1,
@@ -24,7 +24,7 @@
       "A2Amt": 2,
       "A3Name": "NA",
       "A3Amt": 0,
-      "imageName": "Materials_1"
+      "imageName": 1
     },
     {
       "materialID": 2,
@@ -37,7 +37,7 @@
       "A2Amt": 3,
       "A3Name": "Fames",
       "A3Amt": 2,
-      "imageName": "Materials_2"
+      "imageName": 2
     },
     {
       "materialID": 3,
@@ -50,7 +50,7 @@
       "A2Amt": 2,
       "A3Name": "Instramentum",
       "A3Amt": 2,
-      "imageName": "Materials_3"
+      "imageName": 3
     },
     {
       "materialID": 4,
@@ -63,7 +63,7 @@
       "A2Amt": 3,
       "A3Name": "Victus",
       "A3Amt": 2,
-      "imageName": "Materials_4"
+      "imageName": 4
     },
     {
       "materialID": 5,
@@ -76,7 +76,7 @@
       "A2Amt": 3,
       "A3Name": "NA",
       "A3Amt": 0,
-      "imageName": "Materials_5"
+      "imageName": 5
     },
     {
       "materialID": 6,
@@ -85,11 +85,11 @@
       "materialTier": 2,
       "A1Name": "Lucrum",
       "A1Amt": 2,
-      "A2Name": "Voltus",
+      "A2Name": "Volatus",
       "A2Amt": 2,
       "A3Name": "Venenum",
       "A3Amt": 2,
-      "imageName": "Materials_6"
+      "imageName": 7
     },
     {
       "materialID": 7,
@@ -102,7 +102,7 @@
       "A2Amt": 3,
       "A3Name": "Telum",
       "A3Amt": 2,
-      "imageName": "Materials_7"
+      "imageName": 6
     },
     {
       "materialID": 8,
@@ -115,11 +115,11 @@
       "A2Amt": 2,
       "A3Name": "Herba",
       "A3Amt": 2,
-      "imageName": "Materials_8"
+      "imageName": 8
     },
     {
       "materialID": 9,
-      "materialName": "Lavander",
+      "materialName": "Lavender",
       "materialLocation": "Wilds",
       "materialTier": 1,
       "A1Name": "Herba",
@@ -128,7 +128,7 @@
       "A2Amt": 4,
       "A3Name": "NA",
       "A3Amt": 0,
-      "imageName": "Materials_9"
+      "imageName": 9
     },
     {
       "materialID": 10,
@@ -141,7 +141,7 @@
       "A2Amt": 4,
       "A3Name": "NA",
       "A3Amt": 0,
-      "imageName": "Materials_10"
+      "imageName": 10
     },
     {
       "materialID": 11,
@@ -154,7 +154,7 @@
       "A2Amt": 4,
       "A3Name": "NA",
       "A3Amt": 0,
-      "imageName": "Materials_11"
+      "imageName": 11
     },
     {
       "materialID": 12,
@@ -167,7 +167,7 @@
       "A2Amt": 4,
       "A3Name": "NA",
       "A3Amt": 0,
-      "imageName": "Materials_12"
+      "imageName": 12
     },
     {
       "materialID": 13,
@@ -180,7 +180,7 @@
       "A2Amt": 4,
       "A3Name": "NA",
       "A3Amt": 0,
-      "imageName": "Materials_13"
+      "imageName": 13
     },
     {
       "materialID": 14,
@@ -193,7 +193,7 @@
       "A2Amt": 2,
       "A3Name": "Arbor",
       "A3Amt": 2,
-      "imageName": "Materials_14"
+      "imageName": 14
     },
     {
       "materialID": 15,
@@ -204,9 +204,9 @@
       "A1Amt": 3,
       "A2Name": "Tutamen",
       "A2Amt": 2,
-      "A3Name": "Voltus",
+      "A3Name": "Volatus",
       "A3Amt": 2,
-      "imageName": "Materials_15"
+      "imageName": 15
     },
     {
       "materialID": 16,
@@ -215,11 +215,11 @@
       "materialTier": 3,
       "A1Name": "Telum",
       "A1Amt": 3,
-      "A2Name": "Voltus",
+      "A2Name": "Volatus",
       "A2Amt": 3,
       "A3Name": "Lucrum",
       "A3Amt": 3,
-      "imageName": "Materials_16"
+      "imageName": 16
     },
     {
       "materialID": 17,
@@ -232,7 +232,7 @@
       "A2Amt": 2,
       "A3Name": "Examinus",
       "A3Amt": 3,
-      "imageName": "Materials_17"
+      "imageName": 17
     },
     {
       "materialID": 18,
@@ -245,7 +245,7 @@
       "A2Amt": 3,
       "A3Name": "NA",
       "A3Amt": 0,
-      "imageName": "Materials_18"
+      "imageName": 18
     },
     {
       "materialID": 19,
@@ -258,7 +258,7 @@
       "A2Amt": 3,
       "A3Name": "NA",
       "A3Amt": 0,
-      "imageName": "Materials_19"
+      "imageName": 19
     },
     {
       "materialID": 20,
@@ -271,7 +271,7 @@
       "A2Amt": 3,
       "A3Name": "NA",
       "A3Amt": 0,
-      "imageName": "Materials_20"
+      "imageName": 20
     },
     {
       "materialID": 21,
@@ -284,7 +284,7 @@
       "A2Amt": 3,
       "A3Name": "NA",
       "A3Amt": 0,
-      "imageName": "Materials_21"
+      "imageName": 21
     },
     {
       "materialID": 22,
@@ -297,7 +297,7 @@
       "A2Amt": 2,
       "A3Name": "Examinus",
       "A3Amt": 3,
-      "imageName": "Materials_22"
+      "imageName": 22
     },
     {
       "materialID": 23,
@@ -310,7 +310,7 @@
       "A2Amt": 2,
       "A3Name": "Arbor",
       "A3Amt": 2,
-      "imageName": "Materials_23"
+      "imageName": 23
     },
     {
       "materialID": 24,
@@ -323,7 +323,7 @@
       "A2Amt": 2,
       "A3Name": "Venenum",
       "A3Amt": 2,
-      "imageName": "Materials_24"
+      "imageName": 24
     },
     {
       "materialID": 25,
@@ -336,7 +336,7 @@
       "A2Amt": 2,
       "A3Name": "Lux",
       "A3Amt": 3,
-      "imageName": "Materials_25"
+      "imageName": 25
     },
     {
       "materialID": 26,
@@ -349,7 +349,7 @@
       "A2Amt": 2,
       "A3Name": "Tutamen",
       "A3Amt": 2,
-      "imageName": "Materials_26"
+      "imageName": 26
     }
   ]
 }
