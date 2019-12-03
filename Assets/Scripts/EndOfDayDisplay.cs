@@ -43,7 +43,7 @@ public class EndOfDayDisplay : MonoBehaviour
         startGold = Global.startGold;
         hireCost = calcHireCost();
         int netGain = Global.moneyMade - 50 - hireCost;
-        Global.gold = Global.gold + Global.moneyMade - 50 - hireCost;
+        Global.gold = startGold + Global.moneyMade - 50 - hireCost;
         //SET Text
         updateLedger(hireCost, netGain);
         matUsed();
