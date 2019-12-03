@@ -501,7 +501,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 763861440}
   m_HandleRect: {fileID: 763861439}
   m_Direction: 2
-  m_Value: 1.0000006
+  m_Value: 0.9999994
   m_Size: 0.8702026
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -577,8 +577,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 2.3, y: 97.35}
-  m_SizeDelta: {x: 244.8, y: 40.6}
+  m_AnchoredPosition: {x: -0.0000047684, y: 95.499985}
+  m_SizeDelta: {x: 258.7, y: 54.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &480210622
 MonoBehaviour:
@@ -598,7 +598,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Materials Expended
+  m_text: Materials Gathered
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -607,8 +607,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4279053713
-  m_fontColor: {r: 0.5686275, g: 0.1764706, b: 0.050980397, a: 1}
+    rgba: 4278192429
+  m_fontColor: {r: 0.1792453, g: 0.03584906, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1742,7 +1742,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 2.9000092, y: -13.460007}
+  m_AnchoredPosition: {x: 2.9000092, y: -13.459984}
   m_SizeDelta: {x: 186.5, y: 207.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1396397354
@@ -1772,8 +1772,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4279053713
-  m_fontColor: {r: 0.5686275, g: 0.1764706, b: 0.050980397, a: 1}
+    rgba: 4278192944
+  m_fontColor: {r: 0.18867922, g: 0.045740418, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -2137,7 +2137,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1656093096}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
