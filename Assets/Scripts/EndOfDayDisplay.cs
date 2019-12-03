@@ -142,15 +142,15 @@ public class EndOfDayDisplay : MonoBehaviour
             //How many to grab
             if (matGrabAmtRoll <= matGrabChance[0])
             {
-                grabbedMatAmt = 3;
+                grabbedMatAmt = 6;
             }
             else if (matGrabAmtRoll - matGrabChance[0] <= matGrabChance[1])
             {
-                grabbedMatAmt = 2;
+                grabbedMatAmt = 5;
             }
             else
             {
-                grabbedMatAmt = 4;
+                grabbedMatAmt = 7;
             }
             //How many to grab
 
