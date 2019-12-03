@@ -28,9 +28,9 @@ public static class Global
     public static IDictionary<int, int> materials = new Dictionary<int, int>()
     {
         //City Materials
-        [0] = 2,     
+        [0] = 0,     
         [1] = 1,      
-        [2] = 1,
+        [2] = 0,
         [3] = 0,
         [4] = 0,
         [5] = 0,
@@ -42,7 +42,7 @@ public static class Global
         [9] = 1,
         [10] = 0,
         [11] = 0,
-        [12] = 0,
+        [12] = 1,
         [13] = 0,
         [14] = 0,
         [15] = 0,
@@ -50,8 +50,8 @@ public static class Global
         [17] = 0,
 
         //Dungeon Materials
-        [18] = 1,
-        [19] = 1,
+        [18] = 0,
+        [19] = 0,
         [20] = 0,
         [21] = 0,
         [22] = 0,

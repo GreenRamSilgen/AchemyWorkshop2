@@ -411,8 +411,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1, y: -606.5}
-  m_SizeDelta: {x: 734, y: 798.2}
+  m_AnchoredPosition: {x: 0.5, y: -791.9}
+  m_SizeDelta: {x: 733, y: 1168.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &645883477
 MonoBehaviour:
@@ -445,44 +445,11 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Credits:
-
-
-    Lead
-
-    Will
-
-
-    Designers
-
-    Will
-
-    Minh
-
-
-    Programmers
-
-    Bryan
-
-    Kiran
-
-    Queenie
-
-    Luke Ren
-
-
-    Artists
-
-    Video Game Development Club Art Strike Team
-
-    Will
-
-    Queenie
-
-
-    Thank you for playing!
-
-'
+  m_Text: "Credits\r\n\r\nProgramming\r\nKiran Shrestha\r\nBryan Ly\r\nLuke Ren\r\nQueenie
+    Han\r\n\r\nDesign\r\nMinh Nguyen\r\nWill Buscemi\r\n\r\nArt\r\nQueenie Han\r\nWill
+    Buscemi\r\n\r\nAdditional Art\r\nShikashi\u2019s Fantasy Icon Pack\r\nhttps://shikashiassets.itch.io/shikashis-fantasy-icons-pack\r\n\r\nSound
+    Effects\r\nFantasy Interface Sounds\r\nCafofo Music\r\nhttps://cafofomusic.itch.io/fantasy-interface-sounds\r\n\r\nMusic\r\nSkymning\r\nDeliverance\r\nChasing
+    Shadows\r\nVindsvept - Clockwork\r https://vindsvept.se/"
 --- !u!222 &645883478
 CanvasRenderer:
   m_ObjectHideFlags: 0

@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/FailGame.unity
     guid: b21075965d6089342afa63226d4c5d91
+  - enabled: 1
+    path: Assets/Scenes/Credits.unity
+    guid: b7662dcd86f3db34088082d06f02e950
   m_configObjects: {}
