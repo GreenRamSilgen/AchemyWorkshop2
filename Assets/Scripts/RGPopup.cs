@@ -24,6 +24,7 @@ public class RGPopup : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Global.startGold = Global.gold;
         Unit1 = 0;
         Unit2 = 0;
         Unit3 = 0;
@@ -80,17 +81,17 @@ public class RGPopup : MonoBehaviour
     {
         if(unit == 1) {
             Unit1++;
-            Global.gold -= 50;
+            Global.gold -= 100;
             FindObjectOfType<AudioManager>().Play(0);
         }
         else if(unit == 2) {
             Unit2++;
-            Global.gold -= 750;
+            Global.gold -= 300;
             FindObjectOfType<AudioManager>().Play(0);
         }
         else if(unit == 3) {
             Unit3++;
-            Global.gold -= 3000;
+            Global.gold -= 1000;
             FindObjectOfType<AudioManager>().Play(0);
         }
 
@@ -104,19 +105,19 @@ public class RGPopup : MonoBehaviour
         if (unit == 1 && Unit1 > 0)
         {
             Unit1--;
-            Global.gold += 50;
+            Global.gold += 100;
             FindObjectOfType<AudioManager>().Play(1);
         }
         else if (unit == 2 && Unit2 > 0)
         {
             Unit2--;
-            Global.gold += 750;
+            Global.gold += 300;
             FindObjectOfType<AudioManager>().Play(1);
         }
         else if (unit == 3 && Unit3 > 0)
         {
             Unit3--;
-            Global.gold += 3000;
+            Global.gold += 1000;
             FindObjectOfType<AudioManager>().Play(1);
         }
 

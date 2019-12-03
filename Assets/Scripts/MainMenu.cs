@@ -9,19 +9,19 @@ public class MainMenu : MonoBehaviour
     {
         Global.day = 1;
         Global.gold = 300;
-        Global.materials[0] = 2;
-        Global.materials[1] = 1;
-        Global.materials[2] = 1;
-        for(int i = 3; i < Global.materials.Count; i++)
+        for(int i = 0; i < Global.materials.Count; i++)
         {
             Global.materials[i] = 0;
         }
+        Global.materials[1] = 1;
+        Global.materials[9] = 1;
+        Global.materials[12] = 1;
 
         //Danger
         Global.FoundMaterials.Clear();
-        Global.FoundMaterials.Add(0);
         Global.FoundMaterials.Add(1);
-        Global.FoundMaterials.Add(2);
+        Global.FoundMaterials.Add(9);
+        Global.FoundMaterials.Add(12);
     }
 
     // Update is called once per frame

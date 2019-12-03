@@ -20,15 +20,16 @@ public static class Global
 
     // may be renamed to gold or something similar later, but this is the currency
     // amount also subject to change
-    public static int gold = 300;
+    public static int gold = 500;
 
+    public static int startGold = 0;
 
     // dictionary interface containing all the materials the player has
     // not sure if this is the best way to store so many variables so open to alternatives
     public static IDictionary<int, int> materials = new Dictionary<int, int>()
     {
         //City Materials
-        [0] = 0,     
+        [0] = 0,  
         [1] = 1,      
         [2] = 0,
         [3] = 0,
@@ -86,19 +87,19 @@ public static class Global
 
     public static Dictionary<string, int> gathererCost = new Dictionary<string, int>()
     {
-        ["Adventurer"] = 50,
-        ["Veteran"] = 750,
-        ["Hero"] = 3000,
+        ["Adventurer"] = 100,
+        ["Veteran"] = 300,
+        ["Hero"] = 1000,
 
         //Wilds Gatherers
-        ["Explorer"] = 50,
-        ["Ranger"] = 750,
-        ["Beast Hunter"] = 3000,
+        ["Explorer"] = 100,
+        ["Ranger"] = 300,
+        ["Beast Hunter"] = 1000,
 
         //City Gatherers
-        ["Trader"] = 50,
-        ["Merchant"] = 750,
-        ["Black Marketeer"] = 3000,
+        ["Trader"] = 100,
+        ["Merchant"] = 300,
+        ["Black Marketeer"] = 1000,
 
     };
     

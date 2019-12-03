@@ -15,7 +15,7 @@ public class StageCycleEod : MonoBehaviour
     public void FadeToStage (int levelIndex)
         //switches to whichever scene index is defined in the button trigger
     {
-        if (Global.gold < -5000)
+        if (Global.gold < 0)
         {
             levelToLoad = 6;
         }
