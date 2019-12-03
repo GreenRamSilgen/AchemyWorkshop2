@@ -46,9 +46,10 @@ public class EndOfDayDisplay : MonoBehaviour
         Global.gold = Global.gold + Global.moneyMade - 50 - hireCost;
         //SET Text
         updateLedger(hireCost, netGain);
-        matUsed();
+        
         updatePotions();
         materialGain();
+        matUsed();
 
         //update Day
         Global.day += 1;
@@ -78,9 +79,16 @@ public class EndOfDayDisplay : MonoBehaviour
 
     void matUsed()
     {
-        for (int i = 0; i < Global.materialsUsed.Count; i++)
+        //for (int i = 0; i < Global.materialsUsed.Count; i++)
+        //{
+        //    uMaterials.matUsed.text += MaterialList.Materials[Global.materialsUsed[i]].materialName + "\n";
+        //}
+        for(int i = 0; i < Global.materials.Count; i++)
         {
-            uMaterials.matUsed.text += MaterialList.Materials[Global.materialsUsed[i]].materialName + "\n";
+            if(Global.materials[i] > 0)
+            {
+                uMaterials.matUsed.text += MaterialList.Materials[i].materialName + " x " + Global.materials[i]+   "\n";
+            }
         }
     }
 
