@@ -9,6 +9,7 @@ public class DayStartDisplay : MonoBehaviour
     void Start()
     {
         dayNum.text = Global.day.ToString();
+        Global.startGold = Global.gold;
     }
 
     // Update is called once per frame
