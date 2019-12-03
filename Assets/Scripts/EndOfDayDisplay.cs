@@ -138,38 +138,6 @@ public class EndOfDayDisplay : MonoBehaviour
         {
             int roll = Roll();
             int matGrabAmtRoll = Roll();
-            //What tier item to grab
-            if (workerTier == 3)
-            {
-                if (roll <= chance[0])
-                {
-                    grabbedMatTier = 2;
-                }
-                else if (roll - chance[0] <= chance[1])
-                {
-                    grabbedMatTier = 1;
-                }
-                else
-                {
-                    grabbedMatTier = 3;
-                }
-            }
-            else
-            {
-                if (roll <= chance[0])
-                {
-                    grabbedMatTier = 1;
-                }
-                else if (roll - chance[0] <= chance[1])
-                {
-                    grabbedMatTier = 2;
-                }
-                else
-                {
-                    grabbedMatTier = 3;
-                }
-            }
-            //What tier item to grab
 
             //How many to grab
             if (matGrabAmtRoll <= matGrabChance[0])
@@ -185,67 +153,104 @@ public class EndOfDayDisplay : MonoBehaviour
                 grabbedMatAmt = 4;
             }
             //How many to grab
-            
-            //grabbedMatTier and grabbedMatAmt are set
-            //NOW actually "grab" the materials
-            if(loc.Equals("City"))
-            {
-                if(grabbedMatTier == 1)
-                {
-                    matID = Random.Range(0, 4);
-                    Global.materials[matID] += grabbedMatAmt;
-                }
-                else if(grabbedMatTier ==2)
-                {
-                    matID = Random.Range(4, 7);
-                    Global.materials[matID] += grabbedMatAmt;
-                }
-                else
-                {
-                    matID = Random.Range(7, 9);
-                    Global.materials[matID] += grabbedMatAmt;
-                }
-            }
-            else if(loc.Equals("Wilds"))
-            {
-                if (grabbedMatTier == 1)
-                {
-                    matID = Random.Range(9, 13);
-                    Global.materials[matID] += grabbedMatAmt;
-                }
-                else if (grabbedMatTier == 2)
-                {
-                    matID = Random.Range(13, 16);
-                    Global.materials[matID] += grabbedMatAmt;
-                }
-                else
-                {
-                    matID = Random.Range(16, 18);
-                    Global.materials[matID] += grabbedMatAmt;
-                }
-            }
-            else if (loc.Equals("Dungeon"))
-            {
-                if (grabbedMatTier == 1)
-                {
-                    matID = Random.Range(18, 22);
-                    Global.materials[matID] += grabbedMatAmt;
-                }
-                else if (grabbedMatTier == 2)
-                {
-                    matID = Random.Range(22,25);
-                    Global.materials[matID] += grabbedMatAmt;
-                }
-                else
-                {
-                    matID = Random.Range(25, 27);
-                    Global.materials[matID] += grabbedMatAmt;
-                }
-            }
 
-            if(!Global.FoundMaterials.Contains(matID))
-            {
-                Global.FoundMaterials.Add(matID);
+            for(int i2 = 0; i2 < grabbedMatAmt; i2++) {
+                //What tier item to grab
+                if (workerTier == 3)
+                {
+                    if (roll <= chance[0])
+                    {
+                        grabbedMatTier = 2;
+                    }
+                    else if (roll - chance[0] <= chance[1])
+                    {
+                        grabbedMatTier = 1;
+                    }
+                    else
+                    {
+                        grabbedMatTier = 3;
+                    }
+                }
+                else
+                {
+                    if (roll <= chance[0])
+                    {
+                        grabbedMatTier = 1;
+                    }
+                    else if (roll - chance[0] <= chance[1])
+                    {
+                        grabbedMatTier = 2;
+                    }
+                    else
+                    {
+                        grabbedMatTier = 3;
+                    }
+                }
+                //What tier item to grab
+
+
+
+                //grabbedMatTier and grabbedMatAmt are set
+                //NOW actually "grab" the materials
+                if (loc.Equals("City"))
+                {
+                    if(grabbedMatTier == 1)
+                    {
+                        matID = Random.Range(0, 4);
+                        Global.materials[matID] += 1;
+                    }
+                    else if(grabbedMatTier ==2)
+                    {
+                        matID = Random.Range(4, 7);
+                        Global.materials[matID] += 1;
+                    }
+                    else
+                    {
+                        matID = Random.Range(7, 9);
+                        Global.materials[matID] += 1;
+                    }
+                }
+                else if(loc.Equals("Wilds"))
+                {
+                    if (grabbedMatTier == 1)
+                    {
+                        matID = Random.Range(9, 13);
+                        Global.materials[matID] += 1;
+                    }
+                    else if (grabbedMatTier == 2)
+                    {
+                        matID = Random.Range(13, 16);
+                        Global.materials[matID] += 1;
+                    }
+                    else
+                    {
+                        matID = Random.Range(16, 18);
+                        Global.materials[matID] += 1;
+                    }
+                }
+                else if (loc.Equals("Dungeon"))
+                {
+                    if (grabbedMatTier == 1)
+                    {
+                        matID = Random.Range(18, 22);
+                        Global.materials[matID] += 1;
+                    }
+                    else if (grabbedMatTier == 2)
+                    {
+                        matID = Random.Range(22,25);
+                        Global.materials[matID] += 1;
+                    }
+                    else
+                    {
+                        matID = Random.Range(25, 27);
+                        Global.materials[matID] += 1;
+                    }
+                }
+
+                if(!Global.FoundMaterials.Contains(matID))
+                {
+                    Global.FoundMaterials.Add(matID);
+                }
             }
         }
 
