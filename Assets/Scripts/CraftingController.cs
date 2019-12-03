@@ -96,7 +96,7 @@ public class CraftingController : MonoBehaviour
 
 /*        BarChart.updateBarGraph(Slots[0].materialID, Slots[1].materialID, Slots[2].materialID);
 */        List<int> materialIDs = new List<int>();
-        materialIDs.Add(6);
+        materialIDs.Add(7);
         materialIDs.Add(16);
         materialIDs.Add(26);
         RecipeInfo endRecipe = new RecipeInfo(0, END_RECIPE_ID, RecipeList.Recipes[END_RECIPE_ID].recipeName, RecipeList.Recipes[END_RECIPE_ID].recipeValue, materialIDs);
