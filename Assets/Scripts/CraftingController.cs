@@ -101,7 +101,7 @@ public class CraftingController : MonoBehaviour
         materialIDs.Add(26);
         RecipeInfo endRecipe = new RecipeInfo(0, END_RECIPE_ID, RecipeList.Recipes[END_RECIPE_ID].recipeName, RecipeList.Recipes[END_RECIPE_ID].recipeValue, materialIDs);
         AddRecipe(END_RECIPE_ID, endRecipe);
-
+        
     }
 
     void Update()
