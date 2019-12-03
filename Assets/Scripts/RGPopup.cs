@@ -24,7 +24,6 @@ public class RGPopup : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Global.startGold = Global.gold;
         Unit1 = 0;
         Unit2 = 0;
         Unit3 = 0;
