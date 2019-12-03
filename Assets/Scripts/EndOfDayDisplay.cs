@@ -206,16 +206,19 @@ public class EndOfDayDisplay : MonoBehaviour
                     {
                         matID = Random.Range(0, 4);
                         Global.materials[matID] += 1;
+                        Global.start_materials[matID] += 1;
                     }
                     else if(grabbedMatTier ==2)
                     {
                         matID = Random.Range(4, 7);
                         Global.materials[matID] += 1;
+                        Global.start_materials[matID] += 1;
                     }
                     else
                     {
                         matID = Random.Range(7, 9);
                         Global.materials[matID] += 1;
+                        Global.start_materials[matID] += 1;
                     }
                 }
                 else if(loc.Equals("Wilds"))
@@ -224,16 +227,19 @@ public class EndOfDayDisplay : MonoBehaviour
                     {
                         matID = Random.Range(9, 13);
                         Global.materials[matID] += 1;
+                        Global.start_materials[matID] += 1;
                     }
                     else if (grabbedMatTier == 2)
                     {
                         matID = Random.Range(13, 16);
                         Global.materials[matID] += 1;
+                        Global.start_materials[matID] += 1;
                     }
                     else
                     {
                         matID = Random.Range(16, 18);
                         Global.materials[matID] += 1;
+                        Global.start_materials[matID] += 1;
                     }
                 }
                 else if (loc.Equals("Dungeon"))
@@ -242,16 +248,19 @@ public class EndOfDayDisplay : MonoBehaviour
                     {
                         matID = Random.Range(18, 22);
                         Global.materials[matID] += 1;
+                        Global.start_materials[matID] += 1;
                     }
                     else if (grabbedMatTier == 2)
                     {
                         matID = Random.Range(22,25);
                         Global.materials[matID] += 1;
+                        Global.start_materials[matID] += 1;
                     }
                     else
                     {
                         matID = Random.Range(25, 27);
                         Global.materials[matID] += 1;
+                        Global.start_materials[matID] += 1;
                     }
                 }
 
