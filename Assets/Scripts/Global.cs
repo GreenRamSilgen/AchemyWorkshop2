@@ -61,6 +61,9 @@ public static class Global
         [25] = 0,
         [26] = 0
     };
+
+    public static IDictionary<int, int> start_materials = new Dictionary<int,int>(materials);
+
     public static List<RecipeInfo> recipes = new List<RecipeInfo>();
     public static List<RecipeInfo> recipeHistory = new List<RecipeInfo>();
     public static List<int> materialsUsed = new List<int>();
